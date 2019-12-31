@@ -255,33 +255,33 @@
 
 -->
 
-  {{ if .Site.Data.homepage.portfolio.enable }}
-  <!-- portfolio -->
-  <section class="section">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 text-center">
-          <h2 class="section-title">Portfolio</h2>
-        </div>
-      </div>
-      <div class="row shuffle-wrapper">
-        {{ range .Site.Data.homepage.portfolio.item }}
-        <div class="col-lg-4 col-6 mb-4 shuffle-item">
-          <div class="position-relative rounded hover-wrapper">
-            <img src="{{.image | absURL }}" alt="portfolio-image" class="img-fluid rounded w-100 d-block">
-            <div class="hover-overlay">
-              <div class="hover-content">
-                <a class="btn btn-light btn-sm" href="{{ .projectURL }}">view project</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        {{ end }}
-      </div>
-    </div>
-  </section>
-  <!-- /portfolio -->
-  {{ end }}
+<!--  {{ if .Site.Data.homepage.portfolio.enable }}-->
+<!--  &lt;!&ndash; portfolio &ndash;&gt;-->
+<!--  <section class="section">-->
+<!--    <div class="container">-->
+<!--      <div class="row">-->
+<!--        <div class="col-12 text-center">-->
+<!--          <h2 class="section-title">Portfolio</h2>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="row shuffle-wrapper">-->
+<!--        {{ range .Site.Data.homepage.portfolio.item }}-->
+<!--        <div class="col-lg-4 col-6 mb-4 shuffle-item">-->
+<!--          <div class="position-relative rounded hover-wrapper">-->
+<!--            <img src="{{.image | absURL }}" alt="portfolio-image" class="img-fluid rounded w-100 d-block">-->
+<!--            <div class="hover-overlay">-->
+<!--              <div class="hover-content">-->
+<!--                <a class="btn btn-light btn-sm" href="{{ .projectURL }}">view project</a>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        {{ end }}-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </section>-->
+<!--  &lt;!&ndash; /portfolio &ndash;&gt;-->
+<!--  {{ end }}-->
 
 
 
