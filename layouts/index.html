@@ -1,0 +1,366 @@
+{{ define "main" }}
+<!--
+  _    _
+ | |  | |                             /\
+ | |__| |   ___   _ __    ___        /  \     _ __    ___    __ _
+ |  __  |  / _ \ | '__|  / _ \      / /\ \   | '__|  / _ \  / _` |
+ | |  | | |  __/ | |    | (_) |    / ____ \  | |    |  __/ | (_| |
+ |_|  |_|  \___| |_|     \___/    /_/    \_\ |_|     \___|  \__,_|
+
+ -->
+  <section class="hero-area bg-primary overflow-hidden" id="parallax">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-11 mx-auto">
+          <h1 class="text-black">{{ .Site.Data.homepage.banner.title | safeHTML }}</h1>
+        </div>
+      </div>
+    </div>
+
+
+  </section>
+
+<!--
+   _____                  _           _     _        _           _
+  / ____|                (_)         | |   | |      (_)         | |
+ | (___     ___     ___   _    __ _  | |   | |       _   _ __   | | __  ___
+  \___ \   / _ \   / __| | |  / _` | | |   | |      | | | '_ \  | |/ / / __|
+  ____) | | (_) | | (__  | | | (_| | | |   | |____  | | | | | | |   <  \__ \
+ |_____/   \___/   \___| |_|  \__,_| |_|   |______| |_| |_| |_| |_|\_\ |___/
+
+
+-->
+<div class="text-center">
+    <ul id="social-media" class="icons">
+      {{ range .Site.Languages -}}
+      {{ if ne .LanguageName $.Site.Language.LanguageName }}
+      <li><a href="/{{ .Lang }}">{{ .LanguageName }}</a></li>
+      {{ end }}
+      {{ end }}
+      {{ if .Site.Data.homepage.social.twitter }}
+      <li><a href="https://twitter.com/{{ .Site.Data.homepage.social.twitter }}"  aria-hidden="true"></i> <img class="contain" src="https://cdn.svgporn.com/logos/twitter.svg" style="width: 5em; height: 5em"></a></li>
+      {{ end }} {{ if .Site.Data.homepage.social.linkedin }}
+      <li><a href="https://www.linkedin.com/in/{{ .Site.Data.homepage.social.linkedin }}" aria-hidden="true"></i> <img class="contain" src="https://cdn.svgporn.com/logos/linkedin.svg" style="width: 5em; height: 5em"></a></li>
+      {{ end }} {{ if .Site.Data.homepage.social.github }}
+      <li><a href="https://github.com/{{ .Site.Data.homepage.social.github }}"  aria-hidden="true"></i> <img class="contain" src="https://cdn.svgporn.com/logos/github-icon.svg" style="width: 5em; height: 5em"> </a></li>
+      {{ end }} {{ if .Site.Data.homepage.social.gitlab }}
+      <li><a href="https://gitlab.com/{{ .Site.Data.homepage.social.gitlab }}" aria-hidden="true"></i> <img class="contain" src="https://cdn.svgporn.com/logos/gitlab.svg" style="width: 5em; height: 5em"></a></li>
+      {{ end }} {{ if .Site.Data.homepage.social.facebook }}
+      <li><a href="https://www.facebook.com/{{ .Site.Data.homepage.social.facebook }}"  aria-hidden="true"></i> <img class="contain" src="https://cdn.svgporn.com/logos/facebook.svg" style="width: 5em; height: 5em"></a></li>
+      {{ end }} {{ if .Site.Data.homepage.social.instagram }}
+      <li><a href="https://instagram.com/{{ .Site.Data.homepage.social.instagram }}"  aria-hidden="true"></i> <img class="contain" src="https://cdn.svgporn.com/logos/instagram-icon.svg" style="width: 5em; height: 5em"></a></li>
+      {{ end }}
+    </ul>
+</div>
+
+
+<!--
+             _                       _
+     /\     | |                     | |
+    /  \    | |__     ___    _   _  | |_
+   / /\ \   | '_ \   / _ \  | | | | | __|
+  / ____ \  | |_) | | (_) | | |_| | | |_
+ /_/    \_\ |_.__/   \___/   \__,_|  \__|
+
+-->
+  {{ if .Site.Data.homepage.about.enable }}
+  <!-- about -->
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 mx-auto text-center">
+          {{ with .Site.Data.homepage.about }}
+          <p class="lead text-dark">{{.content | markdownify}}</p>
+          {{ with .button }}
+          <a href="{{ .URL | absURL }}" class="btn btn-transparent">{{.btnText}}</a>
+          {{ end }}
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /about -->
+  {{ end }}
+
+
+<!--
+
+   _____   _      _   _   _
+  / ____| | |    (_) | | | |
+ | (___   | | __  _  | | | |  ___
+  \___ \  | |/ / | | | | | | / __|
+  ____) | |   <  | | | | | | \__ \
+ |_____/  |_|\_\ |_| |_| |_| |___/
+
+
+
+-->
+{{ if .Site.Data.homepage.skill.enable }}
+
+{{ range .Site.Data.homepage.skill.item }}
+<div class="modal fade" id="{{ replace (replace .title " " "_") "." "_" }}" tabindex="-1" role="dialog" aria-labelledby="{{ replace (replace .title " " "_") "." "_" }}" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="title_{{ replace (replace .title " " "_") "." "_" }}">{{.title}}</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <p style="white-space: pre-line">{{.description | safeHTML}}</p>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}
+
+  <!-- skills -->
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-title">Skills</h2>
+        </div>
+        {{ range .Site.Data.homepage.skill.skillbar }}
+        <div class="col-lg-3 col-sm-6 mb-4">
+          <div class="card shadow text-center">
+            <div class="position-relative rounded-top progress-wrapper" data-color="{{.color}}">
+              <div class="wave" data-progress="{{.progress}}"></div>
+            </div>
+            <div class="card-footer bg-white">
+              <h4 class="card-title">{{.title }} ({{.progress}})</h4>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+        {{ end }}
+      </div>
+      <div class="container">
+        <h4 class="text-center"><em>Click the images below to find out more</em></h4>
+        <div class="row justify-content-center">
+          {{ range .Site.Data.homepage.skill.item }}
+          <div class="imagemargin col-lg-2 col-md-4 text-center">
+            <img class="contain lazy" src="" data-src="{{.logo}}" style="width: 80px;height: 80px" alt="{{.company}}" data-toggle="modal" data-target="#{{ replace (replace .title " " "_") "." "_" }}">
+            <h4>{{.title }}</h4>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <!-- /skills -->
+  {{ end }}
+
+<!--
+
+  ______                                _
+ |  ____|                              (_)
+ | |__    __  __  _ __     ___   _ __   _    ___   _ __     ___    ___
+ |  __|   \ \/ / | '_ \   / _ \ | '__| | |  / _ \ | '_ \   / __|  / _ \
+ | |____   >  <  | |_) | |  __/ | |    | | |  __/ | | | | | (__  |  __/
+ |______| /_/\_\ | .__/   \___| |_|    |_|  \___| |_| |_|  \___|  \___|
+                 | |
+                 |_|
+
+-->
+
+  {{ if .Site.Data.homepage.experience.enable }}
+  <!-- experience -->
+  <section class="section">
+    <div class="container">
+      <div class="row justify-content-around">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-title">Experience</h2>
+        </div>
+        {{ range .Site.Data.homepage.experience.item }}
+        <div class="col-lg-3 col-md-4 text-center">
+          <img class="contain lazy" src="" data-src="{{.logo}}" style="width: 110px;height: 130px" alt="{{.company}}">
+          <p class="mb-0">{{.duration}}</p>
+          <h4>{{.title }}</h4>
+          <h6 class="text-dark">{{.company }}</h6>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  <!-- ./experience -->
+  {{ end }}
+
+
+
+<!--
+
+  ______       _                          _     _
+ |  ____|     | |                        | |   (_)
+ | |__      __| |  _   _    ___    __ _  | |_   _    ___    _ __
+ |  __|    / _` | | | | |  / __|  / _` | | __| | |  / _ \  | '_ \
+ | |____  | (_| | | |_| | | (__  | (_| | | |_  | | | (_) | | | | |
+ |______|  \__,_|  \__,_|  \___|  \__,_|  \__| |_|  \___/  |_| |_|
+
+
+
+-->
+  {{ if .Site.Data.homepage.education.enable }}
+  <!-- education -->
+  <section class="section position-relative">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-title">Education</h2>
+        </div>
+        {{ range .Site.Data.homepage.education.item }}
+        <div class="col-lg-6 col-md-6 mb-80">
+          <div class="d-flex">
+            <div class="mr-lg-5 mr-3">
+              <i class="icon icon-light icon-bg bg-white shadow rounded-circle d-block"><img class="contain lazy" src="" data-src="{{.image}}" style="width: 60px;height: 60px" alt="{{.academy}}"></i>
+            </div>
+            <div>
+              <p class="text-dark mb-1">{{.year}}</p>
+              <h4>{{ .title }}</h4>
+              <p class="mb-0 text-dark">{{.academy}}</p>
+            </div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+    <!-- bg image -->
+    <img class="img-fluid edu-bg-image w-100 lazy" src="" data-src="{{`images/backgrounds/education-bg.png`|relURL}}" alt="bg-image">
+  </section>
+  <!-- /education -->
+  {{ end }}
+
+
+<!--
+
+  _____                   _      __           _   _
+ |  __ \                 | |    / _|         | | (_)
+ | |__) |   ___    _ __  | |_  | |_    ___   | |  _    ___
+ |  ___/   / _ \  | '__| | __| |  _|  / _ \  | | | |  / _ \
+ | |      | (_) | | |    | |_  | |   | (_) | | | | | | (_) |
+ |_|       \___/  |_|     \__| |_|    \___/  |_| |_|  \___/
+
+
+
+-->
+
+  {{ if .Site.Data.homepage.portfolio.enable }}
+  <!-- portfolio -->
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h2 class="section-title">Portfolio</h2>
+        </div>
+      </div>
+      <div class="row shuffle-wrapper">
+        {{ range .Site.Data.homepage.portfolio.item }}
+        <div class="col-lg-4 col-6 mb-4 shuffle-item">
+          <div class="position-relative rounded hover-wrapper">
+            <img src="{{.image | absURL }}" alt="portfolio-image" class="img-fluid rounded w-100 d-block">
+            <div class="hover-overlay">
+              <div class="hover-content">
+                <a class="btn btn-light btn-sm" href="{{ .projectURL }}">view project</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  <!-- /portfolio -->
+  {{ end }}
+
+
+
+  {{ if .Site.Data.homepage.clientSlider.enable }}
+  <!-- client logo slider -->
+  <section class="section pb-0">
+    <div class="container">
+      {{ partial "client-slider.html" . }}
+    </div>
+  </section>
+  <!-- /client logo slider -->
+  {{ end }}
+
+
+<!--
+
+  ____    _
+ |  _ \  | |
+ | |_) | | |   ___     __ _
+ |  _ <  | |  / _ \   / _` |
+ | |_) | | | | (_) | | (_| |
+ |____/  |_|  \___/   \__, |
+                       __/ |
+                      |___/
+
+-->
+  {{ if .Site.Data.homepage.blog.enable }}
+  <!-- blog -->
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h2 class="section-title">Blogs</h2>
+        </div>
+        {{ range first 3 .Site.RegularPages }}
+        <div class="col-lg-4 col-sm-6 mb-4">
+          <article class="card shadow">
+            <img class="rounded card-img-top lazy"  src ="" data-src="{{.Params.Image | absURL}}" alt="post-thumb">
+            <div class="card-body">
+              <h4 class="card-title"><a class="text-dark" href="{{.Permalink}}">{{.Title }}</a>
+              </h4>
+              <p class="cars-text">{{.Summary}}</p>
+              <a href="{{.Permalink}}" class="btn btn-xs btn-primary">Read More</a>
+            </div>
+          </article>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  <!-- /blog -->
+  {{ end }}
+
+<script>
+
+  document.addEventListener("DOMContentLoaded", function() {
+    var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+
+    if ("IntersectionObserver" in window) {
+      let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            let lazyImage = entry.target;
+            lazyImage.src = lazyImage.dataset.src;
+            lazyImage.srcset = lazyImage.dataset.src;
+            lazyImage.classList.remove("lazy");
+            lazyImageObserver.unobserve(lazyImage);
+          }
+        });
+      });
+
+      lazyImages.forEach(function(lazyImage) {
+        lazyImageObserver.observe(lazyImage);
+      });
+    } else {
+      // Possibly fall back to a more compatible method here
+    }
+  });
+
+</script>
+
+{{ end }}

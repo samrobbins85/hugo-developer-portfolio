@@ -1,0 +1,55 @@
+<header class="navigation fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="{{ .Site.BaseURL }}">{{.Site.Title}}</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+      aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse text-center" id="navigation">
+      <ul class="navbar-nav ml-auto">
+        {{$url := .URL | relURL}}
+        {{if .IsHome}}
+        <li class="nav-item active">
+          <a class="nav-link"  href="{{ .Site.BaseURL }}">{{ with .Site.Params.Home }} {{ . }} {{ end }}</a>
+        </li>
+        {{else}}
+        <li class="nav-item">
+          <a class="nav-link"  href="{{ .Site.BaseURL }}">{{ with .Site.Params.Home }} {{ . }} {{ end }}</a>
+        </li>
+        {{end}}
+        {{ range .Site.Menus.main }}
+        {{ if .HasChildren }}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            {{ .Name }}
+          </a>
+          <div class="dropdown-menu" >
+            {{ range .Children }}
+            <a class="dropdown-item" href="{{ .URL | absURL }}">{{ .Name }}</a>
+            {{ end }}
+          </div>
+        </li>
+        {{ else }}
+        {{$aURL := .URL | relLangURL}}
+        {{$page := $.Page.Permalink | relLangURL}}
+        {{$aURL2 := split $aURL "/"}}
+        {{$page2 := split $page "/"}}
+        {{$aURL3 := index $aURL2 1}}
+        {{$page3 := index $page2 1}}
+        {{if eq $aURL3 $page3}}
+        <li class="nav-item active">
+          <a class="nav-link" href="{{ .URL | absURL }}">{{.Name}}</a>
+        </li>
+        {{else}}
+        <li class="nav-item">
+          <a class="nav-link" href="{{ .URL | absURL }}">{{.Name}}</a>
+        </li>
+        {{end}}
+        {{ end }}
+        {{ end }}
+      </ul>
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,43 @@
+{{ define "main" }}
+
+{{ partial "page-title.html" . }}
+
+<!-- portfolio -->
+<section class="section">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-12">
+        <div class="btn-group btn-group-toggle justify-content-center d-flex flex-wrap" data-toggle="buttons">
+          <label class="btn portfolio btn-sm btn-primary active">
+            <input type="radio" name="shuffle-filter" value="all" checked="checked" />All
+          </label>
+          {{ range .Site.Data.portfolio.list }}
+          <label class="btn portfolio btn-sm btn-primary">
+            <input type="radio" name="shuffle-filter" value="{{.type}}" />{{ .title }}
+          </label>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+    <div class="row shuffle-wrapper">
+      {{ range .Data.Pages }}
+      <div class="col-lg-4 col-6 mb-4 shuffle-item" data-groups="{{.Params.categories | jsonify}}">
+
+        <article class="card shadow">
+          <img class="rounded card-img-top" src="{{.Params.Image | absURL}}" alt="post-thumb">
+          <div class="card-body">
+            <h4 class="card-title"><a class="text-dark" href="{{.Permalink}}">{{.Title }}</a>
+            </h4>
+            <p class="cars-text">{{.Summary}}</p>
+            <a href="{{.Permalink}}" class="btn btn-xs btn-primary">Read More</a>
+          </div>
+        </article>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+<!-- /portfolio -->
+
+
+{{ end }}
