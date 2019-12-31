@@ -152,7 +152,8 @@ h6,
 .btn-primary.focus,
 .btn-primary.active {
   background: #542cb7;
-  box-shadow: none !important
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 .btn-transparent {
@@ -167,7 +168,7 @@ h6,
 }
 
 .btn:focus.portfolio {
-  box-shadow: white !important;
+  box-shadow: none !important;
   background: white !important;
   color: black;
   outline-style: solid !important;
@@ -199,9 +200,11 @@ h6,
 
 .portfolio.btn-primary.focus,
 .btn-primary.active {
-  box-shadow: none !important;
+  box-shadow: black !important;
   background: black !important;
   color: white !important;
+  outline-style: solid !important;
+  outline-color: black !important;
 }
 
 body {
