@@ -4,7 +4,7 @@ PROJECT: Project Name
 VERSION: Version Number
 -------------------------------------------------------------------*/
 @import "https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Roboto:300,400,500,700&display=swap";
-
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:600&display=swap');
 
 .contain {object-fit: contain;}
 
@@ -23,7 +23,7 @@ body {
 p {
   font-weight: 400;
   color: #454545;
-  font-size: 15px;
+  font-size: 1em;
   line-height: 1.8;
   font-family: roboto, sans-serif
 }
@@ -211,7 +211,7 @@ body {
 
 ::selection {
   background: black;
-  color: black;
+  color: white;
 }
 
 .preloader {
@@ -750,7 +750,10 @@ textarea.form-control {
 }
 
 .footer-section {
-  padding-top: 200px
+  padding-top: 0;
+  /*position: absolute;*/
+  /*bottom: 0;*/
+  /*width: 100%;*/
 }
 
 .section-on-footer {
