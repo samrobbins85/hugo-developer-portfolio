@@ -149,7 +149,7 @@
         <h4 class="text-center"><em>Click the images below to find out more</em></h4>
         <div class="row justify-content-center">
           {{ range .Site.Data.homepage.skill.item }}
-          <div class="imagemargin col-lg-2 col-md-4 text-center">
+          <div class="imagemargin col-lg-2 col-md-4 col-sm-6 col-6 text-center">
             <img class="contain lazy" src="" data-src="{{.logo}}" style="width: 80px;height: 80px" alt="{{.company}}" data-toggle="modal" data-target="#{{ replace (replace .title " " "_") "." "_" }}">
             <h4>{{.title }}</h4>
           </div>
