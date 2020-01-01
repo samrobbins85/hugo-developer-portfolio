@@ -12,6 +12,16 @@ VERSION: Version Number
   margin-bottom: 40px;
 }
 
+figcaption p{
+  font-size: 0.8em;
+  color: grey;
+}
+
+figure img{
+  border: solid thin black;
+  padding: 10px;
+}
+
 body {
   line-height: 1.2;
   font-family: roboto, sans-serif;
