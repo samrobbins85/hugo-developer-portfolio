@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">-->
   <meta name="description" property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
-  <meta name="image" property="og:image" content="{{ with .Image }}{{ . }}{{ else }}{{ with .Site.Params.image }}{{ . }}{{ end }}{{ end }}">
+  <meta name="image" property="og:image" content="{{ with .Site.Params.image }}{{ . }}{{ else }}{{ with .Site.Params.image }}{{ . }}{{ end }}{{ end }}">
   <meta name="author" content="{{ with .Author }}{{ . }}{{ else }}{{ with .Site.Params.author }}{{ . }}{{ end }}{{ end }}">
   {{ hugo.Generator }}
 
