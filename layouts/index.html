@@ -127,23 +127,6 @@
         <div class="col-lg-12 text-center">
           <h2 class="section-title">Skills</h2>
         </div>
-        {{ range .Site.Data.homepage.skill.skillbar }}
-        <div class="col-lg-3 col-sm-6 mb-4">
-          <div class="card shadow text-center">
-            <div class="position-relative rounded-top progress-wrapper" data-color="{{.color}}">
-              <div class="wave" data-progress="{{.progress}}"></div>
-            </div>
-            <div class="card-footer bg-white">
-              <h4 class="card-title">{{.title }} ({{.progress}})</h4>
-            </div>
-          </div>
-        </div>
-
-
-
-
-
-        {{ end }}
       </div>
       <div class="container">
         <h4 class="text-center"><em>Click the images below to find out more</em></h4>
