@@ -43,7 +43,7 @@ body {
 p {
   font-weight: 400;
   color: #454545;
-  font-size: 1rem;
+  font-size: 1rem!important;
   line-height: 1.8;
   font-family: Cantarell, sans-serif
 }
