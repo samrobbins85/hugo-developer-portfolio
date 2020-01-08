@@ -49,6 +49,8 @@
       <li><a href="https://www.facebook.com/{{ .Site.Data.homepage.social.facebook }}"  aria-hidden="true"></i> <img class="contain" src="https://cdn.svgporn.com/logos/facebook.svg" style="width: 5em; height: 5em"></a></li>
       {{ end }} {{ if .Site.Data.homepage.social.instagram }}
       <li><a href="https://instagram.com/{{ .Site.Data.homepage.social.instagram }}"  aria-hidden="true"></i> <img class="contain" src="https://cdn.svgporn.com/logos/instagram-icon.svg" style="width: 5em; height: 5em"></a></li>
+      {{ end }}{{ if .Site.Data.homepage.social.gmail }}
+      <li><a href="mailto:{{ .Site.Data.homepage.social.gmail }}@gmail.com"  aria-hidden="true"></i> <img class="contain" src="https://cdn.svgporn.com/logos/google-gmail.svg" style="width: 5em; height: 5em"></a></li>
       {{ end }}
     </ul>
 </div>
