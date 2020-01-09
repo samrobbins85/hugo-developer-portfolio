@@ -11,11 +11,11 @@
         {{$url := .URL | relURL}}
         {{if .IsHome}}
         <li class="nav-item active">
-          <a class="nav-link"  href="{{ .Site.BaseURL }}">{{ with .Site.Params.Home }} {{ . }} {{ end }}</a>
+          <a class="nav-link"  href="/">{{ with .Site.Params.Home }} {{ . }} {{ end }}</a>
         </li>
         {{else}}
         <li class="nav-item">
-          <a class="nav-link"  href="{{ .Site.BaseURL }}">{{ with .Site.Params.Home }} {{ . }} {{ end }}</a>
+          <a class="nav-link"  href="/">{{ with .Site.Params.Home }} {{ . }} {{ end }}</a>
         </li>
         {{end}}
         {{ range .Site.Menus.main }}
