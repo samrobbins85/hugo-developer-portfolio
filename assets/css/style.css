@@ -5,8 +5,18 @@ VERSION: Version Number
 -------------------------------------------------------------------*/
 @import "https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Roboto:300,400,500,700&display=swap";
 @import url('https://fonts.googleapis.com/css?family=Work+Sans:600&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Cantarell:400,700&display=swap');
 
 .contain {object-fit: contain;}
+
+.full-width {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
 
 .imagemargin {
   margin-bottom: 40px;
@@ -33,10 +43,20 @@ body {
 p {
   font-weight: 400;
   color: #454545;
-  font-size: 1em;
+  font-size: 1rem;
   line-height: 1.8;
-  font-family: roboto, sans-serif
+  font-family: Cantarell, sans-serif
 }
+
+li {
+  font-weight: 400;
+  color: #454545;
+  font-size: 1rem;
+  line-height: 1.8;
+  font-family: Cantarell, sans-serif
+}
+
+
 
 h1,
 h2,
@@ -45,9 +65,8 @@ h4,
 h5,
 h6 {
   color: #000;
-  font-family: Roboto, sans-serif;
+  font-family: Cantarell, sans-serif;
   line-height: 1.2;
-  font-weight: normal;
 }
 
 h1,
@@ -78,11 +97,12 @@ h2,
 
 h3,
 .h3 {
-  font-size: 40px
+  font-size: calc(20px + 0.8vw);
+  font-weight: bold;
 }
 
 h4,
-.h4 {
+.h4 {calc(10px + 0.8vw)
   font-size: 22px
 }
 
