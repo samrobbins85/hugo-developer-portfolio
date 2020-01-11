@@ -9,7 +9,9 @@
         </div>
         <div class="col-md-4">
           <h5 class="text-light">Address</h5>
-          <p class="paragraph-lg font-secondary">{{.Site.Params.footer.address}}</p>
+          <div uk-lightbox>
+            <a href="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJwbHYJaUqfEgRK0Ui9dVGimc&key=AIzaSyAE_4rVAKux_DSPcb_OdSRDaovtPOSk_3U" data-caption="{{.Site.Params.footer.address}}" data-type="iframe">{{.Site.Params.footer.address}}</a>
+          </div>
         </div>
       </div>
     </div>

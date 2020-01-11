@@ -9,6 +9,17 @@ VERSION: Version Number
 
 .contain {object-fit: contain;}
 
+
+.uk-open{
+  background: rgba(0, 0, 0, 0.7);
+  /*As there isn't firefox support for this I won't use it*/
+  /*backdrop-filter: blur(8px);*/
+}
+
+.uk-lightbox-toolbar{
+  background: rgba(0, 0, 0, 0);
+}
+
 .full-width {
   width: 100vw;
   position: relative;
