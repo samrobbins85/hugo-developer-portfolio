@@ -138,7 +138,9 @@ h6,
   transition: .2s ease
 }
 
-.portfolio {
+
+/*This is just for buttons*/
+.portfolio-button {
   font-size: 22px;
   font-family: Roboto, sans-serif;
   padding: 16px 44px;
@@ -205,7 +207,7 @@ h6,
   color: #41228e
 }
 
-.btn:focus.portfolio {
+.btn:focus.portfolio-button {
   box-shadow: none !important;
   background: white !important;
   color: black;
@@ -213,7 +215,7 @@ h6,
   outline-color: black !important;
 }
 
-.portfolio.btn:active {
+.portfolio-button.btn:active {
   box-shadow: none;
   background: black !important;
   color: white !important;
@@ -221,22 +223,22 @@ h6,
   outline-color: black !important;
 }
 
-.portfolio.btn-primary {
+.portfolio-button.btn-primary {
   background: white;
   color: black !important;
 }
 
-.portfolio.btn-primary:active {
+.portfolio-button.btn-primary:active {
   background: white !important;
   color: black;
 }
 
-.portfolio.btn-primary:hover {
+.portfolio-button.btn-primary:hover {
   background: black;
   color: white !important;
 }
 
-.portfolio.btn-primary.focus,
+.portfolio-button.btn-primary.focus,
 .btn-primary.active {
   box-shadow: black !important;
   background: black !important;
