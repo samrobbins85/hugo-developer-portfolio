@@ -9,6 +9,11 @@ VERSION: Version Number
 
 .contain {object-fit: contain;}
 
+.footer-section h5{
+  margin-bottom: 5px;
+  margin-top: 20px;
+
+}
 
 .uk-open{
   background: rgba(0, 0, 0, 0.7);
@@ -323,10 +328,17 @@ a:hover {
   outline: 0
 }
 
+.section-footer {
+  padding-top: 60px;
+  padding-bottom: 00px
+}
+
 .section {
   padding-top: 80px;
   padding-bottom: 80px
 }
+
+
 
 .section-title {
   margin-bottom: 80px;

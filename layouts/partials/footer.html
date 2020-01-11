@@ -1,7 +1,8 @@
 <!-- footer -->
 <footer class="footer-section">
-  <div class="section">
+  <div class="section-footer">
     <div class="container">
+      <div class="contact" style="padding-bottom: 50px">
       <div class="row">
         <div class="col-md-4">
           <h5 class="text-light">Email</h5>
@@ -15,9 +16,19 @@
         </div>
       </div>
     </div>
+    </div>
+    <div class="footer-copyright text-center py-3">&copy;
+    <script>
+      document.write(new Date().getFullYear())
+    </script>
+      {{.Site.Params.Author}}
+
+
+
+    </div>
   </div>
 </footer>
-<!-- /footer -->
+
 
 {{ "<!-- JS Plugins -->" | safeHTML }}
 {{ range .Site.Params.plugins.js}}
