@@ -45,7 +45,15 @@ p {
   color: #454545;
   font-size: 1rem;
   line-height: 1.8;
-  font-family: Cantarell, sans-serif
+  font-family: Roboto, sans-serif
+}
+
+body.portfolio p {
+  font-weight: 400;
+  color: #454545;
+  font-size: 1rem;
+  line-height: 1.8;
+  font-family: Cantarell, sans-serif !important;
 }
 
 li {
