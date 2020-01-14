@@ -1,21 +1,34 @@
 <!-- footer -->
-<footer class="bg-dark footer-section">
-  <div class="section">
+<footer class="footer-section">
+  <div class="section-footer">
     <div class="container">
+      <div class="contact" style="padding-bottom: 50px">
       <div class="row">
         <div class="col-md-4">
           <h5 class="text-light">Email</h5>
-          <p class="text-white paragraph-lg font-secondary">{{.Site.Params.footer.email}}</p>
+          <a href="mailto:{{.Site.Params.footer.email}}">{{.Site.Params.footer.email}}</a>
         </div>
         <div class="col-md-4">
           <h5 class="text-light">Address</h5>
-          <p class="text-white paragraph-lg font-secondary">{{.Site.Params.footer.address}}</p>
+          <div uk-lightbox>
+            <a href="{{.Site.Params.footer.googlemaps}}" data-caption="{{.Site.Params.footer.address}}" data-type="iframe">{{.Site.Params.footer.address}}</a>
+          </div>
         </div>
       </div>
     </div>
+    </div>
+    <div class="footer-copyright text-center py-3">&copy;
+    <script>
+      document.write(new Date().getFullYear())
+    </script>
+      {{.Site.Params.Author}}
+
+
+
+    </div>
   </div>
 </footer>
-<!-- /footer -->
+
 
 {{ "<!-- JS Plugins -->" | safeHTML }}
 {{ range .Site.Params.plugins.js}}

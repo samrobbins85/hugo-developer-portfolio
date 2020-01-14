@@ -29,5 +29,17 @@
   {{ "<!--Favicon-->" | safeHTML }}
   <link rel="shortcut icon" href="{{ "images/favicon.png" | relURL }} " type="image/x-icon">
   <link rel="icon" href="{{ "images/favicon.png" | relURL }} " type="image/x-icon">
+  <!--Google analytics-->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{.Site.Params.googleAnalytics}}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '{{.Site.Params.googleAnalytics}}');
+  </script>
+<!--  Google adsense-->
+  <script data-ad-client="ca-pub-2469065497002287" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 </head>

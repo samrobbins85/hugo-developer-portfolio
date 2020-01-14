@@ -9,6 +9,22 @@ VERSION: Version Number
 
 .contain {object-fit: contain;}
 
+.footer-section h5{
+  margin-bottom: 5px;
+  margin-top: 20px;
+
+}
+
+.uk-open{
+  background: rgba(0, 0, 0, 0.7);
+  /*As there isn't firefox support for this I won't use it*/
+  /*backdrop-filter: blur(8px);*/
+}
+
+.uk-lightbox-toolbar{
+  background: rgba(0, 0, 0, 0);
+}
+
 .full-width {
   width: 100vw;
   position: relative;
@@ -45,7 +61,15 @@ p {
   color: #454545;
   font-size: 1rem;
   line-height: 1.8;
-  font-family: Cantarell, sans-serif
+  font-family: Roboto, sans-serif
+}
+
+body.portfolio p {
+  font-weight: 400;
+  color: #454545;
+  font-size: 1rem;
+  line-height: 1.8;
+  font-family: Cantarell, sans-serif !important;
 }
 
 li {
@@ -130,7 +154,9 @@ h6,
   transition: .2s ease
 }
 
-.portfolio {
+
+/*This is just for buttons*/
+.portfolio-button {
   font-size: 22px;
   font-family: Roboto, sans-serif;
   padding: 16px 44px;
@@ -197,7 +223,7 @@ h6,
   color: #41228e
 }
 
-.btn:focus.portfolio {
+.btn:focus.portfolio-button {
   box-shadow: none !important;
   background: white !important;
   color: black;
@@ -205,7 +231,7 @@ h6,
   outline-color: black !important;
 }
 
-.portfolio.btn:active {
+.portfolio-button.btn:active {
   box-shadow: none;
   background: black !important;
   color: white !important;
@@ -213,22 +239,22 @@ h6,
   outline-color: black !important;
 }
 
-.portfolio.btn-primary {
+.portfolio-button.btn-primary {
   background: white;
   color: black !important;
 }
 
-.portfolio.btn-primary:active {
+.portfolio-button.btn-primary:active {
   background: white !important;
   color: black;
 }
 
-.portfolio.btn-primary:hover {
+.portfolio-button.btn-primary:hover {
   background: black;
   color: white !important;
 }
 
-.portfolio.btn-primary.focus,
+.portfolio-button.btn-primary.focus,
 .btn-primary.active {
   box-shadow: black !important;
   background: black !important;
@@ -302,10 +328,17 @@ a:hover {
   outline: 0
 }
 
+.section-footer {
+  padding-top: 60px;
+  padding-bottom: 00px
+}
+
 .section {
   padding-top: 80px;
   padding-bottom: 80px
 }
+
+
 
 .section-title {
   margin-bottom: 80px;
@@ -784,6 +817,8 @@ textarea.form-control {
 
 .footer-section {
   padding-top: 0;
+  background: #fafafa;
+  border-top: 1px solid #eaeaea;
   /*position: absolute;*/
   /*bottom: 0;*/
   /*width: 100%;*/

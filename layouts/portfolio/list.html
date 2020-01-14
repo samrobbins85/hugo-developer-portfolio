@@ -8,11 +8,11 @@
     <div class="row mb-5">
       <div class="col-12">
         <div class="btn-group btn-group-toggle justify-content-center d-flex flex-wrap" data-toggle="buttons">
-          <label class="btn portfolio btn-sm btn-primary active">
+          <label class="btn portfolio-button btn-sm btn-primary active">
             <input type="radio" name="shuffle-filter" value="all" checked="checked" />All
           </label>
           {{ range .Site.Data.portfolio.list }}
-          <label class="btn portfolio btn-sm btn-primary">
+          <label class="btn portfolio-button btn-sm btn-primary">
             <input type="radio" name="shuffle-filter" value="{{.type}}" />{{ .title }}
           </label>
           {{ end }}
