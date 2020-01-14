@@ -1,0 +1,63 @@
+body {
+    background-color: white;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif
+
+}
+
+.hex {
+    clip-path: polygon(0px 51px, 89px 0px, 181px 51px, 181px 156px, 89px 209px, 0px 157px);
+}
+
+.hex > img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    transition: .5s ease;
+}
+
+.hex:hover > img {
+    opacity: 0.1;
+    background-color: #ffffff;
+}
+
+.hex:hover > div {
+    opacity: 1.0;
+}
+
+.hex > div {
+    opacity: 0;
+    transition: .5s ease;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.sticker-name {
+    font-weight: 900;
+}
+
+.sticker-desc {
+    font-size: 90%;
+}
+
+.sticker-links {
+
+}
+
+.pad {
+    margin: 4px;
+}

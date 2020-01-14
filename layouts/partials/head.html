@@ -19,6 +19,13 @@
   {{ $styles := resources.Get "css/style.css" | minify }}
   <link rel="stylesheet" href="{{ $styles.Permalink | relURL}}" integrity="{{ $styles.Data.Integrity }}" media="screen">
 
+  {{ "<!-- Hexy CSS -->" | safeHTML }}
+  {{ $styles2 := resources.Get "css/theme.css" | minify }}
+  <link rel="stylesheet" href="{{ $styles2.Permalink | relURL}}" media="screen">
+
+
+
+
   {{ "<!--Favicon-->" | safeHTML }}
   <link rel="shortcut icon" href="{{ "images/favicon.png" | relURL }} " type="image/x-icon">
   <link rel="icon" href="{{ "images/favicon.png" | relURL }} " type="image/x-icon">

@@ -25,3 +25,7 @@
 {{ $script := resources.Get "js/script.js" | minify}}
 <script src="{{ $script.Permalink }}"></script>
 
+{{ "<!-- Hexy Script -->" | safeHTML }}
+{{ $script2 := resources.Get "js/bundle.js" | minify}}
+<script src="{{ $script2.Permalink }}"></script>
+
