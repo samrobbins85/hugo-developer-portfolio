@@ -2,7 +2,7 @@
 /* global $ */
 var grid = require('hex-grid')
 
-$.getJSON('data.json', function (data) {
+$.getJSON('/hexy/data.json', function (data) {
   var shuffled = shuffle(data)
   $.each(shuffled, function (key, val) {
     var img = $('<img />', {
