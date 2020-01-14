@@ -23,6 +23,10 @@
   {{ $styles2 := resources.Get "css/theme.css" | minify }}
   <link rel="stylesheet" href="{{ $styles2.Permalink | relURL}}" media="screen">
 
+  {{ "<!-- Hexy Script -->" | safeHTML }}
+  {{ $script2 := resources.Get "js/bundle.js" | minify}}
+  <script src="{{ $script2.Permalink | relURL }} defer"></script>
+
 
 
 
