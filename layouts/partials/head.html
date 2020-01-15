@@ -19,15 +19,9 @@
   {{ $styles := resources.Get "css/style.css" | minify }}
   <link rel="stylesheet" href="{{ $styles.Permalink | relURL}}" integrity="{{ $styles.Data.Integrity }}" media="screen">
 
-  {{ "<!-- Hexy CSS -->" | safeHTML }}
-  {{ $styles2 := resources.Get "css/theme.css" | minify }}
-  <link rel="stylesheet" href="{{ $styles2.Permalink | relURL}}" media="screen">
-
-  {{ "<!-- Hexy Script -->" | safeHTML }}
-  {{ $script2 := resources.Get "js/bundle.js" | minify}}
-  <script src="{{ $script2.Permalink | relURL }} defer"></script>
-
-
+  {{ "<!-- Hexagon Stylesheet -->" | safeHTML }}
+  {{ $styles2 := resources.Get "css/hexagon.css" | minify }}
+  <link rel="stylesheet" href="{{ $styles2.Permalink | relURL}}">
 
 
   {{ "<!--Favicon-->" | safeHTML }}
