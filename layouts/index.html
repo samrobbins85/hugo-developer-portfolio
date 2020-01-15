@@ -197,24 +197,17 @@
 </section>
 <div class="text-center">
   <ul id="hexGrid">
+  {{range .Site.Data.homepage.hackathons.item}}
     <li class="hex">
       <div class="hexIn">
-        <a class="hexLink" href="#">
-          <img src="https://raw.githubusercontent.com/HHEU/hexbin/gh-pages/hexagons/201920/durhack%20(1).png" alt="" />
-          <h1>DurHack 2019</h1>
-          <p>Dementia Helper</p>
+        <a class="hexLink" href="{{.url}}">
+          <img src="{{.image}}" alt="{{.title}}" />
+          <h1>{{.title}}</h1>
+          <p>{{.description}}</p>
         </a>
       </div>
     </li>
-    <li class="hex">
-      <div class="hexIn">
-        <a class="hexLink" href="#">
-          <img src="https://raw.githubusercontent.com/HHEU/hexbin/gh-pages/hexagons/201819/durhack.png" alt="" />
-          <h1>DurHack 2018</h1>
-          <p>Cult Bot</p>
-        </a>
-      </div>
-    </li>
+    {{end}}
   </ul>
 </div>
 
