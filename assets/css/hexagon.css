@@ -13,8 +13,20 @@ div p{
     padding: 0;
 }
 
-a.text{
-    color: white;
+/*Only styles like a link if the link is active*/
+a[href="#"] h1{
+    color: white !important;
+    text-decoration: none !important;
+}
+
+a.text h1{
+    color: #07a;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+a.text p{
+    cursor: pointer;
 }
 
 
