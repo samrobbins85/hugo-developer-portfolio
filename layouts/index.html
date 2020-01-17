@@ -200,11 +200,17 @@
   {{range .Site.Data.homepage.hackathons.item}}
     <li class="hex">
       <div class="hexIn">
-        <a class="hexLink" href="{{.url}}">
+        <div class="hexLink">
           <img src="{{.image}}" alt="{{.title}}" />
-          <h1>{{.title}}</h1>
-          <p>{{.description}}</p>
-        </a>
+          <h1>
+            <a href="{{.url}}" style="all:unset;" class="text">
+
+            {{.title}}</a></h1>
+          <p>
+            <a href="{{.url}}" style="all:unset;" class="text">
+
+              {{.description}}</a></p>
+        </div>
       </div>
     </li>
     {{end}}

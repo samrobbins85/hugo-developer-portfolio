@@ -3,16 +3,19 @@
     padding: 0 ;
 }
 
-a h1 {
+div h1 {
     margin:0;
     padding: 0 ;
 }
 
-a p{
+div p{
     margin: 0;
     padding: 0;
 }
 
+a.text{
+    color: white;
+}
 
 
 #hexGrid {
