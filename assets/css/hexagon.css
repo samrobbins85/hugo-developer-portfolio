@@ -14,9 +14,10 @@ div p{
 }
 
 /*Only styles like a link if the link is active*/
-a[href="#"] h1{
+a[href="#"] h1, a[href="#"] p{
     color: white !important;
     text-decoration: none !important;
+    cursor: default !important;
 }
 
 a.text h1{
