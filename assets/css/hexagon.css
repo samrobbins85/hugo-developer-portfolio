@@ -80,6 +80,7 @@ a.text{
     -webkit-transform: rotate3d(0,0,0,0deg);
     -ms-transform: rotate3d(0,0,0,0deg);
     transform: rotate3d(0,0,0,0deg);
+    image-rendering: smooth;
 }
 
 .hex h1, .hex p {
@@ -124,7 +125,8 @@ a.text{
 .hexLink:hover p, .hexLink:focus p{
     -webkit-transform:translate3d(0,0,0);
     -ms-transform:translate3d(0,0,0);
-    transform:translate3d(0,0,0);
+    transform:translate(0,0);
+    backface-visibility: hidden;
 }
 
 /*** HEXAGON SIZING AND EVEN ROW INDENTATION *****************************************************************/
