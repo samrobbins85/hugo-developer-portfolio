@@ -6,11 +6,13 @@
 div h1 {
     margin:0;
     padding: 0 ;
+    font-size: 1.2em !important;
 }
 
 div p{
     margin: 0;
     padding: 0;
+    font-size: 1em !important;
 }
 
 /*Only styles like a link if the link is active*/
@@ -187,7 +189,7 @@ a.text p{
         width: 50%; /* = 100 / 3 */
     }
     .hex:nth-child(3n+3){ /* first hexagon of even rows */
-        margin-left:25%;  /* = width of .hex / 2  to indent even rows */
+        margin-left:0;  /* = width of .hex / 2  to indent even rows */
     }
 }
 
