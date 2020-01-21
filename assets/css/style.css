@@ -287,12 +287,6 @@ body {
   justify-content: center
 }
 
-ol,
-/*ul {*/
-/*  list-style-type: none;*/
-/*  margin: 0*/
-/*}*/
-
 img {
   vertical-align: middle;
   border: 0
@@ -455,10 +449,6 @@ a:hover {
   font-family: playfair display, serif !important
 }
 
-.font-tertiary {
-  font-family: bwn !important
-}
-
 .shadow {
   box-shadow: 0 18px 39.1px 6.9px rgba(224, 241, 255, .34) !important
 }
@@ -480,32 +470,6 @@ a:hover {
 
 .icon-light {
   color: #c8d5ef
-}
-
-.slick-dots {
-  text-align: center;
-  padding-left: 0
-}
-
-.slick-dots li {
-  display: inline-block;
-  margin: 2px
-}
-
-.slick-dots li.slick-active button {
-  background: #fff;
-  width: 25px
-}
-
-.slick-dots li button {
-  height: 6px;
-  width: 12px;
-  background: rgba(255, 255, 255, .5);
-  color: transparent;
-  border-radius: 10px;
-  overflow: hidden;
-  transition: .2s ease;
-  border: 0
 }
 
 .form-control {
@@ -654,44 +618,6 @@ textarea.form-control {
   overflow: hidden
 }
 
-.wave {
-  position: absolute;
-  width: 100%;
-  height: 100%
-}
-
-.wave::before,
-.wave::after {
-  content: "";
-  position: absolute;
-  width: 800px;
-  height: 800px;
-  bottom: 0;
-  left: 50%;
-  background-color: rgba(255, 255, 255, .4);
-  border-radius: 45%;
-  transform: translateX(-50%) rotate(0);
-  animation: rotate 6s linear infinite;
-  z-index: 10
-}
-
-.wave::after {
-  border-radius: 47%;
-  background-color: rgba(255, 255, 255, .9);
-  transform: translateX(-50%) rotate(0);
-  animation: rotate 10s linear -5s infinite;
-  z-index: 20
-}
-
-@keyframes rotate {
-  50% {
-    transform: translateX(-50%) rotate(180deg)
-  }
-
-  100% {
-    transform: translateX(-50%) rotate(360deg)
-  }
-}
 
 .edu-bg-image {
   position: absolute;
@@ -769,53 +695,6 @@ textarea.form-control {
   text-align: center
 }
 
-.testimonial-content strong {
-  color: #2bfdff;
-  font-weight: 400
-}
-
-.testimonial-bg-shapes .container {
-  position: relative;
-  z-index: 1
-}
-
-.testimonial-bg-shapes .bg-map {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%)
-}
-
-.testimonial-bg-shapes .bg-shape-1 {
-  position: absolute;
-  left: 100px;
-  top: -50px
-}
-
-.testimonial-bg-shapes .bg-shape-2 {
-  position: absolute;
-  right: 150px;
-  top: 50px
-}
-
-.testimonial-bg-shapes .bg-shape-3 {
-  position: absolute;
-  right: 50px;
-  top: 200px
-}
-
-.testimonial-bg-shapes .bg-shape-4 {
-  position: absolute;
-  left: 100px;
-  bottom: 200px
-}
-
-.testimonial-bg-shapes .bg-shape-5 {
-  position: absolute;
-  right: 200px;
-  bottom: -50px
-}
-
 .footer-section {
   padding-top: 0;
   background: #fafafa;
@@ -853,15 +732,6 @@ textarea.form-control {
   .card-lg {
     flex-direction: column
   }
-}
-
-blockquote {
-  display: inline-block;
-  padding: 10px 20px;
-  background: #eaeaea;
-  border-left: 2px solid #41228e;
-  font-style: italic;
-  font-size: 22px
 }
 
 .content * {
@@ -918,74 +788,3 @@ blockquote {
   font-weight: 700
 }
 
-/*Stuff for icons*/
-ul.icons {
-    cursor: default;
-    list-style: none;
-    padding-left: 0;
-    margin-top: -0.675em;
-}
-
-ul.icons li {
-    display: inline-block;
-    padding: 0.675em 0.5em;
-}
-
-ul.icons li a {
-    text-decoration: none;
-    position: relative;
-    display: block;
-    width: 7em;
-    height: 7em;
-    border-radius: 100%;
-    border: solid 1px grey;
-    line-height: 6.75em;
-    overflow: hidden;
-    text-align: center;
-    white-space: nowrap;
-}
-
-ul.icons li a:before {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    display: inline-block;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    line-height: 1;
-    text-transform: none !important;
-    font-weight: 400;
-}
-
-ul.icons li a:before {
-    color: #ffffff;
-    text-shadow: 1.25px 0px 0px lightgray, -1.25px 0px 0px lightgray, 0px 1.25px 0px lightgray, 0px -1.25px 0px lightgray;
-}
-
-ul.icons li a:hover:before {
-    text-shadow: 1.25px 0px 0px #454545, -1.25px 0px 0px #454545, 0px 1.25px 0px #454545, 0px -1.25px 0px #454545;
-}
-
-ul.icons li a:before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: inherit;
-    height: inherit;
-    font-size: 4rem;
-    line-height: inherit;
-    text-align: center;
-    text-indent: 0;
-}
-
-ul.icons li a:hover {
-    border-color: #454545;
-}
-
-@media screen and (max-width: 480px) {
-
-    ul.icons li a:before {
-        font-size: 1.5rem;
-    }
-
-}
