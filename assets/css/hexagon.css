@@ -1,18 +1,14 @@
-* {
-    margin: 0 ;
-    padding: 0 ;
-}
 
 .hexLink h1 {
     margin:0;
-    padding: 0 ;
-    font-size: 1.2em !important;
+    padding: 0;
+    font-size: 1.1em ;
 }
 
 .hexLink p{
     margin: 0;
-    padding: 0;
-    font-size: 1em !important;
+    padding: 10px;
+    font-size: 0.9em !important;
 }
 
 /*Only styles like a link if the link is active*/
@@ -36,14 +32,14 @@ a.text p{
 #hexGrid {
     display: flex;
     flex-wrap: wrap;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     overflow: hidden;
     font-family: 'Raleway', sans-serif;
     font-size: 15px;
     list-style-type: none;
-    align-items: center;
-    justify-content: center;
+    /*align-items: center;*/
+    /*justify-content: center;*/
 }
 
 .hex {
@@ -111,7 +107,6 @@ a.text p{
 .hex h1 {
     bottom: 50%;
     padding-top:50%;
-    font-size: 1.5em;
     z-index: 1;
     -webkit-transform:translate3d(0,-100%,0);
     -ms-transform:translate3d(0,-100%,0);
@@ -147,10 +142,10 @@ a.text p{
 /*** HEXAGON SIZING AND EVEN ROW INDENTATION *****************************************************************/
 @media (min-width:1201px) { /* <- 5-4  hexagons per row */
     #hexGrid{
-        padding-bottom: 4.4%
+        padding-bottom: 6.4%;
     }
     .hex {
-        width: 15%; /* = 100 / 5 */
+        width: 20%; /* = 100 / 5 */
     }
     .hex:nth-child(9n+6){ /* first hexagon of even rows */
         margin-left:10%;  /* = width of .hex / 2  to indent even rows */
@@ -189,7 +184,7 @@ a.text p{
         width: 50%; /* = 100 / 3 */
     }
     .hex:nth-child(3n+3){ /* first hexagon of even rows */
-        margin-left:0;  /* = width of .hex / 2  to indent even rows */
+        margin-left:25%;  /* = width of .hex / 2  to indent even rows */
     }
 }
 
