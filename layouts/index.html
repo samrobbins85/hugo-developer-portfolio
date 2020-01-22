@@ -1,4 +1,11 @@
 {{ define "main" }}
+{{ "<!-- Hexagon Stylesheet -->" | safeHTML }}
+{{ $hexagons := resources.Get "css/hexagon.css" | minify }}
+<link rel="stylesheet" href="{{ $hexagons.Permalink | relURL}}">
+
+{{ "<!-- Index -->" | safeHTML }}
+{{ $index := resources.Get "css/index.css" | minify }}
+<link rel="stylesheet" href="{{ $index.Permalink | relURL}}">
 <!--
   _    _
  | |  | |                             /\
@@ -38,19 +45,19 @@
       {{ end }}
       {{ end }}
       {{ if .Site.Data.homepage.social.twitter }}
-      <li><a href="https://twitter.com/{{ .Site.Data.homepage.social.twitter }}"  aria-hidden="true"></i> <img class="contain" src="https://cdn.svgporn.com/logos/twitter.svg" style="width: 5em; height: 5em"></a></li>
+      <li><a href="https://twitter.com/{{ .Site.Data.homepage.social.twitter }}"  aria-hidden="true"></i> <img class="contain" src="https://cdn.svgporn.com/logos/twitter.svg" ></a></li>
       {{ end }} {{ if .Site.Data.homepage.social.linkedin }}
-      <li><a href="https://www.linkedin.com/in/{{ .Site.Data.homepage.social.linkedin }}" aria-hidden="true"></i> <img class="contain" src="https://cdn.svgporn.com/logos/linkedin.svg" style="width: 5em; height: 5em"></a></li>
+      <li><a href="https://www.linkedin.com/in/{{ .Site.Data.homepage.social.linkedin }}" aria-hidden="true"></i> <img class="contain" src="https://cdn.svgporn.com/logos/linkedin.svg"></a></li>
       {{ end }} {{ if .Site.Data.homepage.social.github }}
-      <li><a href="https://github.com/{{ .Site.Data.homepage.social.github }}"  aria-hidden="true"></i> <img class="contain" src="https://cdn.svgporn.com/logos/github-icon.svg" style="width: 5em; height: 5em"> </a></li>
+      <li><a href="https://github.com/{{ .Site.Data.homepage.social.github }}"  aria-hidden="true"></i> <img class="contain" src="https://cdn.svgporn.com/logos/github-icon.svg"> </a></li>
       {{ end }} {{ if .Site.Data.homepage.social.gitlab }}
-      <li><a href="https://gitlab.com/{{ .Site.Data.homepage.social.gitlab }}" aria-hidden="true"></i> <img class="contain" src="https://cdn.svgporn.com/logos/gitlab.svg" style="width: 5em; height: 5em"></a></li>
+      <li><a href="https://gitlab.com/{{ .Site.Data.homepage.social.gitlab }}" aria-hidden="true"></i> <img class="contain" src="https://cdn.svgporn.com/logos/gitlab.svg"></a></li>
       {{ end }} {{ if .Site.Data.homepage.social.facebook }}
-      <li><a href="https://www.facebook.com/{{ .Site.Data.homepage.social.facebook }}"  aria-hidden="true"></i> <img class="contain" src="https://cdn.svgporn.com/logos/facebook.svg" style="width: 5em; height: 5em"></a></li>
+      <li><a href="https://www.facebook.com/{{ .Site.Data.homepage.social.facebook }}"  aria-hidden="true"></i> <img class="contain" src="https://cdn.svgporn.com/logos/facebook.svg"></a></li>
       {{ end }} {{ if .Site.Data.homepage.social.instagram }}
-      <li><a href="https://instagram.com/{{ .Site.Data.homepage.social.instagram }}"  aria-hidden="true"></i> <img class="contain" src="https://cdn.svgporn.com/logos/instagram-icon.svg" style="width: 5em; height: 5em"></a></li>
+      <li><a href="https://instagram.com/{{ .Site.Data.homepage.social.instagram }}"  aria-hidden="true"></i> <img class="contain" src="https://cdn.svgporn.com/logos/instagram-icon.svg"></a></li>
       {{ end }}{{ if .Site.Data.homepage.social.gmail }}
-      <li><a href="mailto:{{ .Site.Data.homepage.social.gmail }}@gmail.com"  aria-hidden="true"></i> <img class="contain" src="https://cdn.svgporn.com/logos/google-gmail.svg" style="width: 5em; height: 5em"></a></li>
+      <li><a href="mailto:{{ .Site.Data.homepage.social.gmail }}@gmail.com"  aria-hidden="true"></i> <img class="contain" src="https://cdn.svgporn.com/logos/google-gmail.svg"></a></li>
       {{ end }}
     </ul>
 </div>
@@ -111,7 +118,7 @@
       </div>
       <div class="modal-body">
 
-        <p style="white-space: pre-line">{{.description | safeHTML}}</p>
+        <p>{{.description | safeHTML}}</p>
 
       </div>
       <div class="modal-footer">
@@ -135,7 +142,7 @@
         <div class="row justify-content-center">
           {{ range .Site.Data.homepage.skill.item }}
           <div class="imagemargin col-lg-2 col-md-4 col-sm-6 col-6 text-center">
-            <img class="contain lazy" src="" data-src="{{.logo}}" style="width: 80px;height: 80px" alt="{{.company}}" data-toggle="modal" data-target="#{{ replace (replace .title " " "_") "." "_" }}">
+            <img class="contain lazy skills" src="" data-src="{{.logo}}" alt="{{.company}}" data-toggle="modal" data-target="#{{ replace (replace .title " " "_") "." "_" }}">
             <h4>{{.title }}</h4>
           </div>
           {{ end }}
@@ -160,6 +167,9 @@
 
 -->
 
+
+
+
   {{ if .Site.Data.homepage.experience.enable }}
   <!-- experience -->
   <section class="section">
@@ -168,16 +178,34 @@
         <div class="col-lg-12 text-center">
           <h2 class="section-title">Experience</h2>
         </div>
+
+
+        <div class="uk-child-width-1-4@l uk-child-width-1-2  uk-text-center uk-flex-between" uk-grid style="padding-left: 20px; padding-right: 20px">
+
         {{ range .Site.Data.homepage.experience.item }}
-        <div class="col-lg-3 col-md-4 col-sm-6 col-8 text-center">
-          <img class="contain lazy" src="" data-src="{{.logo}}" style="width: 110px;height: 130px" alt="{{.company}}">
-          <p class="mb-0">{{.duration}}</p>
-          <h4>{{.title }}</h4>
-          <h6 class="text-dark">{{.company }}</h6>
-        </div>
+          <div>
+            <div class="uk-card uk-card-default uk-height-large">
+              <div class="uk-card-media-top">
+                <img class="contain experience" src="{{.logo}}" alt="" style="padding: 20px">
+              </div>
+              <div class="uk-card-body" style="padding-top: 0">
+                <div style="height: 5em">
+                <h3 class="uk-card-title">{{.title}}</h3>
+                  </div>
+                <p style="height: 4em">{{.company}}</p>
+                <p>{{.duration}}</p>
+              </div>
+            </div>
+          </div>
         {{ end }}
-      </div>
-    </div>
+        </div>
+
+
+
+
+
+
+
   </section>
   <!-- ./experience -->
   {{ end }}
@@ -185,7 +213,7 @@
 
 
 <!--Hackathons-->
-<section class="section" style="margin-bottom: 0; padding-bottom: 0">
+<section class="section" >
   <div class="container">
     <div class="row justify-content-around">
       <div class="col-lg-12 text-center">
@@ -195,7 +223,7 @@
     </div>
   </div>
 </section>
-<div class="text-center">
+<div class="text-center container">
   <ul id="hexGrid">
   {{range .Site.Data.homepage.hackathons.item}}
     <li class="hex">
@@ -203,12 +231,12 @@
         <div class="hexLink">
           <img src="{{.image}}" alt="{{.title}}" />
 
-            <a href="{{.url}}" style="all:unset;" class="text">
+            <a href="{{.url}}" class="text unset">
 
           <h1>
             {{.title}}</h1></a>
 
-            <a href="{{.url}}" style="all:unset;" class="text">
+            <a href="{{.url}}" class="text unset">
               <p>
               {{.description}}</p></a>
         </div>
@@ -242,7 +270,7 @@
         <div class="col-lg-6 col-md-6 mb-80">
           <div class="d-flex">
             <div class="mr-lg-5 mr-3">
-              <i class="icon icon-light icon-bg bg-white shadow rounded-circle d-block"><img class="contain lazy" src="" data-src="{{.image}}" style="width: 60px;height: 60px" alt="{{.academy}}"></i>
+              <i class="icon icon-light icon-bg bg-white shadow rounded-circle d-block"><img class="contain lazy schools" src="" data-src="{{.image}}" alt="{{.academy}}"></i>
             </div>
             <div>
               <p class="text-dark mb-1">{{.year}}</p>
@@ -254,18 +282,11 @@
         {{ end }}
       </div>
     </div>
-    <!-- bg image -->
-<!--    <img class="img-fluid edu-bg-image w-100 lazy" src="" data-src="{{`images/backgrounds/education-bg.png`|relURL}}" alt="bg-image">-->
   </section>
   <!-- /education -->
   {{ end }}
 
-<!--<div class="container main-content">-->
-<!--  <div id = "epic">-->
-<!--  </div>-->
-<!--  <div id="grid" style="position: relative; margin-bottom: 20px;">-->
-<!--  </div>-->
-<!--</div>-->
+
 
 <!--Handle the lazy loading-->
 
