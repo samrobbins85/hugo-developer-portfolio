@@ -1,21 +1,67 @@
 {{ define "main" }}
 
 <!--  {{ partial "page-title.html" . }}-->
-<br>
-<br>
-<br>
+<style>
+  p {
+    margin: 0
+  }
+  .people-wrap {
+    display: inline-flex;
+    margin-top: 10px;
+  }
+
+  .people-image {
+    display: block;
+    border-radius: 50%;
+    /* remove gap*/
+  }
+
+  .people{
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .name{
+    margin: auto;
+  }
+</style>
+
+
   <section class="section">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <h3 class="mb-5 text-center" style="font-family: 'Cantarell', sans-serif; font-size: 36px!important;font-weight: 600; margin-bottom: 0.5rem!important;">{{.Title}}</h3>
-          <p class="text-center" style="font-size: calc(20px + 0.8vw)!important">{{.Params.description}}</p>
+          <h1 class="mb-5 text-center" style="font-family: 'Cantarell', sans-serif; font-size: 36px!important;font-weight: 600; margin-bottom: 0.5rem!important;">{{.Title}}</h1>
+          <p class="text-center" style="font-size: 26px!important">{{.Params.description}}</p>
           <p class="text-center" style="font-size: 14px">Published on {{ .PublishDate.Format "Jan 02, 2006" }}</p>
           <p class="text-center" style="font-size: 14px">Reading time: {{ math.Round (div (countwords .Content) 220.0) }} minutes.</p>
+          <div class="uk-child-width-1-5@m uk-child-width-1-2@s uk-text-center uk-flex-center uk-grid-small" uk-grid>
+            {{ range .Params.coders }}
+
+            <div>
+              <div class="people-wrap">
+                <div class="people">
+                  <a href="#">
+                    <img class="people-image" src="https://github.com/{{.}}.png" style="height:3rem">
+                  </a>
+                </div>
+<!--                <div class="card">-->
+<!--                  <p class="title">Title</p>-->
+                  <a class="name" href="https://github.com/{{.}}">{{.}}</a>
+<!--                </div>-->
+              </div>
+            </div>
+            {{end}}
+
+
+          </div>
+
+
           <hr class="full-width">
           <div class="content" style="font-size: 1.4em !important;">
             {{.Content }}
           </div>
+        </div>
         </div>
       </div>
     </div>
