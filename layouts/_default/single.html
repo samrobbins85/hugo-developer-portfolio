@@ -34,27 +34,39 @@
           <h1 class="mb-5 text-center" style="font-family: 'Cantarell', sans-serif; font-size: 36px!important;font-weight: 600; margin-bottom: 0.5rem!important;">{{.Title}}</h1>
           <p class="text-center" style="font-size: 26px!important">{{.Params.description}}</p>
           <p class="text-center" style="font-size: 14px">Published on {{ .PublishDate.Format "Jan 02, 2006" }}</p>
-          <p class="text-center" style="font-size: 14px">Reading time: {{ math.Round (div (countwords .Content) 220.0) }} minutes.</p>
-          <div class="uk-child-width-1-5@m uk-child-width-1-2@s uk-text-center uk-flex-center uk-grid-small" uk-grid>
-            {{ range .Params.coders }}
+          <p class="text-center" style="font-size: 14px; padding-bottom: 20px">Reading time: {{ math.Round (div (countwords .Content) 220.0) }} minutes.</p>
+          {{if isset .Params "coders"}}
+          <div class="uk-child-width-1-4@m uk-child-width-1-2@s uk-text-center uk-flex-center uk-grid-large" uk-grid>
 
             <div>
-              <div class="people-wrap">
-                <div class="people">
-                  <a href="#">
-                    <img class="people-image" src="https://github.com/{{.}}.png" style="height:3rem">
-                  </a>
+            <button class="uk-button uk-button-default" type="button"> <span uk-icon="icon: users"></span> Team Project</button>
+            <div class="uk-width-auto" uk-dropdown="pos: bottom-center; delay-hide:400">
+              <div class="uk-dropdown-grid uk-child-width-1-2@m" uk-grid>
+                <div>
+                  <ul class="uk-nav uk-dropdown-nav">
+                    {{ range .Params.coders }}
+                    <li><a href="https://github.com/{{.}}"> <img src="https://github.com/{{.}}.png" alt="Smiley face" width="42" height="42" style="border-radius: 50%"> {{.}}</a></li>
+                    {{end}}
+                  </ul>
                 </div>
-<!--                <div class="card">-->
-<!--                  <p class="title">Title</p>-->
-                  <a class="name" href="https://github.com/{{.}}">{{.}}</a>
-<!--                </div>-->
+
               </div>
             </div>
-            {{end}}
+            </div>
 
-
+            <div>
+            <a class="uk-button uk-button-default" href="{{.Params.github}}"> <span uk-icon="icon: github"></span> Github</a>
+            </div>
           </div>
+          {{end}}
+
+
+
+
+
+
+
+
 
 
           <hr class="full-width">

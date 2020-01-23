@@ -15,7 +15,7 @@ VERSION: Version Number
 
 }
 
-.uk-open{
+.uk-lightbox{
   background: rgba(0, 0, 0, 0.7);
   /*As there isn't firefox support for this I won't use it*/
   /*backdrop-filter: blur(8px);*/
