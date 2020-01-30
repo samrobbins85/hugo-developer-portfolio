@@ -262,29 +262,44 @@
   <!-- education -->
   <section class="section position-relative">
     <div class="container">
-      <div class="row">
+
+      <div class="row justify-content-around">
         <div class="col-lg-12 text-center">
           <h2 class="section-title">Education</h2>
         </div>
+
+
+      <div class="uk-child-width-1-2@l uk-child-width-1-2  uk-text-center uk-flex-between" uk-grid style="padding-left: 20px; padding-right: 20px">
+
         {{ range .Site.Data.homepage.education.item }}
-        <div class="col-lg-6 col-md-6 mb-80">
-          <div class="d-flex">
-            <div class="mr-lg-5 mr-3">
-              <i class="icon icon-light icon-bg bg-white shadow rounded-circle d-block"><img class="contain lazy schools" src="" data-src="{{.image}}" alt="{{.academy}}"></i>
+        <div>
+          <div class="uk-card uk-card-default uk-height-max-large">
+            <div class="uk-card-media-top">
+              <img class="contain experience" src="{{.image}}" alt="" style="padding: 20px">
             </div>
-            <div>
-              <p class="text-dark mb-1">{{.year}}</p>
-              <h4>{{ .title }}</h4>
-              <p class="mb-0 text-dark">{{.academy}}</p>
+            <div class="uk-card-body" style="padding-top: 0">
+              <div style="height: 5em">
+                <h3 class="uk-card-title">{{.academy}}</h3>
+              </div>
+              <p style="height: 4em">{{.title}}</p>
+              <p>{{.year}}</p>
             </div>
           </div>
         </div>
         {{ end }}
       </div>
-    </div>
-  </section>
-  <!-- /education -->
-  {{ end }}
+      </div>
+
+
+
+
+
+
+
+
+</section>
+{{ end }}
+
 
 
 
