@@ -15,6 +15,8 @@ VERSION: Version Number
 
 }
 
+
+
 .uk-lightbox{
   background: rgba(0, 0, 0, 0.7);
   /*As there isn't firefox support for this I won't use it*/
@@ -53,7 +55,7 @@ body {
   font-family: roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   font-size: 15px;
-  color: #454545
+  color: #454545;
 }
 
 .portfolio h3{

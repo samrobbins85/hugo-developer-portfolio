@@ -303,6 +303,41 @@
 
 
 
+<!-- experience -->
+<section class="section">
+  <div class="container">
+    <div class="row justify-content-around">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-title">Leadership and Teamwork</h2>
+      </div>
+
+
+      <div class="uk-child-width-1-4@l uk-child-width-1-2  uk-text-center uk-flex-between" uk-grid style="padding-left: 20px; padding-right: 20px">
+
+        {{ range .Site.Data.homepage.leadership.item }}
+        <div>
+          <div class="uk-card uk-card-default uk-height-large">
+            <div class="uk-card-media-top">
+              <img class="contain experience" src="{{.logo}}" alt="" style="padding: 20px">
+            </div>
+            <div class="uk-card-body" style="padding-top: 0">
+              <div style="height: 5em">
+                <h3 class="uk-card-title">{{.title}}</h3>
+              </div>
+              <p style="height: 4em">{{.company}}</p>
+              <p>{{.duration}}</p>
+            </div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+</section>
+<!-- ./experience -->
+
+
+
+
+
 <!--Handle the lazy loading-->
 
 
