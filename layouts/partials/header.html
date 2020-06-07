@@ -1,57 +1,65 @@
-<header class="navigation sticky-top">
-  <nav class="navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand" href="/">{{.Site.Title}}</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
-      aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+<div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar" >
+    <nav
+            class="uk-navbar-container uk-margin"
+            uk-navbar="mode: click;"
+            style="padding-right: 3rem"
+    >
+        <div class="uk-navbar-right">
+            <ul class="uk-navbar-nav uk-visible@s">
+                {{if .IsHome}}
+                <li class="uk-active"><a style="font-size: 18px" href="/">{{ with .Site.Params.Home }} {{ . }} {{ end }}</a></li>
+                {{else}}
+                <li><a style="font-size: 18px" href="/">{{ with .Site.Params.Home }} {{ . }} {{ end }}</a></li>
 
-    <div class="collapse navbar-collapse text-center" id="navigation">
-      <ul class="navbar-nav ml-auto">
-        {{$url := .URL | relURL}}
-        {{if .IsHome}}
-        <li class="nav-item active">
-          <a class="nav-link"  href="/">{{ with .Site.Params.Home }} {{ . }} {{ end }}</a>
-        </li>
-        {{else}}
-        <li class="nav-item">
-          <a class="nav-link"  href="/">{{ with .Site.Params.Home }} {{ . }} {{ end }}</a>
-        </li>
-        {{end}}
-        {{ range .Site.Menus.main }}
-        {{ if .HasChildren }}
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false">
-            {{ .Name }}
-          </a>
-          <div class="dropdown-menu" >
-            {{ range .Children }}
-            <a class="dropdown-item" href="{{ .URL | relURL }}">{{ .Name }}</a>
-            {{ end }}
-          </div>
-        </li>
-        {{ else }}
-        {{$aURL := .URL | relLangURL}}
-        {{$page := $.Page.Permalink | relLangURL}}
-        {{$aURL2 := split $aURL "/"}}
-        {{$page2 := split $page "/"}}
-        {{$aURL3 := index $aURL2 1}}
-        {{$page3 := index $page2 1}}
-        {{if eq $aURL3 $page3}}
-        <li class="nav-item active">
-          <a class="nav-link" href="{{ .URL | relURL }}">{{.Name}}</a>
-        </li>
-        {{else}}
-        <li class="nav-item">
-          <a class="nav-link" href="{{ .URL | relURL }}">{{.Name}}</a>
-        </li>
-        {{end}}
-        {{ end }}
-        {{ end }}
-      </ul>
+                {{end}}
+                {{ range .Site.Menus.main }}
+                {{$aURL := .URL | relLangURL}}
+                {{$page := $.Page.Permalink | relLangURL}}
+                {{$aURL2 := split $aURL "/"}}
+                {{$page2 := split $page "/"}}
+                {{$aURL3 := index $aURL2 1}}
+                {{$page3 := index $page2 1}}
+                {{if eq $aURL3 $page3}}
+                <li class="uk-active"><a style="font-size: 18px" href="{{ .URL | relURL }}">{{.Name}}</a></li>
+                {{else}}
+                <li><a style="font-size: 18px" href="{{ .URL | relURL }}">{{.Name}}</a></li>
+                {{end}}
+                {{end}}
+            </ul>
+
+            <a class="uk-navbar-toggle uk-hidden@s" uk-toggle="target: #sidenav" uk-navbar-toggle-icon href="#"></a>
+
+        </div>
+    </nav>
+</div>
+
+
+<div id="sidenav" uk-offcanvas="overlay: true">
+    <div class="uk-offcanvas-bar uk-flex uk-flex-column">
+
+        <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">
+            {{if .IsHome}}
+            <li class="uk-active"><a style="font-size: 18px" href="/">{{ with .Site.Params.Home }} {{ . }} {{ end }}</a></li>
+            {{else}}
+            <li><a style="font-size: 18px" href="/">{{ with .Site.Params.Home }} {{ . }} {{ end }}</a></li>
+
+            {{end}}
+            {{ range .Site.Menus.main }}
+            {{$aURL := .URL | relLangURL}}
+            {{$page := $.Page.Permalink | relLangURL}}
+            {{$aURL2 := split $aURL "/"}}
+            {{$page2 := split $page "/"}}
+            {{$aURL3 := index $aURL2 1}}
+            {{$page3 := index $page2 1}}
+            {{if eq $aURL3 $page3}}
+            <li class="uk-active"><a style="font-size: 18px" href="{{ .URL | relURL }}">{{.Name}}</a></li>
+            {{else}}
+            <li><a style="font-size: 18px" href="{{ .URL | relURL }}">{{.Name}}</a></li>
+            {{end}}
+            {{end}}
+        </ul>
+
     </div>
-  </nav>
-</header>
+</div>
 
 
