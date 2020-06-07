@@ -15,18 +15,13 @@
  |_|  |_|  \___| |_|     \___/    /_/    \_\ |_|     \___|  \__,_|
 
  -->
-  <section class="hero-area bg-primary overflow-hidden" id="parallax">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-11 mx-auto">
-          <h1 class="text-black">{{ .Site.Data.homepage.banner.title | safeHTML }}</h1>
-        </div>
-      </div>
+<section>
+    <div class="uk-container uk-margin-xlarge-top uk-margin-xlarge-bottom">
+
+        <h1 class="uk-heading-large">{{ .Site.Data.homepage.banner.title | safeHTML }}</h1>
     </div>
 
-
-  </section>
-
+</section>
 <!--
    _____                  _           _     _        _           _
   / ____|                (_)         | |   | |      (_)         | |
@@ -37,31 +32,30 @@
 
 
 -->
-<div class="text-center">
+<div class="uk-text-center uk-margin-xlarge-bottom uk-margin-xlarge-top">
     <ul id="social-media" class="icons">
-      {{ range .Site.Languages -}}
-      {{ if ne .LanguageName $.Site.Language.LanguageName }}
-      <li><a href="/{{ .Lang }}">{{ .LanguageName }}</a></li>
-      {{ end }}
-      {{ end }}
-      {{ if .Site.Data.homepage.social.twitter }}
-      <li><a href="https://twitter.com/{{ .Site.Data.homepage.social.twitter }}"  aria-hidden="true"></i> <img class="contain" src="https://cdn.svgporn.com/logos/twitter.svg" ></a></li>
-      {{ end }} {{ if .Site.Data.homepage.social.linkedin }}
-      <li><a href="https://www.linkedin.com/in/{{ .Site.Data.homepage.social.linkedin }}" aria-hidden="true"></i> <img class="contain" src="https://cdn.svgporn.com/logos/linkedin.svg"></a></li>
-      {{ end }} {{ if .Site.Data.homepage.social.github }}
-      <li><a href="https://github.com/{{ .Site.Data.homepage.social.github }}"  aria-hidden="true"></i> <img class="contain" src="https://cdn.svgporn.com/logos/github-icon.svg"> </a></li>
-      {{ end }} {{ if .Site.Data.homepage.social.gitlab }}
-      <li><a href="https://gitlab.com/{{ .Site.Data.homepage.social.gitlab }}" aria-hidden="true"></i> <img class="contain" src="https://cdn.svgporn.com/logos/gitlab.svg"></a></li>
-      {{ end }} {{ if .Site.Data.homepage.social.facebook }}
-      <li><a href="https://www.facebook.com/{{ .Site.Data.homepage.social.facebook }}"  aria-hidden="true"></i> <img class="contain" src="https://cdn.svgporn.com/logos/facebook.svg"></a></li>
-      {{ end }} {{ if .Site.Data.homepage.social.instagram }}
-      <li><a href="https://instagram.com/{{ .Site.Data.homepage.social.instagram }}"  aria-hidden="true"></i> <img class="contain" src="https://cdn.svgporn.com/logos/instagram-icon.svg"></a></li>
-      {{ end }}{{ if .Site.Data.homepage.social.gmail }}
-      <li><a href="mailto:{{ .Site.Data.homepage.social.gmail }}@gmail.com"  aria-hidden="true"></i> <img class="contain" src="https://cdn.svgporn.com/logos/google-gmail.svg"></a></li>
-      {{ end }}
+        {{ range .Site.Languages -}}
+        {{ if ne .LanguageName $.Site.Language.LanguageName }}
+        <li><a href="/{{ .Lang }}">{{ .LanguageName }}</a></li>
+        {{ end }}
+        {{ end }}
+        {{ if .Site.Data.homepage.social.twitter }}
+        <li><a href="https://twitter.com/{{ .Site.Data.homepage.social.twitter }}"  aria-hidden="true"></i> <img class="contain" src="https://cdn.svgporn.com/logos/twitter.svg" ></a></li>
+        {{ end }} {{ if .Site.Data.homepage.social.linkedin }}
+        <li><a href="https://www.linkedin.com/in/{{ .Site.Data.homepage.social.linkedin }}" aria-hidden="true"></i> <img class="contain" src="https://cdn.svgporn.com/logos/linkedin.svg"></a></li>
+        {{ end }} {{ if .Site.Data.homepage.social.github }}
+        <li><a href="https://github.com/{{ .Site.Data.homepage.social.github }}"  aria-hidden="true"></i> <img class="contain" src="https://cdn.svgporn.com/logos/github-icon.svg"> </a></li>
+        {{ end }} {{ if .Site.Data.homepage.social.gitlab }}
+        <li><a href="https://gitlab.com/{{ .Site.Data.homepage.social.gitlab }}" aria-hidden="true"></i> <img class="contain" src="https://cdn.svgporn.com/logos/gitlab.svg"></a></li>
+        {{ end }} {{ if .Site.Data.homepage.social.facebook }}
+        <li><a href="https://www.facebook.com/{{ .Site.Data.homepage.social.facebook }}"  aria-hidden="true"></i> <img class="contain" src="https://cdn.svgporn.com/logos/facebook.svg"></a></li>
+        {{ end }} {{ if .Site.Data.homepage.social.instagram }}
+        <li><a href="https://instagram.com/{{ .Site.Data.homepage.social.instagram }}"  aria-hidden="true"></i> <img class="contain" src="https://cdn.svgporn.com/logos/instagram-icon.svg"></a></li>
+        {{ end }}{{ if .Site.Data.homepage.social.gmail }}
+        <li><a href="mailto:{{ .Site.Data.homepage.social.gmail }}@gmail.com"  aria-hidden="true"></i> <img class="contain" src="https://cdn.svgporn.com/logos/google-gmail.svg"></a></li>
+        {{ end }}
     </ul>
 </div>
-
 
 <!--
              _                       _
@@ -72,24 +66,26 @@
  /_/    \_\ |_.__/   \___/   \__,_|  \__|
 
 -->
-  {{ if .Site.Data.homepage.about.enable }}
-  <!-- about -->
-  <section class="section">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-10 mx-auto text-center">
-          {{ with .Site.Data.homepage.about }}
-          <p class="lead text-dark">{{.content | markdownify}}</p>
-          {{ with .button }}
-          <a href="{{ .URL | absURL }}" class="btn btn-transparent">{{.btnText}}</a>
-          {{ end }}
-          {{ end }}
+{{ if .Site.Data.homepage.about.enable }}
+<!-- about -->
+
+<section class="uk-margin-large-top">
+    <div class="uk-container">
+        <div class="uk-text-center">
+            {{ with .Site.Data.homepage.about }}
+            <p class="uk-text-lead">{{.content | markdownify}}</p>
+            {{ with .button }}
+            <a class="uk-button uk-button-text" href="{{.URL| absURL}}">{{.btnText}}</a>
+            {{end}}
+            {{end}}
         </div>
-      </div>
     </div>
-  </section>
-  <!-- /about -->
-  {{ end }}
+
+</section>
+
+
+<!-- /about -->
+{{ end }}
 
 
 <!--
@@ -107,52 +103,42 @@
 {{ if .Site.Data.homepage.skill.enable }}
 
 {{ range .Site.Data.homepage.skill.item }}
-<div class="modal fade" id="{{ replace (replace .title " " "_") "." "_" }}" tabindex="-1" role="dialog" aria-labelledby="{{ replace (replace .title " " "_") "." "_" }}" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="title_{{ replace (replace .title " " "_") "." "_" }}">{{.title}}</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-
+<div id="{{ replace (replace .title " " "_") "." "_" }}" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <div class="uk-modal-header">
+        <h2 class="uk-modal-title">{{.title}}</h2>
+        </div>
         <p>{{.description | safeHTML}}</p>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
     </div>
-  </div>
 </div>
 {{ end }}
 
-  <!-- skills -->
-  <section class="section">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-title">Skills</h2>
+<section class="uk-margin-large-top uk-margin-large-bottom">
+    <div class="uk-container">
+        <h1 class="uk-heading-line uk-text-center"><span>Skills</span></h1>
+
+        <p class="uk-text-center uk-text-lead"><i>Click the images below to find out more</i></p>
+        <div class="uk-child-width-1-6@l uk-child-width-1-3@m uk-child-width-1-3@s uk-child-width-1-2 uk-text-center uk-flex-center"  uk-grid >
+            {{ range .Site.Data.homepage.skill.item }}
+            <div class="imagemargin ">
+                <img class="contain lazy skills" src="" data-src="{{.logo}}" alt="{{.company}}" uk-toggle="target: #{{ replace (replace .title " " "_") "." "_" }}">
+                <h4>{{.title }}</h4>
+            </div>
+            {{ end }}
         </div>
-      </div>
-      <div class="container">
-        <h4 class="text-center"><i>Click the images below to find out more</i></h4>
-        <div class="row justify-content-center">
-          {{ range .Site.Data.homepage.skill.item }}
-          <div class="imagemargin col-lg-2 col-md-4 col-sm-6 col-6 text-center">
-            <img class="contain lazy skills" src="" data-src="{{.logo}}" alt="{{.company}}" data-toggle="modal" data-target="#{{ replace (replace .title " " "_") "." "_" }}">
-            <h4>{{.title }}</h4>
-          </div>
-          {{ end }}
-        </div>
-      </div>
+
     </div>
 
-  </section>
-  <!-- /skills -->
-  {{ end }}
+</section>
+
+
+
+
+
+
+<!-- /skills -->
+{{ end }}
 
 <!--
 
@@ -170,35 +156,34 @@
 
 
 
-  {{ if .Site.Data.homepage.experience.enable }}
-  <!-- experience -->
-  <section class="section">
-    <div class="container">
-      <div class="row justify-content-around">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-title">Experience</h2>
-        </div>
+{{ if .Site.Data.homepage.experience.enable }}
+<!-- experience -->
+<section class="uk-margin-large-bottom">
+
+    <div class="uk-container">
+        <h1 class="uk-heading-line uk-text-center"><span>Experience</span></h1>
+
 
 
         <div class="uk-child-width-1-4@l uk-child-width-1-2  uk-text-center uk-flex-between" uk-grid style="padding-left: 20px; padding-right: 20px">
 
-        {{ range .Site.Data.homepage.experience.item }}
-          <div>
-            <div class="uk-card uk-card-default uk-height-large">
-              <div class="uk-card-media-top">
-                <img class="contain experience" src="{{.logo}}" alt="" style="padding: 20px">
-              </div>
-              <div class="uk-card-body" style="padding-top: 0">
-                <div style="height: 5em">
-                <h3 class="uk-card-title">{{.title}}</h3>
-                  </div>
-                <p style="height: 4em">{{.company}}</p>
-                <p>{{.duration}}</p>
-              </div>
+                {{ range .Site.Data.homepage.experience.item }}
+                <div>
+                    <div class="uk-card uk-card-default uk-height-large">
+                        <div class="uk-card-media-top">
+                            <img class="contain experience" src="{{.logo}}" alt="" style="padding: 20px">
+                        </div>
+                        <div class="uk-card-body" style="padding-top: 0">
+                            <div style="height: 5em">
+                                <h3 class="uk-card-title">{{.title}}</h3>
+                            </div>
+                            <p style="height: 4em">{{.company}}</p>
+                            <p>{{.duration}}</p>
+                        </div>
+                    </div>
+                </div>
+                {{ end }}
             </div>
-          </div>
-        {{ end }}
-        </div>
 
 
 
@@ -206,44 +191,39 @@
 
 
 
-  </section>
-  <!-- ./experience -->
-  {{ end }}
+</section>
+<!-- ./experience -->
+{{ end }}
 
 
 
 <!--Hackathons-->
-<section class="section" >
-  <div class="container">
-    <div class="row justify-content-around">
-      <div class="col-lg-12 text-center">
-        <h2 class="section-title">Hackathons</h2>
-      </div>
-
+<section class="uk-margin-large-bottom">
+    <div class="uk-container">
+        <h1 class="uk-heading-line uk-text-center"><span>Hackathons</span></h1>
     </div>
-  </div>
 </section>
-<div class="text-center container">
-  <ul id="hexGrid">
-  {{range .Site.Data.homepage.hackathons.item}}
-    <li class="hex">
-      <div class="hexIn">
-        <div class="hexLink">
-          <img src="{{.image}}" alt="{{.title}}" />
+<div class="uk-container uk-margin-large-bottom">
+    <ul id="hexGrid">
+        {{range .Site.Data.homepage.hackathons.item}}
+        <li class="hex">
+            <div class="hexIn">
+                <div class="hexLink">
+                    <img src="{{.image}}" alt="{{.title}}" />
 
-            <a href="{{.url}}" class="text unset">
+                    <a href="{{.url}}" class="text unset">
 
-          <h1>
-            {{.title}}</h1></a>
+                        <h1>
+                            {{.title}}</h1></a>
 
-            <a href="{{.url}}" class="text unset">
-              <p>
-              {{.description}}</p></a>
-        </div>
-      </div>
-    </li>
-    {{end}}
-  </ul>
+                    <a href="{{.url}}" class="text unset">
+                        <p>
+                            {{.description}}</p></a>
+                </div>
+            </div>
+        </li>
+        {{end}}
+    </ul>
 </div>
 
 <!--
@@ -258,37 +238,34 @@
 
 
 -->
-  {{ if .Site.Data.homepage.education.enable }}
-  <!-- education -->
-  <section class="section position-relative">
-    <div class="container">
+{{ if .Site.Data.homepage.education.enable }}
+<!-- education -->
+<section class="uk-margin-xlarge-bottom">
+    <div class="uk-container">
 
-      <div class="row justify-content-around">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-title">Education</h2>
-        </div>
+        <h1 class="uk-heading-line uk-text-center uk-margin-large-bottom"><span>Education</span></h1>
 
 
-      <div class="uk-child-width-1-2@l uk-child-width-1-2  uk-text-center uk-flex-between" uk-grid style="padding-left: 20px; padding-right: 20px">
+            <div class=" uk-grid-large uk-child-width-1-3@s uk-child-width-1  uk-text-center uk-flex-center" uk-grid style="padding-left: 20px; padding-right: 20px">
 
-        {{ range .Site.Data.homepage.education.item }}
-        <div>
-          <div class="uk-card uk-card-default uk-height-max-large">
-            <div class="uk-card-media-top">
-              <img class="contain experience" src="{{.image}}" alt="" style="padding: 20px">
+                {{ range .Site.Data.homepage.education.item }}
+                <div>
+                    <div class="uk-card uk-card-default uk-height-max-large">
+                        <div class="uk-card-media-top">
+                            <img class="contain experience" src="{{.image}}" alt="" style="padding: 20px">
+                        </div>
+                        <div class="uk-card-body" style="padding-top: 0">
+                            <div style="height: 5em">
+                                <h3 class="uk-card-title">{{.academy}}</h3>
+                            </div>
+                            <p style="height: 4em">{{.title}}</p>
+                            <p>{{.year}}</p>
+                        </div>
+                    </div>
+                </div>
+                {{ end }}
             </div>
-            <div class="uk-card-body" style="padding-top: 0">
-              <div style="height: 5em">
-                <h3 class="uk-card-title">{{.academy}}</h3>
-              </div>
-              <p style="height: 4em">{{.title}}</p>
-              <p>{{.year}}</p>
-            </div>
-          </div>
         </div>
-        {{ end }}
-      </div>
-      </div>
 
 
 
@@ -299,6 +276,8 @@
 
 </section>
 {{ end }}
+
+
 
 
 
@@ -317,29 +296,29 @@
 
 <script>
 
-  document.addEventListener("DOMContentLoaded", function() {
-    var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+    document.addEventListener("DOMContentLoaded", function() {
+        var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
 
-    if ("IntersectionObserver" in window) {
-      let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            let lazyImage = entry.target;
-            lazyImage.src = lazyImage.dataset.src;
-            lazyImage.srcset = lazyImage.dataset.src;
-            lazyImage.classList.remove("lazy");
-            lazyImageObserver.unobserve(lazyImage);
-          }
-        });
-      });
+        if ("IntersectionObserver" in window) {
+            let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        let lazyImage = entry.target;
+                        lazyImage.src = lazyImage.dataset.src;
+                        lazyImage.srcset = lazyImage.dataset.src;
+                        lazyImage.classList.remove("lazy");
+                        lazyImageObserver.unobserve(lazyImage);
+                    }
+                });
+            });
 
-      lazyImages.forEach(function(lazyImage) {
-        lazyImageObserver.observe(lazyImage);
-      });
-    } else {
-      // Possibly fall back to a more compatible method here
-    }
-  });
+            lazyImages.forEach(function(lazyImage) {
+                lazyImageObserver.observe(lazyImage);
+            });
+        } else {
+            // Possibly fall back to a more compatible method here
+        }
+    });
 
 </script>
 

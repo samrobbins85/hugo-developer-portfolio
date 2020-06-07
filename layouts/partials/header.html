@@ -7,9 +7,9 @@
         <div class="uk-navbar-right">
             <ul class="uk-navbar-nav uk-visible@s">
                 {{if .IsHome}}
-                <li class="uk-active"><a style="font-size: 18px" href="/">{{ with .Site.Params.Home }} {{ . }} {{ end }}</a></li>
+                <li class="uk-active "><a style="font-size: 18px; text-transform: none" href="/">{{ with .Site.Params.Home }} {{ . }} {{ end }}</a></li>
                 {{else}}
-                <li><a style="font-size: 18px" href="/">{{ with .Site.Params.Home }} {{ . }} {{ end }}</a></li>
+                <li><a style="font-size: 18px; text-transform: none" href="/">{{ with .Site.Params.Home }} {{ . }} {{ end }}</a></li>
 
                 {{end}}
                 {{ range .Site.Menus.main }}
@@ -20,9 +20,9 @@
                 {{$aURL3 := index $aURL2 1}}
                 {{$page3 := index $page2 1}}
                 {{if eq $aURL3 $page3}}
-                <li class="uk-active"><a style="font-size: 18px" href="{{ .URL | relURL }}">{{.Name}}</a></li>
+                <li class="uk-active"><a style="font-size: 18px; text-transform:none" href="{{ .URL | relURL }}">{{.Name}}</a></li>
                 {{else}}
-                <li><a style="font-size: 18px" href="{{ .URL | relURL }}">{{.Name}}</a></li>
+                <li><a style="font-size: 18px; text-transform: none" href="{{ .URL | relURL }}">{{.Name}}</a></li>
                 {{end}}
                 {{end}}
             </ul>
