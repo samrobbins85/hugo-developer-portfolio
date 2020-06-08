@@ -32,7 +32,7 @@ a.text p{
 #hexGrid {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
+    /*width: 100%;*/
     margin: 0 auto;
     overflow: hidden;
     font-family: 'Raleway', sans-serif;
