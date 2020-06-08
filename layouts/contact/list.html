@@ -2,29 +2,38 @@
 
   {{ partial "page-title.html" . }}
 
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 mx-auto">
-      <div class="bg-white rounded text-center p-5 shadow-down">
-        <h4 class="mb-80">Contact Form</h4>
-        <form action="{{.Site.Params.contact.formAction}}" method="POST" class="row">
-          <div class="col-md-6">
-            <input type="text" id="name" name="name" placeholder="Full Name" class="form-control px-0 mb-4">
-          </div>
-          <div class="col-md-6">
-            <input type="email" id="email" name="email" placeholder="Email Address" class="form-control px-0 mb-4">
-          </div>
-          <div class="col-12">
-              <textarea name="message" id="message" class="form-control px-0 mb-4"
-                        placeholder="Type Message Here"></textarea>
-          </div>
-          <div class="col-lg-6 col-10 mx-auto">
-            <button class="btn btn-primary w-100">send</button>
-          </div>
-        </form>
+<section>
+  <div class="uk-container">
+    <form class="uk-form-horizontal uk-margin-large" action="{{.Site.Params.contact.formAction}}" method="post">
+
+      <div class="uk-margin">
+        <label class="uk-form-label" for="name">Name</label>
+        <div class="uk-form-controls">
+          <input class="uk-input" name="name" id="name" type="text" placeholder="Some text...">
+        </div>
       </div>
-    </div>
+
+      <div class="uk-margin">
+        <label class="uk-form-label" for="email">Email</label>
+        <div class="uk-form-controls">
+          <input class="uk-input" name="email" id="email" type="text" placeholder="Some text...">
+        </div>
+      </div>
+
+      <div class="uk-margin">
+        <label class="uk-form-label" for="message">Message</label>
+        <div class="uk-form-controls">
+        <textarea class="uk-textarea" name="message" id="message" rows="5" placeholder="Textarea"></textarea>
+        </div>
+      </div>
+
+      <button class="uk-align-center uk-button uk-button-default">Submit</button>
+
+    </form>
+
   </div>
-</div>
+
+</section>
+
 
 {{ end }}
