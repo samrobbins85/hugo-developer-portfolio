@@ -21,6 +21,7 @@
         <h1 class="uk-heading-large">{{ .Site.Data.homepage.banner.title | safeHTML }}</h1>
     </div>
 
+
 </section>
 <!--
    _____                  _           _     _        _           _
@@ -40,21 +41,30 @@
         {{ end }}
         {{ end }}
         {{ if .Site.Data.homepage.social.twitter }}
-        <li><a href="https://twitter.com/{{ .Site.Data.homepage.social.twitter }}"  aria-hidden="true"></i> <img class="contain" src="https://cdn.svgporn.com/logos/twitter.svg" ></a></li>
+        <li><a href="https://twitter.com/{{ .Site.Data.homepage.social.twitter }}" aria-hidden="true"></i> <img
+                    class="contain" src="https://cdn.svgporn.com/logos/twitter.svg"></a></li>
         {{ end }} {{ if .Site.Data.homepage.social.linkedin }}
-        <li><a href="https://www.linkedin.com/in/{{ .Site.Data.homepage.social.linkedin }}" aria-hidden="true"></i> <img class="contain" src="https://cdn.svgporn.com/logos/linkedin.svg"></a></li>
+        <li><a href="https://www.linkedin.com/in/{{ .Site.Data.homepage.social.linkedin }}" aria-hidden="true"></i> <img
+                    class="contain" src="https://cdn.svgporn.com/logos/linkedin.svg"></a></li>
         {{ end }} {{ if .Site.Data.homepage.social.github }}
-        <li><a href="https://github.com/{{ .Site.Data.homepage.social.github }}"  aria-hidden="true"></i> <img class="contain" src="https://cdn.svgporn.com/logos/github-icon.svg"> </a></li>
+        <li><a href="https://github.com/{{ .Site.Data.homepage.social.github }}" aria-hidden="true"></i> <img
+                    class="contain" src="https://cdn.svgporn.com/logos/github-icon.svg"> </a></li>
         {{ end }} {{ if .Site.Data.homepage.social.gitlab }}
-        <li><a href="https://gitlab.com/{{ .Site.Data.homepage.social.gitlab }}" aria-hidden="true"></i> <img class="contain" src="https://cdn.svgporn.com/logos/gitlab.svg"></a></li>
+        <li><a href="https://gitlab.com/{{ .Site.Data.homepage.social.gitlab }}" aria-hidden="true"></i> <img
+                    class="contain" src="https://cdn.svgporn.com/logos/gitlab.svg"></a></li>
         {{ end }} {{ if .Site.Data.homepage.social.facebook }}
-        <li><a href="https://www.facebook.com/{{ .Site.Data.homepage.social.facebook }}"  aria-hidden="true"></i> <img class="contain" src="https://cdn.svgporn.com/logos/facebook.svg"></a></li>
+        <li><a href="https://www.facebook.com/{{ .Site.Data.homepage.social.facebook }}" aria-hidden="true"></i> <img
+                    class="contain" src="https://cdn.svgporn.com/logos/facebook.svg"></a></li>
         {{ end }} {{ if .Site.Data.homepage.social.instagram }}
-        <li><a href="https://instagram.com/{{ .Site.Data.homepage.social.instagram }}"  aria-hidden="true"></i> <img class="contain" src="https://cdn.svgporn.com/logos/instagram-icon.svg"></a></li>
+        <li><a href="https://instagram.com/{{ .Site.Data.homepage.social.instagram }}" aria-hidden="true"></i> <img
+                    class="contain" src="https://cdn.svgporn.com/logos/instagram-icon.svg"></a></li>
         {{ end }}{{ if .Site.Data.homepage.social.gmail }}
-        <li><a href="mailto:{{ .Site.Data.homepage.social.gmail }}@gmail.com"  aria-hidden="true"></i> <img class="contain" src="https://cdn.svgporn.com/logos/google-gmail.svg"></a></li>
+        <li><a href="mailto:{{ .Site.Data.homepage.social.gmail }}@gmail.com" aria-hidden="true"></i> <img
+                    class="contain" src="https://cdn.svgporn.com/logos/google-gmail.svg"></a></li>
         {{ end }}
     </ul>
+
+
 </div>
 
 <!--
@@ -107,7 +117,7 @@
     <div class="uk-modal-dialog uk-modal-body">
         <button class="uk-modal-close-default" type="button" uk-close></button>
         <div class="uk-modal-header">
-        <h2 class="uk-modal-title">{{.title}}</h2>
+            <h2 class="uk-modal-title">{{.title}}</h2>
         </div>
         <p>{{.description | safeHTML}}</p>
     </div>
@@ -119,10 +129,12 @@
         <h1 class="uk-heading-line uk-text-center uk-heading-medium"><span>Skills</span></h1>
 
         <p class="uk-text-center uk-text-lead"><i>Click the images below to find out more</i></p>
-        <div class="uk-child-width-1-6@l uk-child-width-1-3@m uk-child-width-1-3@s uk-child-width-1-2 uk-text-center uk-flex-center"  uk-grid >
+        <div class="uk-child-width-1-6@l uk-child-width-1-3@m uk-child-width-1-3@s uk-child-width-1-2 uk-text-center uk-flex-center"
+            uk-grid>
             {{ range .Site.Data.homepage.skill.item }}
             <div class="imagemargin ">
-                <img class="contain lazy skills" src="" data-src="{{.logo}}" alt="{{.company}}" uk-toggle="target: #{{ replace (replace .title " " "_") "." "_" }}">
+                <img class="contain lazy skills" src="" data-src="{{.logo}}" alt="{{.company}}"
+                    uk-toggle="target: #{{ replace (replace .title " " "_") "." "_" }}">
                 <h4>{{.title }}</h4>
             </div>
             {{ end }}
@@ -165,25 +177,26 @@
 
 
 
-        <div class="uk-child-width-1-4@m uk-child-width-1-2  uk-text-center uk-flex-between" uk-grid style="padding-left: 20px; padding-right: 20px">
+        <div class="uk-child-width-1-4@m uk-child-width-1-2  uk-text-center uk-flex-between" uk-grid
+            style="padding-left: 20px; padding-right: 20px">
 
-                {{ range .Site.Data.homepage.experience.item }}
-                <div>
-                    <div class="uk-card uk-card-default uk-height-large">
-                        <div class="uk-card-media-top">
-                            <img class="contain experience" src="{{.logo}}" alt="" style="padding: 20px">
+            {{ range .Site.Data.homepage.experience.item }}
+            <div>
+                <div class="uk-card uk-card-default uk-height-large">
+                    <div class="uk-card-media-top">
+                        <img class="contain experience" src="{{.logo}}" alt="" style="padding: 20px">
+                    </div>
+                    <div class="uk-card-body" style="padding: initial">
+                        <div style="height: 5em">
+                            <h3 class="uk-card-title uk-heading-small">{{.title}}</h3>
                         </div>
-                        <div class="uk-card-body" style="padding: initial">
-                            <div style="height: 5em">
-                                <h3 class="uk-card-title uk-heading-small">{{.title}}</h3>
-                            </div>
-                            <p style="height: 4em">{{.company}}</p>
-                            <p>{{.duration}}</p>
-                        </div>
+                        <p style="height: 4em">{{.company}}</p>
+                        <p>{{.duration}}</p>
                     </div>
                 </div>
-                {{ end }}
             </div>
+            {{ end }}
+        </div>
 
 
 
@@ -214,11 +227,13 @@
                     <a href="{{.url}}" class="text unset">
 
                         <h1>
-                            {{.title}}</h1></a>
+                            {{.title}}</h1>
+                    </a>
 
                     <a href="{{.url}}" class="text unset">
                         <p>
-                            {{.description}}</p></a>
+                            {{.description}}</p>
+                    </a>
                 </div>
             </div>
         </li>
@@ -246,26 +261,27 @@
         <h1 class="uk-heading-line uk-heading-medium uk-text-center uk-margin-large-bottom"><span>Education</span></h1>
 
 
-            <div class=" uk-grid-large uk-child-width-1-3@s uk-child-width-1  uk-text-center uk-flex-center" uk-grid style="padding-left: 20px; padding-right: 20px">
+        <div class=" uk-grid-large uk-child-width-1-3@s uk-child-width-1  uk-text-center uk-flex-center" uk-grid
+            style="padding-left: 20px; padding-right: 20px">
 
-                {{ range .Site.Data.homepage.education.item }}
-                <div>
-                    <div class="uk-card uk-card-default uk-height-max-large">
-                        <div class="uk-card-media-top">
-                            <img class="contain experience" src="{{.image}}" alt="" style="padding: 20px">
+            {{ range .Site.Data.homepage.education.item }}
+            <div>
+                <div class="uk-card uk-card-default uk-height-max-large">
+                    <div class="uk-card-media-top">
+                        <img class="contain experience" src="{{.image}}" alt="" style="padding: 20px">
+                    </div>
+                    <div class="uk-card-body" style="padding-top: 0">
+                        <div style="height: 5em">
+                            <h3 class="uk-card-title">{{.academy}}</h3>
                         </div>
-                        <div class="uk-card-body" style="padding-top: 0">
-                            <div style="height: 5em">
-                                <h3 class="uk-card-title">{{.academy}}</h3>
-                            </div>
-                            <p style="height: 4em">{{.title}}</p>
-                            <p>{{.year}}</p>
-                        </div>
+                        <p style="height: 4em">{{.title}}</p>
+                        <p>{{.year}}</p>
                     </div>
                 </div>
-                {{ end }}
             </div>
+            {{ end }}
         </div>
+    </div>
 
 
 
@@ -296,12 +312,12 @@
 
 <script>
 
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
         var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
 
         if ("IntersectionObserver" in window) {
-            let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-                entries.forEach(function(entry) {
+            let lazyImageObserver = new IntersectionObserver(function (entries, observer) {
+                entries.forEach(function (entry) {
                     if (entry.isIntersecting) {
                         let lazyImage = entry.target;
                         lazyImage.src = lazyImage.dataset.src;
@@ -312,7 +328,7 @@
                 });
             });
 
-            lazyImages.forEach(function(lazyImage) {
+            lazyImages.forEach(function (lazyImage) {
                 lazyImageObserver.observe(lazyImage);
             });
         } else {

@@ -2,42 +2,7 @@
 
 {{ partial "page-title.html" . }}
 
-<!-- portfolio -->
-<!--<section class="section">-->
-<!--  <div class="container">-->
-<!--    <div class="row mb-5">-->
-<!--      <div class="col-12">-->
-<!--        <div class="btn-group btn-group-toggle justify-content-center d-flex flex-wrap" data-toggle="buttons">-->
-<!--          <label class="btn portfolio-button btn-sm btn-primary active">-->
-<!--            <input type="radio" name="shuffle-filter" value="all" checked="checked" />All-->
-<!--          </label>-->
-<!--          {{ range .Site.Data.portfolio.list }}-->
-<!--          <label class="btn portfolio-button btn-sm btn-primary">-->
-<!--            <input type="radio" name="shuffle-filter" value="{{.type}}" />{{ .title }}-->
-<!--          </label>-->
-<!--          {{ end }}-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <div class="row shuffle-wrapper">-->
-<!--      {{ range .Data.Pages }}-->
-<!--      <div class="col-lg-4 col-6 mb-4 shuffle-item" data-groups="{{.Params.categories | jsonify}}">-->
 
-<!--        <article class="card shadow">-->
-<!--          <img class="rounded card-img-top" src="{{.Params.Image | absURL}}" alt="post-thumb">-->
-<!--          <div class="card-body">-->
-<!--            <h4 class="card-title"><a class="text-dark" href="{{.Permalink}}">{{.Title }}</a>-->
-<!--            </h4>-->
-<!--            <p class="cars-text">{{.Params.Description}}</p>-->
-<!--            <a href="{{.Permalink}}" class="btn btn-xs btn-primary">Read More</a>-->
-<!--          </div>-->
-<!--        </article>-->
-<!--      </div>-->
-<!--      {{ end }}-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</section>-->
-<!-- /portfolio -->
 <section>
   <div class="uk-container uk-margin-xlarge-bottom">
 
@@ -53,54 +18,22 @@
 
       <ul class="js-filter uk-child-width-1-2 uk-child-width-1-4@m uk-text-center" uk-grid>
         {{ range .Data.Pages }}
-        <li data-tags="{{delimit .Params.categories " "}}">
-        <div class="uk-card uk-card-default">
-          <div class="uk-card-media-top">
-            <img src="{{.Params.Image | absURL}}" alt="">
+        <li data-tags="{{delimit .Params.categories  ' '}}">
+          <div class="uk-card uk-card-default">
+            <div class="uk-card-media-top">
+              <img src="{{.Params.Image | absURL}}" alt="">
+            </div>
+            <div class="uk-card-body">
+              <h3 class="uk-card-title">{{.Title}}</h3>
+              <p>{{.Params.Description}}</p>
+            </div>
+            <div class="uk-card-footer">
+              <a href="{{.Permalink}}" class="uk-button uk-button-text">Read more</a>
+            </div>
           </div>
-          <div class="uk-card-body">
-            <h3 class="uk-card-title">{{.Title}}</h3>
-            <p>{{.Params.Description}}</p>
-          </div>
-          <div class="uk-card-footer">
-            <a href="{{.Permalink}}" class="uk-button uk-button-text">Read more</a>
-          </div>
-        </div>
         </li>
         {{end}}
-<!--        <li data-tags="blue dark">-->
-<!--          <div class="uk-card uk-card-primary uk-card-body">Item</div>-->
-<!--        </li>-->
-<!--        <li data-tags="white">-->
-<!--          <div class="uk-card uk-card-default uk-card-body">Item</div>-->
-<!--        </li>-->
-<!--        <li data-tags="white">-->
-<!--          <div class="uk-card uk-card-default uk-card-body">Item</div>-->
-<!--        </li>-->
-<!--        <li data-tags="black dark">-->
-<!--          <div class="uk-card uk-card-secondary uk-card-body">Item</div>-->
-<!--        </li>-->
-<!--        <li data-tags="black dark">-->
-<!--          <div class="uk-card uk-card-secondary uk-card-body">Item</div>-->
-<!--        </li>-->
-<!--        <li data-tags="blue dark">-->
-<!--          <div class="uk-card uk-card-primary uk-card-body">Item</div>-->
-<!--        </li>-->
-<!--        <li data-tags="black dark">-->
-<!--          <div class="uk-card uk-card-secondary uk-card-body">Item</div>-->
-<!--        </li>-->
-<!--        <li data-tags="blue dark">-->
-<!--          <div class="uk-card uk-card-primary uk-card-body">Item</div>-->
-<!--        </li>-->
-<!--        <li data-tags="white">-->
-<!--          <div class="uk-card uk-card-default uk-card-body">Item</div>-->
-<!--        </li>-->
-<!--        <li data-tags="blue dark">-->
-<!--          <div class="uk-card uk-card-primary uk-card-body">Item</div>-->
-<!--        </li>-->
-<!--        <li data-tags="black dark">-->
-<!--          <div class="uk-card uk-card-secondary uk-card-body">Item</div>-->
-<!--        </li>-->
+
       </ul>
 
     </div>

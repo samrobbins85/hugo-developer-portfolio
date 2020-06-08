@@ -1,7 +1,7 @@
 <!-- footer -->
 <footer class="footer">
-    <div class="uk-container">
-      <div class="contact" style="padding-bottom: 50px">
+  <div class="uk-container">
+    <div class="contact" style="padding-bottom: 50px">
       <div class="uk-grid-large text-center uk-flex-center" uk-grid>
         <div>
           <h5>Email</h5>
@@ -10,25 +10,25 @@
         <div>
           <h5>Address</h5>
           <div uk-lightbox>
-            <a href="{{.Site.Params.footer.googlemaps}}" data-caption="{{.Site.Params.footer.address}}" data-type="iframe">{{.Site.Params.footer.address}}</a>
+            <a href="{{.Site.Params.footer.googlemaps}}" data-caption="{{.Site.Params.footer.address}}"
+              data-type="iframe">{{.Site.Params.footer.address}}</a>
           </div>
         </div>
       </div>
     </div>
-    </div>
-    <div class="footer-copyright uk-text-center" style="padding-bottom: 1rem">
-      <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 1.2em;
+  </div>
+  <div class="footer-copyright uk-text-center" style="padding-bottom: 1rem">
+    <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="height: 1.2em;
   width: 1.2em;">
-      <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="height: 1.2em;
+    <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="height: 1.2em;
   width: 1.2em;">
     <script>
       document.write(new Date().getFullYear())
     </script>
-      {{.Site.Params.Author}}
+    {{.Site.Params.Author}}
 
 
-
-    </div>
+  </div>
 </footer>
 
 
@@ -36,6 +36,3 @@
 {{ range .Site.Params.plugins.js}}
 <script src="{{ .URL | absURL }}"></script>
 {{ end }}
-
-
-

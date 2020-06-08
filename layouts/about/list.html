@@ -1,14 +1,13 @@
-
 {{ define "main" }}
 {{ partial "page-title.html" . }}
 {{ "<!-- About -->" | safeHTML }}
 {{ $about := resources.Get "css/about.css" | minify }}
 <link rel="stylesheet" href="{{ $about.Permalink | relURL}}">
-  <!-- about -->
+<!-- about -->
 
 <section class="uk-margin-large-bottom">
   <div class="uk-container">
-    <div  uk-grid>
+    <div uk-grid>
       <div class="uk-width-1-3@m">
         <img src="{{.Params.AuthorImage | absURL }}" alt="author">
       </div>
@@ -23,34 +22,35 @@
 
 
 
-
 <!-- experience -->
 <section class="uk-margin-large-bottom">
   <div class="uk-container">
-    <h1 class="uk-heading-line uk-text-center uk-heading-medium uk-margin-medium-bottom"><span>Leadership and Teamwork</span></h1>
+    <h1 class="uk-heading-line uk-text-center uk-heading-medium uk-margin-medium-bottom"><span>Leadership and
+        Teamwork</span></h1>
 
 
-      <div class="uk-child-width-1-4@l uk-child-width-1-2  uk-text-center uk-flex-between" uk-grid style="padding-left: 20px; padding-right: 20px">
+    <div class="uk-child-width-1-4@l uk-child-width-1-2  uk-text-center uk-flex-between" uk-grid
+      style="padding-left: 20px; padding-right: 20px">
 
-        {{ range .Site.Data.homepage.leadership.item }}
-        <div>
-          <div class="uk-card uk-card-default uk-height-large">
-            <div class="uk-card-media-top">
-              <img class="contain experience" src="{{.logo}}" alt="" style="padding: 20px">
+      {{ range .Site.Data.homepage.leadership.item }}
+      <div>
+        <div class="uk-card uk-card-default uk-height-large">
+          <div class="uk-card-media-top">
+            <img class="contain experience" src="{{.logo}}" alt="" style="padding: 20px">
+          </div>
+          <div class="uk-card-body" style="padding-top: 0">
+            <div style="height: 5em">
+              <h3 class="uk-card-title">{{.title}}</h3>
             </div>
-            <div class="uk-card-body" style="padding-top: 0">
-              <div style="height: 5em">
-                <h3 class="uk-card-title">{{.title}}</h3>
-              </div>
-              <p style="height: 4em">{{.company}}</p>
-              <p>{{.duration}}</p>
-            </div>
+            <p style="height: 4em">{{.company}}</p>
+            <p>{{.duration}}</p>
           </div>
         </div>
-        {{ end }}
       </div>
+      {{ end }}
+    </div>
 </section>
 <!-- ./experience -->
-  <!-- /about -->
+<!-- /about -->
 
 {{ end }}

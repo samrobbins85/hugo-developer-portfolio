@@ -2,27 +2,6 @@
 
 {{ partial "page-title.html" . }}
 
-<!-- blog -->
-<!--  <section class="section">-->
-<!--    <div class="container">-->
-<!--      <div class="row">-->
-<!--        {{ range .Data.Pages.ByPublishDate }}-->
-<!--        <div class="col-lg-4 col-sm-6 mb-4">-->
-<!--          <article class="card shadow">-->
-<!--            <img class="rounded card-img-top" src="{{.Params.Image | absURL}}" alt="post-thumb">-->
-<!--            <div class="card-body">-->
-<!--              <h4 class="card-title"><a class="text-dark" href="{{.Permalink}}">{{.Title }}</a>-->
-<!--              </h4>-->
-<!--              <p class="cars-text">{{.Params.description}}</p>-->
-<!--              <a href="{{.Permalink}}" class="btn btn-xs btn-primary">Read More</a>-->
-<!--            </div>-->
-<!--          </article>-->
-<!--        </div>-->
-<!--        {{ end }}-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </section>-->
-<!-- /blog -->
 <section class="uk-margin-large-bottom">
     <div class="uk-container">
         <div class="uk-grid-small uk-child-width-1-4@s uk-text-center" uk-grid>
@@ -33,7 +12,8 @@
                         <div class="uk-grid-small uk-flex-middle" uk-grid>
                             <div class="uk-width-expand">
                                 <h3 class="uk-card-title uk-margin-remove-bottom">{{.Title}}</h3>
-                                <p class="uk-text-meta uk-margin-remove-top"><time datetime="{{.Date}}">{{.Date.Format "Jan 2, 2006"}}</time></p>
+                                <p class="uk-text-meta uk-margin-remove-top"><time
+                                        datetime="{{.Date}}">{{.Date.Format "Jan 2, 2006"}}</time></p>
                             </div>
                         </div>
                     </div>
