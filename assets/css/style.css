@@ -15,6 +15,13 @@ VERSION: Version Number
 
 }
 
+.footer {
+  flex-shrink: 0;
+  background: #fafafa;
+  border-top: 1px solid #eaeaea;
+  padding-top: 5em;
+}
+
 
 
 

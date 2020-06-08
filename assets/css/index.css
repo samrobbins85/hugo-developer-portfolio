@@ -1,4 +1,9 @@
 /*Stuff for icons*/
+html, body {
+    height: 100%;
+}
+
+
 ul.icons {
     cursor: default;
     list-style: none;
