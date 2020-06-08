@@ -165,7 +165,7 @@
 
 
 
-        <div class="uk-child-width-1-4@l uk-child-width-1-2  uk-text-center uk-flex-between" uk-grid style="padding-left: 20px; padding-right: 20px">
+        <div class="uk-child-width-1-4@m uk-child-width-1-2  uk-text-center uk-flex-between" uk-grid style="padding-left: 20px; padding-right: 20px">
 
                 {{ range .Site.Data.homepage.experience.item }}
                 <div>
@@ -173,9 +173,9 @@
                         <div class="uk-card-media-top">
                             <img class="contain experience" src="{{.logo}}" alt="" style="padding: 20px">
                         </div>
-                        <div class="uk-card-body" style="padding-top: 0">
+                        <div class="uk-card-body" style="padding: initial">
                             <div style="height: 5em">
-                                <h3 class="uk-card-title">{{.title}}</h3>
+                                <h3 class="uk-card-title uk-heading-small">{{.title}}</h3>
                             </div>
                             <p style="height: 4em">{{.company}}</p>
                             <p>{{.duration}}</p>
