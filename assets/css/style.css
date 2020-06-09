@@ -22,7 +22,9 @@ VERSION: Version Number
   padding-top: 5em;
 }
 
-
+.uk-link,a{
+  color: #0077aa
+}
 
 
 .uk-lightbox{
