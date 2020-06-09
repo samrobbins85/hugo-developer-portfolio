@@ -42,25 +42,25 @@
         {{ end }}
         {{ if .Site.Data.homepage.social.twitter }}
         <li><a href="https://twitter.com/{{ .Site.Data.homepage.social.twitter }}" > <img
-                    class="contain" src="https://cdn.svgporn.com/logos/twitter.svg" alt="Twitter"></a></li>
+                    class="contain" src="https://cdn.svgporn.com/logos/twitter.svg" alt="Twitter" loading="lazy"></a></li>
         {{ end }} {{ if .Site.Data.homepage.social.linkedin }}
         <li><a href="https://www.linkedin.com/in/{{ .Site.Data.homepage.social.linkedin }}">
-            <img class="contain" src="https://cdn.svgporn.com/logos/linkedin.svg" alt="LinkedIn"> </a></li>
+            <img class="contain" src="https://cdn.svgporn.com/logos/linkedin.svg" alt="LinkedIn" loading="lazy"> </a></li>
         {{ end }} {{ if .Site.Data.homepage.social.github }}
         <li><a href="https://github.com/{{ .Site.Data.homepage.social.github }}"> <img
-                    class="contain" src="https://cdn.svgporn.com/logos/github-icon.svg" alt="GitHub"> </a></li>
+                    class="contain" src="https://cdn.svgporn.com/logos/github-icon.svg" alt="GitHub" loading="lazy"> </a></li>
         {{ end }} {{ if .Site.Data.homepage.social.gitlab }}
         <li><a href="https://gitlab.com/{{ .Site.Data.homepage.social.gitlab }}"> <img
-                    class="contain" src="https://cdn.svgporn.com/logos/gitlab.svg" alt="GitLab"></a></li>
+                    class="contain" src="https://cdn.svgporn.com/logos/gitlab.svg" alt="GitLab" loading="lazy"></a></li>
         {{ end }} {{ if .Site.Data.homepage.social.facebook }}
         <li><a href="https://www.facebook.com/{{ .Site.Data.homepage.social.facebook }}"> <img
-                    class="contain" src="https://cdn.svgporn.com/logos/facebook.svg" alt="Facebook"></a></li>
+                    class="contain" src="https://cdn.svgporn.com/logos/facebook.svg" alt="Facebook" loading="lazy"></a></li>
         {{ end }} {{ if .Site.Data.homepage.social.instagram }}
         <li><a href="https://instagram.com/{{ .Site.Data.homepage.social.instagram }}"> <img
-                    class="contain" src="https://cdn.svgporn.com/logos/instagram-icon.svg" alt="Instagram"></a></li>
+                    class="contain" src="https://cdn.svgporn.com/logos/instagram-icon.svg" alt="Instagram" loading="lazy"></a></li>
         {{ end }}{{ if .Site.Data.homepage.social.gmail }}
         <li><a href="mailto:{{ .Site.Data.homepage.social.gmail }}@gmail.com" > <img
-                    class="contain" src="https://cdn.svgporn.com/logos/google-gmail.svg" alt="Gmail"></a></li>
+                    class="contain" src="https://cdn.svgporn.com/logos/google-gmail.svg" alt="Gmail" loading="lazy"></a></li>
         {{ end }}
     </ul>
 
@@ -133,7 +133,7 @@
             uk-grid>
             {{ range .Site.Data.homepage.skill.item }}
             <div class="imagemargin ">
-                <img class="contain lazy skills" src="" data-src="{{.logo}}" alt="{{.company}}"
+                <img class="contain skills" src="{{.logo}}" alt="{{.company}}" loading="lazy"
                     uk-toggle="target: #{{ replace (replace .title " " "_") "." "_" }}">
                 <h4>{{.title }}</h4>
             </div>
@@ -184,7 +184,7 @@
             <div>
                 <div class="uk-card uk-card-default uk-height-large">
                     <div class="uk-card-media-top">
-                        <img class="contain lazy experience" src="" data-src="{{.logo}}" alt="" style="padding: 20px">
+                        <img class="containexperience" src="{{.logo}}" alt="" style="padding: 20px" loading="lazy">
                     </div>
                     <div class="uk-card-body" style="padding: initial">
                         <div style="height: 5em">
@@ -222,7 +222,7 @@
         <li class="hex">
             <div class="hexIn">
                 <div class="hexLink">
-                    <img src="" data-src="{{.image}}" alt="{{.title}}" class="lazy" />
+                    <img src="{{.image}}" alt="{{.title}}" loading="lazy" />
 
                     <a href="{{.url}}" class="text unset">
 
@@ -268,7 +268,7 @@
             <div>
                 <div class="uk-card uk-card-default uk-height-max-large">
                     <div class="uk-card-media-top">
-                        <img class="contain lazy experience" src="" data-src="{{.image}}" alt="" style="padding: 20px">
+                        <img class="containexperience" src="{{.image}}" alt="" style="padding: 20px" loading="lazy">
                     </div>
                     <div class="uk-card-body" style="padding-top: 0">
                         <div style="height: 5em">
@@ -310,32 +310,6 @@
 
 
 
-<script>
 
-    document.addEventListener("DOMContentLoaded", function () {
-        var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
-
-        if ("IntersectionObserver" in window) {
-            let lazyImageObserver = new IntersectionObserver(function (entries, observer) {
-                entries.forEach(function (entry) {
-                    if (entry.isIntersecting) {
-                        let lazyImage = entry.target;
-                        lazyImage.src = lazyImage.dataset.src;
-                        lazyImage.srcset = lazyImage.dataset.src;
-                        lazyImage.classList.remove("lazy");
-                        lazyImageObserver.unobserve(lazyImage);
-                    }
-                });
-            });
-
-            lazyImages.forEach(function (lazyImage) {
-                lazyImageObserver.observe(lazyImage);
-            });
-        } else {
-            // Possibly fall back to a more compatible method here
-        }
-    });
-
-</script>
 
 {{ end }}
