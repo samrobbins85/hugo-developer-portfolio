@@ -3,6 +3,13 @@
 /*    height: 100vh;*/
 /*}*/
 
+li {
+    font-weight: 400;
+    color: #454545;
+    font-size: 1rem;
+    line-height: 1.8;
+    font-family: Cantarell, sans-serif
+}
 
 ul.icons {
     cursor: default;

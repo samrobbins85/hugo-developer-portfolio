@@ -15,14 +15,6 @@ VERSION: Version Number
 
 }
 
-.uk-button-text{
-  border-bottom: 1px solid #333;
-}
-
-.uk-button-text::before{
-  border-bottom: 1px solid mediumblue;
-}
-
 .footer {
   flex-shrink: 0;
   background: #fafafa;
@@ -68,17 +60,17 @@ figure img{
   padding: 10px;
 }
 
-/*body {*/
-/*  line-height: 1.2;*/
-/*  font-family: roboto, sans-serif;*/
-/*  -webkit-font-smoothing: antialiased;*/
-/*  font-size: 15px;*/
-/*  color: #454545;*/
-/*}*/
-
 em{
   color:unset;
 }
+
+
+
+
+
+
+
+
 
 
 h1,
@@ -90,7 +82,6 @@ h6 {
   color: #000;
   font-family: Roboto, sans-serif;
   line-height: 1.2;
-  /*margin-top: 2rem;*/
 }
 
 h1,
@@ -127,7 +118,7 @@ h3,
 
 h4,
 .h4 {calc(10px + 0.8vw)
-  font-size: 22px
+font-size: 22px
 }
 
 h5,
