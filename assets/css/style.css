@@ -15,6 +15,14 @@ VERSION: Version Number
 
 }
 
+.uk-button-text{
+  border-bottom: 1px solid #333;
+}
+
+.uk-button-text::before{
+  border-bottom: 1px solid mediumblue;
+}
+
 .footer {
   flex-shrink: 0;
   background: #fafafa;
@@ -60,46 +68,17 @@ figure img{
   padding: 10px;
 }
 
-body {
-  line-height: 1.2;
-  font-family: roboto, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  font-size: 15px;
-  color: #454545;
-}
+/*body {*/
+/*  line-height: 1.2;*/
+/*  font-family: roboto, sans-serif;*/
+/*  -webkit-font-smoothing: antialiased;*/
+/*  font-size: 15px;*/
+/*  color: #454545;*/
+/*}*/
 
-.portfolio h3{
-  font-size: 24px;
+em{
+  color:unset;
 }
-
-.portfolio section{
-  padding-top: 0px;
-}
-
-p {
-  font-weight: 400;
-  color: #454545;
-  font-size: 1rem;
-  line-height: 1.8;
-  font-family: Roboto, sans-serif
-}
-
-body.portfolio p {
-  font-weight: 400;
-  color: #454545;
-  font-size: 1rem;
-  line-height: 1.8;
-  font-family: Cantarell, sans-serif !important;
-}
-
-li {
-  font-weight: 400;
-  color: #454545;
-  font-size: 1rem;
-  line-height: 1.8;
-  font-family: Cantarell, sans-serif
-}
-
 
 
 h1,
@@ -111,7 +90,7 @@ h6 {
   color: #000;
   font-family: Roboto, sans-serif;
   line-height: 1.2;
-  margin-top: 0;
+  /*margin-top: 2rem;*/
 }
 
 h1,
