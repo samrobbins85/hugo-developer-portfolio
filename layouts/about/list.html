@@ -7,8 +7,8 @@
 
 <section class="uk-margin-large-bottom">
   <div class="uk-container">
-    <div uk-grid>
-      <div class="uk-width-1-3@m">
+    <div class="uk-flex-center" uk-grid>
+      <div class="uk-width-1-2 uk-width-1-3@s">
         <img src="{{.Params.AuthorImage | absURL }}" alt="author">
       </div>
       <div class="uk-width-expand@m">
@@ -29,7 +29,7 @@
         Teamwork</span></h1>
 
 
-    <div class="uk-child-width-1-4@l uk-child-width-1-2  uk-text-center uk-flex-between" uk-grid
+    <div class="uk-child-width-1-4@l uk-child-width-1-2@s uk-child-width  uk-text-center uk-flex-between" uk-grid
       style="padding-left: 20px; padding-right: 20px">
 
       {{ range .Site.Data.homepage.leadership.item }}
