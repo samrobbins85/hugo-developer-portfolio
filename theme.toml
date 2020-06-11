@@ -1,12 +1,13 @@
-name = "Kross Hugo"
+name = "Developer Portfolio"
 license = "MIT"
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
-description = "Hugo port of the Themefisher’s Kross Template"
-homepage = "https://themefisher.com/best-hugo-themes/"
-tags = ['landing-page', 'fast', 'light', 'white', 'modern', 'themefisher', 'hugo-theme', 'hugo-templates', 'bootstrap', 'blog', 'responsive', 'clean', 'simple', 'creative', 'contact-form', 'custom-themes', 'mobile', 'minimalistic', 'pages', 'resume', 'portfolio', 'google analytics', 'customizable', 'flexbox', 'presentation', 'product', 'theme', 'typography']
-features = ['bootstrap','responsive']
-min_version = "0.55"
+licenselink = "https://github.com/samrobbins85/hugo-developer-portfolio/blob/master/LICENSE"
+description = "A Portfolio website designed for developers"
+homepage = "https://github.com/samrobbins85/hugo-developer-portfolio"
+tags = ["portfolio", "developer", "responsive","uikit"]
+features = ["uikit", "responsive", "features"]
+min_version = "0.59.1"
 
 [author]
-  name = "Themefisher"
-  homepage = "https://themefisher.com/"
+    name = "Sam Robbins"
+    homepage = "https://samrobbins.uk/"
+
