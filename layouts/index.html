@@ -211,6 +211,8 @@
 
 
 <!--Hackathons-->
+{{ if .Site.Data.homepage.hackathons.enable }}
+
 <section class="uk-margin-large-bottom">
     <div class="uk-container">
         <h1 class="uk-heading-line uk-heading-medium uk-text-center"><span>Hackathons</span></h1>
@@ -241,6 +243,7 @@
         {{end}}
     </ul>
 </div>
+{{end}}
 
 <!--
 

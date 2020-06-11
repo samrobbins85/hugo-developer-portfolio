@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "build": "rm -rf themes/hugo-developer-portfolio;git clone https://github.com/samrobbins85/hugo-developer-portfolio.git themes/hugo-developer-portfolio && hugo"
+  }
+}
+ 

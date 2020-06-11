@@ -1,0 +1,103 @@
+---
+banner:
+  title: Hi! I’m Sam
+social:
+  twitter: ''
+  linkedin: sam-robbins-gb
+  github: samrobbins85
+  gitlab: ''
+  facebook: ''
+  instagram: ''
+  gmail: samrobbinsgb
+about:
+  enable: true
+  content: 2nd Year Durham Computer Science Student
+  button:
+    btnText: Find out more
+    URL: "/about"
+skill:
+  enable: true
+  item:
+  - title: JavaScript
+    logo: https://res.cloudinary.com/samrobbins/image/upload/v1591793272/logos/logos_javascript_adj1dx.svg
+    description: Details coming soon, contact me if you want to know more
+  - title: Python
+    description: Details coming soon, contact me if you want to know more
+    logo: https://res.cloudinary.com/samrobbins/image/upload/v1591793276/logos/logos_python_pjlesq.svg
+  - title: Vercel
+    description: Details coming soon, contact me if you want to know more
+    logo: https://res.cloudinary.com/samrobbins/image/upload/v1591793280/logos/logos_zeit_mj2mka.svg
+  - title: LaTeX
+    description: Details coming soon, contact me if you want to know more
+    logo: https://res.cloudinary.com/samrobbins/image/upload/v1591793272/logos/logos_latex_jy4wnp.svg
+  - title: Linux
+    description: Details coming soon, contact me if you want to know more
+    logo: https://res.cloudinary.com/samrobbins/image/upload/v1591793274/logos/logos_linux_btjirt.svg
+  - title: Hugo
+    description: Details coming soon, contact me if you want to know more
+    logo: https://res.cloudinary.com/samrobbins/image/upload/v1591793276/logos/logos_hugo_h2xbne.svg
+experience:
+  enable: true
+  item:
+  - logo: https://res.cloudinary.com/samrobbins/image/upload/f_auto,q_auto/v1591793271/logos/logos_google_id6v9a.svg
+    title: init.g
+    company: Google
+    duration: November 2019
+  - logo: https://res.cloudinary.com/samrobbins/image/upload/f_auto,q_auto/v1591793275/logos/logos_pmt_tdrgcd.webp
+    title: Web Developer
+    company: Physics and Maths Tutor
+    duration: October 2019 - Present
+  - logo: https://res.cloudinary.com/samrobbins/image/upload/f_auto,q_auto/v1591793274/logos/logos_nexus_i7azpj.webp
+    title: Work Experience
+    company: Nexus
+    duration: July 2017
+  - logo: https://res.cloudinary.com/samrobbins/image/upload/f_auto,q_auto/v1591793274/logos/logos_nustem_l2nwbm.webp
+    title: Work Experience
+    company: nustem
+    duration: March 2015 - April 2015
+hackathons:
+  item:
+  - title: Hack Cambridge 2019
+    description: Climate change simulator
+    image: https://res.cloudinary.com/samrobbins/image/upload/f_auto,q_auto/v1591793405/stickers/Hack_Cambridge_101_ozoq5d.png
+    url: javascript:void(0)
+  - title: DurHack 2019
+    description: Dementia Helper
+    image: https://res.cloudinary.com/samrobbins/image/upload/f_auto,q_auto/v1591793399/stickers/durhack19_dzecbb.png
+    url: "/portfolio/durhack-2019/"
+  - title: DurHack 2018
+    description: Cult Bot
+    image: https://res.cloudinary.com/samrobbins/image/upload/f_auto,q_auto/v1591793396/stickers/durhack18_k2atqm.png
+    url: javascript:void(0)
+education:
+  enable: true
+  item:
+  - title: BSc Computer Science
+    year: 2018 - Present
+    academy: Durham University
+    image: https://res.cloudinary.com/samrobbins/image/upload/f_auto,q_auto/v1591793268/logos/logos_Durham_fc2sae.svg
+  - title: GCSEs and A Levels
+    year: 2013-2018
+    academy: The King Edward VI School
+    image: https://res.cloudinary.com/samrobbins/image/upload/f_auto,q_auto/v1591793272/logos/logos_kevi_ksyppz.webp
+blog:
+  enable: true
+leadership:
+  enable: true
+  item:
+  - logo: https://res.cloudinary.com/samrobbins/image/upload/f_auto,q_auto/v1591793280/logos/logos_yl_qozav6.webp
+    title: Young Leader
+    company: The Scout Association
+    duration: September 2014 - July 2018
+  - logo: https://res.cloudinary.com/samrobbins/image/upload/f_auto,q_auto/v1591793272/logos/logos_kevi_ksyppz.webp
+    title: Leader of the Space Club
+    company: The King Edward VI School
+    duration: April 2017 - April 2018
+  - logo: https://res.cloudinary.com/samrobbins/image/upload/f_auto,q_auto/v1591793271/logos/logos_explorerbelt_ezjvqq.webp
+    title: Explorer Belt
+    company: The Scout Association
+    duration: August 2016
+  - logo: https://res.cloudinary.com/samrobbins/image/upload/f_auto,q_auto/v1591793271/logos/logos_dofe_j7lpeh.webp
+    title: Bronze and Silver DofE
+    company: The Duke of Edinburgh's Award
+    duration: June 2014 - January 2017
