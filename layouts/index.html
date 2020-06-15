@@ -226,17 +226,31 @@
             <div class="hexIn">
                 <div class="hexLink">
                     <img src="{{.image}}" alt="{{.title}}" loading="lazy" />
+                    {{if eq .url "none"}}
+                    <div style="all:unset">
 
+                        <h1>
+                            {{.title}}</h1>
+                    </div>
+                    {{else}}
                     <a href="{{.url}}" class="text unset">
 
                         <h1>
                             {{.title}}</h1>
                     </a>
 
+                    {{end}}
+                    {{if eq .url "none"}}
+                    <div style="all:unset">
+                        <p>
+                            {{.description}}</p>
+                    </div>
+                    {{else}}
                     <a href="{{.url}}" class="text unset">
                         <p>
                             {{.description}}</p>
                     </a>
+                    {{end}}
                 </div>
             </div>
         </li>
