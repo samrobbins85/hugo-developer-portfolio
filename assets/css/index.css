@@ -94,6 +94,10 @@ img.skills{
     height: 80px;
 }
 
+img.certs{
+    height: 160px;
+}
+
 img.experience{
     width: 150px;
     height: 180px;
