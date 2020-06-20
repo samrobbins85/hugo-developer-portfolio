@@ -57,7 +57,10 @@ figure img{
 em{
   color:unset;
 }
-
+img.experience{
+  width: 150px;
+  height: 180px;
+}
 
 
 

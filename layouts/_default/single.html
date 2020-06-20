@@ -47,8 +47,9 @@
     <p class="uk-text-center">Published on {{ .PublishDate.Format "Jan 02, 2006" }}</p>
     <p class="uk-text-center">Reading time: {{ math.Round (div (countwords .Content) 220.0) }} minutes.</p>
     {{if isset .Params "coders"}}
-    <div class="uk-child-width-1-4@m uk-child-width-1-2@s uk-text-center uk-flex-center uk-grid-large" uk-grid>
 
+    <div class="uk-child-width-1-4@m uk-child-width-1-2@s uk-text-center uk-flex-center uk-grid-large uk-margin-small-top" uk-grid>
+      {{if ( gt (len .Params.coders ) 0)}}
       <div>
         <button class="uk-button uk-button-default" type="button"> <span uk-icon="icon: users"></span> Team
           Project</button>
@@ -66,6 +67,7 @@
           </div>
         </div>
       </div>
+      {{end}}
 
       <div>
         <a class="uk-button uk-button-default" href="{{.Params.github}}"> <span uk-icon="icon: github"></span>
@@ -82,4 +84,5 @@
   </div>
 </section>
 
-{{ end }}
+
+{{end}}

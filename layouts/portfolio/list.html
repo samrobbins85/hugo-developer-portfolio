@@ -16,17 +16,21 @@
         <li uk-filter-control="[data-tags*='web-dev']"><a href="#">Web Dev</a></li>
       </ul>
 
-      <ul class="js-filter uk-child-width-1-2 uk-child-width-1-4@m uk-text-center" uk-grid>
+      <ul class="js-filter uk-child-width-1-2 uk-child-width-1-4@m uk-text-center" uk-grid uk-height-match="target: > li > div > .fixy">
         {{ range .Data.Pages }}
         <li data-tags="{{delimit .Params.categories  ' '}}">
-          <div class="uk-card uk-card-default">
+          <div class="uk-card uk-card-default" style="position: relative">
+            <div class="fixy">
             <div class="uk-card-media-top">
-              <img src="{{.Params.Image | absURL}}" alt="">
+              <img class="contain experience" src="{{.Params.Image | absURL}}" alt="">
             </div>
             <div class="uk-card-body">
               <h3 class="uk-card-title">{{.Title}}</h3>
               <p>{{.Params.Description}}</p>
             </div>
+            </div>
+
+
             <div class="uk-card-footer">
               <a href="{{.Permalink}}" class="uk-button uk-button-text">Read more</a>
             </div>
