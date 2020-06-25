@@ -83,8 +83,26 @@
       {{end}}
 
       <div>
-        <a class="uk-button uk-button-default" href="{{.Params.github}}"> <span uk-icon="icon: github"></span>
+        {{if ( gt (len .Params.github ) 1)}}
+        <div>
+          <button class="uk-button uk-button-default" type="button"> <span uk-icon="icon: github"></span> GitHub</button>
+          <div class="uk-width-auto" uk-dropdown="pos: bottom-center; delay-hide:400">
+            <div class="uk-dropdown-grid uk-child-width-1-2" uk-grid>
+              <div>
+                <ul class="uk-nav uk-dropdown-nav">
+                  {{ range .Params.github }}
+                  <li><a style="color: #0366d6; font-weight: 600" href="{{.}}"> <span><img loading="lazy" src="https://res.cloudinary.com/samrobbins/image/upload/v1593092912/repo_ec3slk.svg"></span>  {{index (last 1 (split . "/")) 0}}</a></li>
+                  {{end}}
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        {{else}}
+        <a class="uk-button uk-button-default" href="{{index (.Params.github) 0}}"> <span uk-icon="icon: github"></span>
           Github</a>
+        {{end}}
       </div>
     </div>
     {{end}}
