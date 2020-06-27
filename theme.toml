@@ -5,7 +5,7 @@ description = "A Portfolio website designed for developers"
 homepage = "https://github.com/samrobbins85/hugo-developer-portfolio"
 tags = ["portfolio", "developer", "responsive","uikit"]
 features = ["uikit", "responsive", "features"]
-min_version = "0.59.1"
+min_version = "0.54.0"
 
 [author]
     name = "Sam Robbins"
