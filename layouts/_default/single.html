@@ -46,6 +46,10 @@
     margin-bottom:30px;
   }
 
+  p { margin-bottom: 1em; }
+
+  body p:last-child { margin-bottom: 0em; }
+
 
 
   @media only screen and (min-width: 960px) {
@@ -99,7 +103,7 @@
             </div>
           </div>
         </div>
-        {{else}}
+        {{else if ( gt (len .Params.github ) 0)}}
         <a class="uk-button uk-button-default" href="{{index (.Params.github) 0}}"> <span uk-icon="icon: github"></span>
           Github</a>
         {{end}}

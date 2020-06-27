@@ -4,10 +4,12 @@
 
 <section class="uk-margin-large-bottom">
     <div class="uk-container">
-        <div class="uk-grid-small uk-child-width-1-4@s uk-text-center" uk-grid>
+        <div class="uk-grid-small uk-child-width-1-4@s uk-text-center" uk-grid uk-height-match="target: > div > div > .card-body">
+            {{ range .Data.Pages.ByPublishDate }}
+
             <div>
-                {{ range .Data.Pages.ByPublishDate }}
                 <div class="uk-card uk-card-default uk-width-1@m">
+                    <div class="card-body">
                     <div class="uk-card-header">
                         <div class="uk-grid-small uk-flex-middle" uk-grid>
                             <div class="uk-width-expand">
@@ -20,6 +22,7 @@
                     <div class="uk-card-body">
                         <p>{{.Params.description}}</p>
                     </div>
+                </div>
                     <div class="uk-card-footer">
                         <a href="{{.Permalink}}" class="uk-button uk-button-text">Read more</a>
                     </div>
