@@ -114,6 +114,7 @@
     {{end}}
 
     <hr class="full-width">
+    {{ if ( gt (len .Params.tech ) 0)}}
     <h2 class="uk-text-center uk-heading-small">Built with</h2>
 
     <section >
@@ -135,6 +136,8 @@
     </section>
 
     <hr class="full-width">
+    {{end}}
+
     <div class="content">
       {{.Content }}
     </div>
