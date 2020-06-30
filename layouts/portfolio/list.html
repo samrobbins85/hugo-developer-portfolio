@@ -16,7 +16,7 @@
         <li uk-filter-control="[data-tags*='web-dev']"><a href="#">Web Dev</a></li>
       </ul>
 
-      <ul class="js-filter uk-child-width-1-2 uk-child-width-1-4@m uk-text-center" uk-grid uk-height-match="target: > li > div > .fixy">
+      <ul class="js-filter uk-child-width-1-1 uk-child-width-1-4@m  uk-text-center" uk-grid uk-height-match="target: > li > div > .fixy">
         {{ range .Data.Pages }}
         <li data-tags="{{delimit .Params.categories  ' '}}">
           <div class="uk-card uk-card-default" style="position: relative">
