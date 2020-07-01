@@ -206,6 +206,8 @@ experience:
 
 #### hackathons
 
+By placing none in the URL field, the image will be rendered without any links
+
 ```yml
 hackathons:
   enable: true
@@ -213,5 +215,69 @@ hackathons:
     - title: Hack Cambridge 2019
       description: Climate change simulator
       image: https://res.cloudinary.com/samrobbins/image/upload/f_auto,q_auto/v1591793405/stickers/Hack_Cambridge_101_ozoq5d.png
-      url: javascript:void(0)
+      url: none
 ```
+
+#### education
+
+This section allows you to showcase your education history, the fields are self explanatory.
+
+```yml
+education:
+  enable: true
+  item:
+    - title: BSc Computer Science
+      year: 2018 - Present
+      academy: Durham University
+      image: https://res.cloudinary.com/samrobbins/image/upload/f_auto,q_auto/v1591793268/logos/logos_Durham_fc2sae.svg
+```
+
+#### leadership
+
+This configures the cards you can see on the "About me page"
+
+```yml
+leadership:
+  enable: true
+  item:
+    - logo: https://res.cloudinary.com/samrobbins/image/upload/f_auto,q_auto/v1591793280/logos/logos_yl_qozav6.webp
+      title: Young Leader
+      company: The Scout Association
+      duration: September 2014 - July 2018
+```
+
+### Blogs
+
+When submitting a blog, you can supply the following fields in the front matter
+
+```yml
+title: "Making a new Website"
+date: 2019-12-31T12:14:34+06:00
+image: "https://d33wubrfki0l68.cloudfront.net/c38c7334cc3f23585738e40334284fddcaf03d5e/2e17c/images/hugo-logo-wide.svg"
+description: "My first blog, introducing my new website"
+author: "Sam Robbins"
+```
+
+### Portfolio pages
+
+The portfolio page and blog page use the same configuration, so you can use these new fields if you want, but they are more suited to portfolio pages
+
+```toml
+categories = ["hackathon", "web-dev"]
+coders = ["samrobbins85", "karina-talibzhanova"]
+date = 2020-05-30T23:00:00Z
+description = "A Firefox Browser Extension"
+github = ["https://github.com/karina-talibzhanova/oxfordhack2020"]
+image = "https://res.cloudinary.com/samrobbins/image/upload/q_auto/v1593352345/twoo-home_k7molq.png"
+title = "Oxford Digithon"
+[[tech]]
+logo = "https://res.cloudinary.com/samrobbins/image/upload/q_auto/v1591793272/logos/logos_javascript_adj1dx.svg"
+name = "JavaScript"
+url = "https://www.ecma-international.org/memento/tc39.htm"
+[[tech]]
+logo = "https://res.cloudinary.com/samrobbins/image/upload/q_auto/v1593368547/firefox-ar21_cps6me.svg"
+name = "Firefox WebExtensions"
+url = "https://www.mozilla.org/en-GB/firefox/"
+```
+
+The [[tech]] item can be repeated as many times as you desire.
