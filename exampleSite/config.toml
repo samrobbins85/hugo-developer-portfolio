@@ -1,9 +1,9 @@
+# Base information
 baseURL = "https://example.com"
 languageCode = "en-gb"
 title = "Sam Robbins"
 theme = "hugo-developer-portfolio"
-summaryLength = "10"
-
+googleAnalytics = ""
 # Plugins
 [params.plugins]
 
@@ -20,44 +20,53 @@ summaryLength = "10"
 
 # navigation
 [menu]
-    
+
   [[menu.main]]
   name = "About"
   URL = "about"
-  weight = 2
-  
+  weight=1
+
   [[menu.main]]
   name = "Blog"
   URL = "blog"
-  weight = 3
-  
+  weight=2
+
   [[menu.main]]
   name = "Portfolio"
   URL = "portfolio"
-  weight = 4
-  
+  weight=3
+
   [[menu.main]]
   name = "Contact"
   URL = "contact"
-  weight = 5
+  weight=4
 
 
 [params]
-logo = "images/logo.png"
 home = "Home"
 # Meta data
 description = "The website of Sam Robbins, 2nd Year Computer Science Student at Durham University"
 author = "Sam Robbins"
-image = "images/about/profile.jpg"
 
 
   [params.contact]
   enable = true
-  formAction = "https://formspree.io/mlegaggv" #contact form works with formspree.io
+  formAction = "" #contact form works with formspree.io
 
   [params.footer]
   email = "samrobbinsgb@gmail.com"
-  phone = ""
   address = "Durham, UK"
   googlemaps = "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJwbHYJaUqfEgRK0Ui9dVGimc&key=AIzaSyAE_4rVAKux_DSPcb_OdSRDaovtPOSk_3U"
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ""
+    lineNoStart = 1
+    lineNos = true
+    lineNumbersInTable = true
+    noClasses = true
+    style = "rainbow_dash"
+    tabWidth = 4
 
