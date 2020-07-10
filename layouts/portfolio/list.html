@@ -10,10 +10,11 @@
 
       <ul class="uk-subnav uk-subnav-pill uk-subnav-divider">
         <li uk-filter-control><a href="#">All</a> </li>
-        <li uk-filter-control="[data-tags*='coursework']"><a href="#">Coursework</a></li>
-        <li uk-filter-control="[data-tags*='hackathon']"><a href="#">Hackathons</a></li>
-        <li uk-filter-control="[data-tags*='python']"><a href="#">Python</a></li>
-        <li uk-filter-control="[data-tags*='web-dev']"><a href="#">Web Dev</a></li>
+        {{ range .Site.Data.homepage.portfolio.filter }}
+
+        <li uk-filter-control="[data-tags*='{{.value}}']"><a href="#">{{.label}}</a></li>
+
+        {{end}}
       </ul>
 
       <ul class="js-filter uk-child-width-1-1 uk-child-width-1-4@m  uk-text-center" uk-grid uk-height-match="target: > li > div > .fixy">
