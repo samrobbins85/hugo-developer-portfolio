@@ -21,6 +21,10 @@
   {{ $syntax := resources.Get "css/syntax.css" | minify }}
   <link rel="stylesheet" href="{{ $syntax.Permalink | relURL}}" integrity="{{ $syntax.Data.Integrity }}" media="screen">
 
+  {{ range .AlternativeOutputFormats -}}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+{{ end -}}
+
 
 
   {{ "<!--Favicon-->" | safeHTML }}
