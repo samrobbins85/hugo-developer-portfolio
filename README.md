@@ -219,6 +219,33 @@ hackathons:
       url: none
 ```
 
+
+#### certifications
+
+This allows you to list your certifications in the following format
+
+```yml
+certifications:
+  enable: true
+  item:
+    - title: Microsoft Azure Fundamentals
+      image: https://res.cloudinary.com/samrobbins/image/upload/v1592501459/microsoft-certified-fundamentals-badge_cpcgyn.svg
+      url: https://www.youracclaim.com/badges/b4cf7a86-eb83-478e-bfd0-9f427c3474a0/public_url
+```
+
+#### Awards and Achievements
+
+This allows you to list your awards and achievements in the following format
+
+```yml
+awards:
+  enable: true
+  item:
+    - title: Phase 1 Winner
+      event: GNOME Community Engagement Challenge
+      image: https://res.cloudinary.com/samrobbins/image/upload/v1595701167/CEChallenge-P1Winner2_iyjvyu.png
+```
+
 #### education
 
 This section allows you to showcase your education history, the fields are self explanatory.
@@ -233,9 +260,11 @@ education:
       image: https://res.cloudinary.com/samrobbins/image/upload/f_auto,q_auto/v1591793268/logos/logos_Durham_fc2sae.svg
 ```
 
-#### leadership
 
-This configures the cards you can see on the "About me page"
+
+
+### `about.yml`
+This file configures the about page, and follows the format below:
 
 ```yml
 leadership:
@@ -246,6 +275,16 @@ leadership:
       company: The Scout Association
       duration: September 2014 - July 2018
 ```
+
+### `porfolio.yml`
+This file configures the portfolio page, allowing you to specify the filters you want to use.
+
+```yml
+filter:
+  - label: Web Dev
+    value: web-dev
+```
+
 
 ### Blogs
 
