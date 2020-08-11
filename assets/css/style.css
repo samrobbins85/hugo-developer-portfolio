@@ -1,21 +1,19 @@
 @import "https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Roboto:300,400,500,700&display=swap";
-@import url('https://fonts.googleapis.com/css?family=Work+Sans:600&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Cantarell:400,700&display=swap');
+.contain {
+  object-fit: contain;
+}
 
-.contain {object-fit: contain;}
-
-.uk-button-text{
+.uk-button-text {
   border-bottom: 1px solid #333;
 }
 
-.uk-button-text::before{
+.uk-button-text::before {
   border-bottom: 1px solid mediumblue;
 }
 
-.footer-section h5{
+.footer-section h5 {
   margin-bottom: 5px;
   margin-top: 20px;
-
 }
 
 .footer {
@@ -25,18 +23,18 @@
   padding-top: 5em;
 }
 
-.uk-link,a{
-  color: #0077aa
+.uk-link,
+a {
+  color: #0077aa;
 }
 
-
-.uk-lightbox{
+.uk-lightbox {
   background: rgba(0, 0, 0, 0.7);
   /*As there isn't firefox support for this I won't use it*/
   /*backdrop-filter: blur(8px);*/
 }
 
-.uk-lightbox-toolbar{
+.uk-lightbox-toolbar {
   background: rgba(0, 0, 0, 0);
 }
 
@@ -44,23 +42,20 @@
   margin-bottom: 40px;
 }
 
-figcaption p{
+figcaption p {
   font-size: 0.8em;
   color: grey;
 }
 
-figure img{
+figure img {
   border: solid thin black;
   padding: 10px;
 }
 
-em{
-  color:unset;
+em {
+  color: unset;
 }
-img.experience{
+img.experience {
   width: 150px;
   height: 180px;
 }
-
-
-
