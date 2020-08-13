@@ -4,6 +4,11 @@ languageCode = "en-gb"
 title = "Sam Robbins"
 theme = "hugo-developer-portfolio"
 googleAnalytics = ""
+
+# Remove this when using normally
+themesDir = "../../" 
+
+
 # Plugins
 [params.plugins]
 
