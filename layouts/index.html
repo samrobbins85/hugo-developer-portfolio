@@ -132,6 +132,59 @@
 {{ end }}
 
 
+<!--
+
+   _____   _      _   _   _
+  / ____| | |    (_) | | | |
+ | (___   | | __  _  | | | |  ___
+  \___ \  | |/ / | | | | | | / __|
+  ____) | |   <  | | | | | | \__ \
+ |_____/  |_|\_\ |_| |_| |_| |___/
+
+
+
+-->
+{{ if .Site.Data.homepage.skill.enable }}
+
+{{ range .Site.Data.homepage.skill.item }}
+<div id="{{ replace (replace .title " " "_") "." "_" }}" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <div class="uk-modal-header">
+            <h2 class="uk-modal-title">{{.title}}</h2>
+        </div>
+        <p>{{.description | safeHTML}}</p>
+    </div>
+</div>
+{{ end }}
+
+<section class="uk-margin-large-top uk-margin-large-bottom">
+    <div class="uk-container">
+        <h1 class="uk-heading-line uk-text-center uk-heading-medium"><span>Skills</span></h1>
+
+        <p class="uk-text-center uk-text-lead"><i>Click the images below to find out more</i></p>
+        <div class="uk-child-width-1-6@l uk-child-width-1-3@m uk-child-width-1-3@s uk-child-width-1-2 uk-text-center uk-flex-center"
+            uk-grid>
+            {{ range .Site.Data.homepage.skill.item }}
+            <div class="imagemargin">
+                <img class="contain skills" src="{{.logo}}" alt="{{.company}}" loading="lazy" style="cursor: pointer"
+                    uk-toggle="target: #{{ replace (replace .title " " "_") "." "_" }}">
+                <h4>{{.title }}</h4>
+            </div>
+            {{ end }}
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+<!-- /skills -->
+{{ end }}
 
 
 
@@ -223,7 +276,7 @@
 
 
 <!-- Awards -->
-{{ if .Site.Data.homepage.certifications.enable }}
+{{ if .Site.Data.homepage.awards.enable }}
 
 
 <section class="uk-margin-large-top uk-margin-medium-bottom">
@@ -355,24 +408,6 @@
 
 </section>
 {{ end }}
-
-
-
-
-
-
-
-
-
-
-
-<!--Handle the lazy loading-->
-
-
-
-
-
-
 
 
 {{ end }}
