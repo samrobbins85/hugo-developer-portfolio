@@ -43,11 +43,7 @@ theme="hugo-developer-portfolio"
 
 ### Creating a new site
 
-If you just want to get set up with a new site, you can start from the Example Site I have provided. To do this:
-
-1. Cut the `exampleSite` folder out of the theme and paste it wherever you want
-2. Create a `theme` directory within the `exampleSite folder`
-3. Paste the theme into this directory, ensuring is has the name `hugo-developer-portfolio`
+The exampleSite folder is all set up to work as a site, just copy it out of the Git repo and it will work. You need to have golang installed as it uses [hugo modules](https://gohugo.io/hugo-modules/use-modules/).
 
 ## Configuration
 
