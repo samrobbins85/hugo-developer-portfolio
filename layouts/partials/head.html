@@ -25,7 +25,7 @@
     {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
 {{ end -}}
 
-
+<script src="https://cdn.jsdelivr.net/npm/mailgo@0.9.14/dist/mailgo.min.js" defer></script>
 
   {{ "<!--Favicon-->" | safeHTML }}
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
