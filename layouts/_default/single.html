@@ -111,6 +111,17 @@
       </div>
       {{end}}
 
+    {{if isset .Params "site"}}
+    {{if ne .Params.site ""}}
+      <div>
+        <a class="uk-button uk-button-default" href="{{.Params.site}}"> <span uk-icon="icon: world"></span>
+          Website</a>
+      </div>
+    {{end}}
+    {{end}}
+
+
+
       <div>
         {{if ( gt (len .Params.github ) 1)}}
         <div>
