@@ -12,12 +12,12 @@
 
   {{ "<!-- plugins -->" | safeHTML }}
   {{ range .Site.Params.plugins.css }}
-  <link rel="stylesheet" href="{{ .URL | absURL }} ">
+  <!-- <link rel="stylesheet" href="{{ .URL | absURL }} "> -->
   {{ end }}
 
   {{ "<!-- Main Stylesheet -->" | safeHTML }}
   {{ $styles := resources.Get "css/style.css" | minify }}
-  <link rel="stylesheet" href="{{ $styles.Permalink | relURL}}" integrity="{{ $styles.Data.Integrity }}" media="screen"> 
+  <!-- <link rel="stylesheet" href="{{ $styles.Permalink | relURL}}" integrity="{{ $styles.Data.Integrity }}" media="screen">  -->
   {{ $syntax := resources.Get "css/syntax.css" | minify }}
   <link rel="stylesheet" href="{{ $syntax.Permalink | relURL}}" integrity="{{ $syntax.Data.Integrity }}" media="screen">
 
