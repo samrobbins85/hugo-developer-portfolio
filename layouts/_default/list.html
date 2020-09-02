@@ -1,38 +1,47 @@
 {{ define "main" }}
-
-{{ partial "page-title.html" . }}
+ {{ partial "page-title.html" . }}
 
 <section class="uk-margin-large-bottom">
-    <div class="uk-container">
-        <div class="uk-grid-small uk-child-width-1-4@s uk-text-center" uk-grid uk-height-match="target: > div > div > .card-body">
-            {{ range .Data.Pages.ByPublishDate }}
+  <div class="uk-container">
+    <div
+      class="uk-grid-small uk-child-width-1-4@s uk-text-center"
+      uk-grid
+      uk-height-match="target: > div > div > .card-body"
+    >
+      {{ range .Data.Pages.ByPublishDate }}
 
-            <div>
-                <div class="uk-card uk-card-default uk-width-1@m">
-                    <div class="card-body">
-                    <div class="uk-card-header">
-                        <div class="uk-grid-small uk-flex-middle" uk-grid>
-                            <div class="uk-width-expand">
-                                <h3 class="uk-card-title uk-margin-remove-bottom">{{.Title}}</h3>
-                                <p class="uk-text-meta uk-margin-remove-top"><time
-                                        datetime="{{.Date}}">{{.Date.Format "Jan 2, 2006"}}</time></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="uk-card-body">
-                        <p>{{.Params.description}}</p>
-                    </div>
+      <div>
+        <div class="uk-card uk-card-default uk-width-1@m">
+          <div class="card-body">
+            <div class="uk-card-header">
+              <div class="uk-grid-small uk-flex-middle" uk-grid>
+                <div class="uk-width-expand">
+                  <h3 class="uk-card-title uk-margin-remove-bottom">
+                    {{ .Title }}
+                  </h3>
+                  <p class="uk-text-meta uk-margin-remove-top">
+                    <time datetime="{{ .Date }}"
+                      >{{ .Date.Format "Jan 2, 2006" }}</time
+                    >
+                  </p>
                 </div>
-                    <div class="uk-card-footer">
-                        <a href="{{.Permalink | relURL}}" class="uk-button uk-button-text">Read more</a>
-                    </div>
-                </div>
+              </div>
             </div>
-            {{end}}
-
+            <div class="uk-card-body">
+              <p>{{ .Params.description }}</p>
+            </div>
+          </div>
+          <div class="uk-card-footer">
+            <a href="{{ .Permalink | relURL }}" class="uk-button uk-button-text"
+              >Read more</a
+            >
+          </div>
         </div>
+      </div>
+      {{ end }}
 
     </div>
+  </div>
 </section>
 
 {{ end }}

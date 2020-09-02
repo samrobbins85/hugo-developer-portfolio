@@ -1,38 +1,56 @@
 {{ define "main" }}
-
-{{ partial "page-title.html" . }}
+ {{ partial "page-title.html" . }}
 
 <section>
   <div class="uk-container">
-    <form class="uk-form-horizontal uk-margin-large" action="{{.Site.Params.contact.formAction}}" method="post">
-
+    <form
+      class="uk-form-horizontal uk-margin-large"
+      action="{{ .Site.Params.contact.formAction }}"
+      method="post"
+    >
       <div class="uk-margin">
         <label class="uk-form-label" for="name">Name</label>
         <div class="uk-form-controls">
-          <input class="uk-input" name="name" id="name" type="text" placeholder="John Doe">
+          <input
+            class="uk-input"
+            name="name"
+            id="name"
+            type="text"
+            placeholder="John Doe"
+          />
         </div>
       </div>
 
       <div class="uk-margin">
         <label class="uk-form-label" for="email">Email</label>
         <div class="uk-form-controls">
-          <input class="uk-input" name="email" id="email" type="text" placeholder="email@example.com">
+          <input
+            class="uk-input"
+            name="email"
+            id="email"
+            type="text"
+            placeholder="email@example.com"
+          />
         </div>
       </div>
       <div class="uk-margin">
         <label class="uk-form-label" for="message">Message</label>
         <div class="uk-form-controls">
-          <textarea class="uk-textarea" name="message" id="message" rows="5" placeholder="Your message here"></textarea>
+          <textarea
+            class="uk-textarea"
+            name="message"
+            id="message"
+            rows="5"
+            placeholder="Your message here"
+          ></textarea>
         </div>
       </div>
 
-      <button class="uk-align-center uk-button uk-button-default">Submit</button>
-
+      <button class="uk-align-center uk-button uk-button-default">
+        Submit
+      </button>
     </form>
-
   </div>
-
 </section>
-
 
 {{ end }}

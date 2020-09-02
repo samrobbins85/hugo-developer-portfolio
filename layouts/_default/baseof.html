@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <style>
-    html {
-        height: 100vh;
-    }
-    body {
-        min-height: 100vh;
-        display: grid;
-        grid-template-rows: 1fr auto;
-    }
-    .footer {
-        grid-row-start: 2;
-        grid-row-end: 3;
-    }
+  html {
+    height: 100vh;
+  }
+  body {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr auto;
+  }
+  .footer {
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
 </style>
 <html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
-    {{- partial "head.html" . -}}
-    <body class="{{.Section}}">
+  {{- partial "head.html" . -}}
+
+  <body class="{{ .Section }}">
     <div class="wrapper">
-        {{- partial "header.html" . -}}
-        {{- block "main" . }}{{- end }}
+      {{- partial "header.html" . -}}
+ {{- block "main" . }}{{- end }}
+
     </div>
-        <!-- {{- partial "footer.html" . -}} -->
-    </body>
+    <!-- {{- partial "footer.html" . -}} -->
+  </body>
 </html>
