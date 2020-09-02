@@ -1,11 +1,10 @@
 {{ define "main" }}
 {{ "<!-- Hexagon Stylesheet -->" | safeHTML }}
 {{ $hexagons := resources.Get "css/hexagon.css" | minify }}
-<link rel="stylesheet" href="{{ $hexagons.Permalink | relURL}}">
-
-
-
-
+<link
+  rel="stylesheet"
+  href="{{ $hexagons.Permalink | relURL }}"
+/>
 
 <!--
   _    _
@@ -17,23 +16,27 @@
 
  -->
 <section class="pt-20">
-    <div class="container mt-6 mx-auto">
-        <div class="text-6xl font-black leading-none tracking-tight w-1/2 mx-auto">
-            <h1 class="inline-block">Hi! I'm</h1>
-            <h1 class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-teal-400 to-blue-400 inline-block">
-                {{ .Site.Data.homepage.banner.title}}
-            </h1>
-            <h1 class="inline-block">I study Computer Science at</h1>
-            <h1 class="text-purple-700 inline-block">
-                Durham University
-            </h1>
-        </div>
+  <div class="container mt-6 flex justify-center">
+    <div class="text-6xl font-black leading-none tracking-tight w-1/2">
+      <h1 class="inline-block">Hi! I'm</h1>
+      <h1
+        class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-teal-400 to-blue-400 inline-block"
+      >
+        {{ .Site.Data.homepage.banner.title }}
 
-  
+      </h1>
+      <h1 class="inline-block">I study Computer Science at</h1>
+      <h1 class="text-purple-700 inline-block">Durham University</h1>
     </div>
-
-
+  </div>
 </section>
+
+<section class="py-10 container mx-auto">
+  <h2 class="text-center text-2xl">
+    I build and contribute to open source software on GitHub, attend Hackathons
+  </h2>
+</section>
+
 <!--
    _____                  _           _     _        _           _
   / ____|                (_)         | |   | |      (_)         | |
@@ -44,281 +47,91 @@
 
 
 -->
-<section class="pt-24 container mx-auto px-2">
-<h2 class="text-5xl font-semibold">Get in touch here:</h2>
-<div class="flex justify-center gap-4">
-        {{ range .Site.Languages -}}
-        {{ if ne .LanguageName $.Site.Language.LanguageName }}
-        <li><a href="/{{ .Lang }}">{{ .LanguageName }}</a></li>
-        {{ end }}
-        {{ end }}
-        {{ if .Site.Data.homepage.social.twitter }}
-        <a href="https://twitter.com/{{ .Site.Data.homepage.social.twitter }}" class="inline-block"> <img
-                    class="h-12 contain" src="https://cdn.svgporn.com/logos/twitter.svg" alt="Twitter" loading="lazy"></a>
-        {{ end }} {{ if .Site.Data.homepage.social.linkedin }}
-        <a href="https://www.linkedin.com/in/{{ .Site.Data.homepage.social.linkedin }}" class="inline-block">
-            <img class="h-12 contain" src="https://cdn.svgporn.com/logos/linkedin.svg" alt="LinkedIn" loading="lazy" > </a>
-        {{ end }} {{ if .Site.Data.homepage.social.facebook }}
-        ><a href="https://www.facebook.com/{{ .Site.Data.homepage.social.facebook }}" class="inline-block" > <img
-                    class="h-12 contain" src="https://cdn.svgporn.com/logos/facebook.svg" alt="Facebook" loading="lazy"></a>
-        {{ end }} {{ if .Site.Data.homepage.social.instagram }}
-        <a href="https://instagram.com/{{ .Site.Data.homepage.social.instagram }}" class="inline-block"> <img
-                    class="h-12 contain" src="https://cdn.svgporn.com/logos/instagram-icon.svg" alt="Instagram" loading="lazy"></a>
-        {{ end }}{{ if .Site.Data.homepage.social.gmail }}
-        <a href="mailto:{{ .Site.Data.homepage.social.gmail }}@gmail.com" class="inline-block"> <img
-                    class="h-12 contain" src="https://cdn.svgporn.com/logos/google-gmail.svg" alt="Gmail" loading="lazy"></a>
-        {{ end }}
+<div class="py-10">
+  <section class=" container mx-auto px-2 ">
+    <div class="flex justify-center gap-10">
+      {{ if .Site.Data.homepage.social.twitter }}
 
+      <a
+        href="https://twitter.com/{{ .Site.Data.homepage.social.twitter }}"
+        class="inline-block"
+      >
+        <img
+          class="h-12 object-contain"
+          src="https://cdn.svgporn.com/logos/twitter.svg"
+          alt="Twitter"
+          loading="lazy"
+      /></a>
+      {{ end }}{{ if .Site.Data.homepage.social.github }}
 
+      <a href="https://github.com/{{ .Site.Data.homepage.social.github }}">
+        <img
+          class="h-12 object-contain"
+          src="https://cdn.svgporn.com/logos/github-icon.svg"
+          alt="GitHub"
+          loading="lazy"
+        />
+      </a>
+      {{ end }} {{ if .Site.Data.homepage.social.gitlab }}
+
+      <a href="https://gitlab.com/{{ .Site.Data.homepage.social.gitlab }}">
+        <img
+          class="object-contain"
+          src="https://cdn.svgporn.com/logos/gitlab.svg"
+          alt="GitLab"
+          loading="lazy"
+      /></a>
+      {{ end }} {{ if .Site.Data.homepage.social.linkedin }}
+
+      <a
+        href="https://www.linkedin.com/in/{{ .Site.Data.homepage.social.linkedin }}"
+        class="inline-block"
+      >
+        <img
+          class="h-12 object-contain"
+          src="https://cdn.svgporn.com/logos/linkedin.svg"
+          alt="LinkedIn"
+          loading="lazy"
+        />
+      </a>
+      {{ end }} {{ if .Site.Data.homepage.social.facebook }}
+ ><a
+        href="https://www.facebook.com/{{ .Site.Data.homepage.social.facebook }}"
+        class="inline-block"
+      >
+        <img
+          class="h-12 object-contain"
+          src="https://cdn.svgporn.com/logos/facebook.svg"
+          alt="Facebook"
+          loading="lazy"
+      /></a>
+      {{ end }} {{ if .Site.Data.homepage.social.instagram }}
+
+      <a
+        href="https://instagram.com/{{ .Site.Data.homepage.social.instagram }}"
+        class="inline-block"
+      >
+        <img
+          class="h-12 object-contain"
+          src="https://cdn.svgporn.com/logos/instagram-icon.svg"
+          alt="Instagram"
+          loading="lazy"
+      /></a>
+      {{ end }}{{ if .Site.Data.homepage.social.gmail }}
+
+      <a
+        href="mailto:{{ .Site.Data.homepage.social.gmail }}@gmail.com"
+        class="inline-block"
+      >
+        <img
+          class="h-12 object-contain"
+          src="https://cdn.svgporn.com/logos/google-gmail.svg"
+          alt="Gmail"
+          loading="lazy"
+      /></a>
+      {{ end }}
+
+    </div>
+  </section>
 </div>
-</section>
-
-<section class="container mx-auto px-2 pt-12">
-<h1 class="text-5xl font-semibold">I love working with these tools:</h1>
-<div class="flex flex-wrap justify-center gap-x-20 gap-y-16 pt-10">
-    {{range .Site.Data.homepage.tools.item}}
-    <img src={{.image}} class="h-16">
-    {{end}}
-</div>
-<p class="text-lg text-gray-800 text-center pt-12">But I've worked with many more</p>
-</section>
-
-
-
-
-<!-- portfolio -->
-{{ if .Site.Data.homepage.portfolio.enable }}
-
-<section>
-    <div class="container mx-auto pt-6">
-        <h1 class="text-3xl text-center underline"><span>Portfolio</span></h1>
-        {{ range .Site.Data.homepage.portfolio.item }}
-        <div>
-        <h2 class="text-center text-xl font-semibold"> {{.title}} </h2>
-        <div class="flex justify-center">
-        <img src="{{.image}}" class="w-2/6 h-64 object-contain" >
-        </div>
-        <p class="text-center">{{.description}}</p>  
-        <div class="flex justify-center">
-            <div class="flex gap-2">
-                {{ range .tools}}
-            <div>
-                <img height="32" width="32" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/{{.}}.svg" />
-            </div>
-            {{end}}
-            </div>
-        </div>
-        <div class="flex justify-center"> 
-        <a href="{{.link}}" class="text-center">Find out more</a>
-        </div>
-        </div>
-        {{end}}
-
-</section>
-{{ end }}
-
-
-
-
-<!--
-
-  ______                                _
- |  ____|                              (_)
- | |__    __  __  _ __     ___   _ __   _    ___   _ __     ___    ___
- |  __|   \ \/ / | '_ \   / _ \ | '__| | |  / _ \ | '_ \   / __|  / _ \
- | |____   >  <  | |_) | |  __/ | |    | | |  __/ | | | | | (__  |  __/
- |______| /_/\_\ | .__/   \___| |_|    |_|  \___| |_| |_|  \___|  \___|
-                 | |
-                 |_|
-
--->
-
-
-
-
-<!-- experience -->
-{{ if .Site.Data.homepage.experience.enable }}
-
-<section class="">
-    <div class="container mx-auto">
-        <h1 class="text-4xl text-center underline"><span>Experience</span></h1>
-
-        <div class="flex flex-wrap gap-4 justify-center">
-
-            {{ range .Site.Data.homepage.experience.item }}
-            <div>
-                <div class="border border-gray-300 p-6">
-                    <div class="flex justify-center">
-                        <img class="contain experience" src="{{.logo}}" alt="" style="padding: 20px" loading="lazy">
-                    </div>
-                    <div class="text-center">
-                        <div style="height: 5em">
-                            <h3 class="text-xl">{{.title}}</h3>
-                        </div>
-                        <p>{{.company}}</p>
-                        <p>{{.duration}}</p>
-                    </div>
-                </div>
-            </div>
-            {{ end }}
-        </div>
-</section>
-{{ end }}
-
-<!-- ./experience -->
-
-
-
-
-
-
-<!-- Certifications -->
-{{ if .Site.Data.homepage.certifications.enable }}
-
-
-<section>
-    <div class="container mx-auto">
-        <h1 class="text-4xl text-center underline"><span>Certifications</span></h1>
-
-        <p class="text-center"><i>Click the images below to view the proof</i></p>
-        <div class="flex flex-wrap justify-center" >
-            {{ range .Site.Data.homepage.certifications.item }}
-            <a href="{{.url}}" class="imagemargin">
-                <img class="contain certs" src="{{.image}}" alt="{{.title}}" loading="lazy" style="cursor: pointer">
-                {{.title}}
-            </a>
-
-            {{ end }}
-        </div>
-
-    </div>
-
-</section>
-
-
-
-
-
-{{ end }}
-
-<!-- /Certifications -->
-
-
-
-<!-- Awards -->
-{{ if .Site.Data.homepage.awards.enable }}
-
-
-<section class="">
-    <div class="container mx-auto">
-        <h1 class="text-4xl text-center underline"><span>Awards and Achievements</span></h1>
-
-        <div class="flex flex-wrap justify-center gap-6 py-6">
-            {{ range .Site.Data.homepage.awards.item }}
-            <div class="imagemargin border border-gray-300 w-1/6 text-center py-4">
-                <img class="contain h-20 mx-auto" src="{{.image}}" alt="{{.title}}" loading="lazy" >
-                <h4>{{.title}}</h4>
-                <p>{{.event}}</p>
-                </div>
-
-            {{ end }}
-        </div>
-
-    </div>
-
-</section>
-
-
-
-
-
-{{ end }}
-
-<!-- /Awards -->
-
-<!--Hackathons-->
-{{ if .Site.Data.homepage.hackathons.enable }}
-
-<section>
-    <div class="container mx-auto">
-        <h1 class="text-4xl text-center underline "><span>Hackathons</span></h1>
-    </div>
-    <p class="text-center"><i>Hover over the logos to find out more</i></p>
-</section>
-<div class="container mx-auto">
-    <ul id="hexGrid">
-        {{range .Site.Data.homepage.hackathons.item}}
-        <li class="hex">
-            <div class="hexIn">
-                <div class="hexLink">
-                    <img src="{{.image}}" alt="{{.title}}" loading="lazy" />
-                    <div style="all:unset">
-
-                        <h1>
-                            {{.title}}</h1>
-                    </div>
-
-
-                    <div style="all:unset">
-                        <p>
-                            {{.description}}</p>
-                    </div>
-
-                </div>
-            </div>
-        </li>
-        {{end}}
-    </ul>
-</div>
-{{end}}
-
-
-<!--
-
-  ______       _                          _     _
- |  ____|     | |                        | |   (_)
- | |__      __| |  _   _    ___    __ _  | |_   _    ___    _ __
- |  __|    / _` | | | | |  / __|  / _` | | __| | |  / _ \  | '_ \
- | |____  | (_| | | |_| | | (__  | (_| | | |_  | | | (_) | | | | |
- |______|  \__,_|  \__,_|  \___|  \__,_|  \__| |_|  \___/  |_| |_|
-
-
-
--->
-{{ if .Site.Data.homepage.education.enable }}
-<!-- education -->
-<section>
-    <div class="container mx-auto">
-
-        <h1 class="text-4xl text-center underline"><span>Education</span></h1>
-
-
-        <div class="flex flex-wrap justify-center gap-6">
-
-            {{ range .Site.Data.homepage.education.item }}
-            <div class="w-1/4">
-                <div class="uk-card uk-card-default uk-height-max-large">
-                        <img class="contain experience mx-auto" src="{{.image}}" alt="" style="padding: 20px" loading="lazy">
-                    <div class="text-center">
-                            <h3 >{{.academy}}</h3>
-                        <p >{{.title}}</p>
-                        <p>{{.year}}</p>
-                    </div>
-                </div>
-            </div>
-            {{ end }}
-        </div>
-    </div>
-
-
-
-
-
-
-
-
-</section>
-{{ end }}
-
-
 {{ end }}
