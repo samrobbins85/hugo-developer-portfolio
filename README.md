@@ -313,7 +313,6 @@ When submitting a blog, you can supply the following fields in the front matter
 ```yml
 title: "Making a new Website"
 date: 2019-12-31T12:14:34+06:00
-image: "https://d33wubrfki0l68.cloudfront.net/c38c7334cc3f23585738e40334284fddcaf03d5e/2e17c/images/hugo-logo-wide.svg"
 description: "My first blog, introducing my new website"
 author: "Sam Robbins"
 ```
