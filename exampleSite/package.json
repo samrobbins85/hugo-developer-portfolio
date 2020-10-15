@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "amazon-linux-extras install golang1.11 && hugo"
+    "build": "amazon-linux-extras install golang1.11 && hugo",
     "dev": "hugo server"
   }
 }
