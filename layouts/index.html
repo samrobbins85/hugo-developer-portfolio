@@ -147,7 +147,7 @@
 {{ if .Site.Data.homepage.skill.enable }}
 
 {{ range .Site.Data.homepage.skill.item }}
-<div id="{{ replace (replace .title " " "_") "." "_" }}" uk-modal>
+<div id="{{cond (isset . "titlealt") .titlealt (replace (replace .title ' ' '_') '.' '_') }}" uk-modal>
     <div class="uk-modal-dialog uk-modal-body">
         <button class="uk-modal-close-default" type="button" uk-close></button>
         <div class="uk-modal-header">
@@ -168,7 +168,7 @@
             {{ range .Site.Data.homepage.skill.item }}
             <div class="imagemargin">
                 <img class="contain skills" src="{{.logo}}" alt="{{.company}}" loading="lazy" style="cursor: pointer"
-                    uk-toggle="target: #{{ replace (replace .title " " "_") "." "_" }}">
+                    uk-toggle="target: #{{ cond (isset . "titlealt") .titlealt (replace (replace .title ' ' '_') '.' '_')}}">
                 <h4>{{.title }}</h4>
             </div>
             {{ end }}
