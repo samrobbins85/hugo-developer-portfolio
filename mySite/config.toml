@@ -1,7 +1,7 @@
 # Base information
 baseURL = "https://example.com"
 languageCode = "en-gb"
-title = "Sam Robbins"
+title = "Shubham Gautam"
 # theme = "hugo-developer-portfolio"
 googleAnalytics = ""
 
@@ -10,7 +10,7 @@ googleAnalytics = ""
 # `
 [module]
   [[module.imports]]
-    path = "github.com/samrobbins85/hugo-developer-portfolio"
+    path = "github.com/Gautam1630/hugo-developer-portfolio"
 
 # Plugins
 [params.plugins]
@@ -53,8 +53,9 @@ googleAnalytics = ""
 [params]
 home = "Home"
 # Meta data
-description = "The website of Sam Robbins, 2nd Year Computer Science Student at Durham University"
-author = "Sam Robbins"
+description = "The website of Shubham Gautam, A software engineer with more than an year of professional experience"
+author = "Shubham Gautam"
+image = "https://res.cloudinary.com/dpslnapow/image/upload/v1632066157/mySite/NnSUVrWU_v2igf3.jpg"
 
 
   [params.contact]
@@ -62,8 +63,8 @@ author = "Sam Robbins"
   formAction = "" #contact form works with formspree.io
 
   [params.footer]
-  email = "samrobbinsgb@gmail.com"
-  address = "Durham, UK"
+  email = "1630gautam@gmail.com"
+  address = "Bangalore, India"
   googlemaps = "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJwbHYJaUqfEgRK0Ui9dVGimc&key=AIzaSyAE_4rVAKux_DSPcb_OdSRDaovtPOSk_3U"
 
 [markup]
