@@ -145,11 +145,15 @@ Put all of your social links here and they will appear in the social section
 social:
   twitter: ""
   linkedin: sam-robbins-gb
+  bitbucket: ""
   github: samrobbins85
   gitlab: ""
   facebook: ""
   instagram: ""
   gmail: samrobbinsgb
+  hotmail: ""
+  telegram: ""
+  whatsapp: ""
 ```
 
 #### about
