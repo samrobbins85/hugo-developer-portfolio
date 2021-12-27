@@ -45,7 +45,10 @@
                     class="contain" src="https://cdn.svgporn.com/logos/twitter.svg" alt="Twitter" loading="lazy"></a></li>
         {{ end }} {{ if .Site.Data.homepage.social.linkedin }}
         <li><a href="https://www.linkedin.com/in/{{ .Site.Data.homepage.social.linkedin }}">
-            <img class="contain" src="https://cdn.svgporn.com/logos/linkedin.svg" alt="LinkedIn" loading="lazy"> </a></li>
+            <img class="contain" src="https://cdn.svgporn.com/logos/linkedin-icon.svg" alt="LinkedIn" loading="lazy"> </a></li>
+        {{ end }} {{ if .Site.Data.homepage.social.bitbucket }}
+        <li><a href="https://bitbucket.org/{{ .Site.Data.homepage.social.bitbucket }}"> <img
+                    class="contain" src="https://cdn.svgporn.com/logos/bitbucket.svg" alt="Bitbucket" loading="lazy"> </a></li>
         {{ end }} {{ if .Site.Data.homepage.social.github }}
         <li><a href="https://github.com/{{ .Site.Data.homepage.social.github }}"> <img
                     class="contain" src="https://cdn.svgporn.com/logos/github-icon.svg" alt="GitHub" loading="lazy"> </a></li>
@@ -61,6 +64,15 @@
         {{ end }}{{ if .Site.Data.homepage.social.gmail }}
         <li><a href="mailto:{{ .Site.Data.homepage.social.gmail }}@gmail.com" > <img
                     class="contain" src="https://cdn.svgporn.com/logos/google-gmail.svg" alt="Gmail" loading="lazy"></a></li>
+        {{ end }}{{ if .Site.Data.homepage.social.hotmail }}
+        <li><a href="mailto:{{ .Site.Data.homepage.social.hotmaill }}@hotmail.com" > <img
+                    class="contain" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/microsoftoutlook.svg" alt="Hotmail" loading="lazy"></a></li>
+        {{ end }} {{ if .Site.Data.homepage.social.telegram }}
+        <li><a href="https://t.me/{{ .Site.Data.homepage.social.telegram }}"> <img
+                    class="contain" src="https://cdn.svgporn.com/logos/telegram.svg" alt="Telegram" loading="lazy"></a></li>
+        {{ end }} {{ if .Site.Data.homepage.social.whatsapp }}
+        <li><a href="https://wa.me/{{ .Site.Data.homepage.social.whatsapp}}"> <img
+                    class="contain" src="https://cdn.svgporn.com/logos/whatsapp.svg" alt="Whatsapp" loading="lazy"></a></li>
         {{ end }}
     </ul>
 
@@ -117,7 +129,7 @@
             <div uk-grid>
                 {{ range .tools}}
             <div>
-                <img height="32" width="32" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/{{.}}.svg" />
+                <img height="32" width="32" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/{{.}}.svg" />
             </div>
             {{end}}
             </div>
