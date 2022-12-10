@@ -44,7 +44,7 @@ theme="hugo-developer-portfolio"
 
 ### Creating a new site
 
-The exampleSite folder is all set up to work as a site, just copy it out of the Git repo and it will work. You need to have golang installed as it uses [hugo modules](https://gohugo.io/hugo-modules/use-modules/).
+The exampleSite folder is almost set up to work as a site, if you copy it out of the Git Repo and remove the lines in `config.toml` under "Remove this when using normally" and uncomment the lines starting at "[module]" it should work. You need to have golang installed as it uses [hugo modules](https://gohugo.io/hugo-modules/use-modules/).
 
 ## Configuration
 
