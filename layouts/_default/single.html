@@ -121,7 +121,7 @@
     {{end}}
 
 
-
+    {{if isset .Params "github"}}
       <div>
         {{if ( gt (len .Params.github ) 1)}}
         <div>
@@ -144,7 +144,9 @@
           Github</a>
         {{end}}
       </div>
+      {{end}}
     </div>
+
     {{end}}
 
     <hr class="full-width">
