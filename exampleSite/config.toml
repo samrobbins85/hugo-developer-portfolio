@@ -2,15 +2,15 @@
 baseURL = "https://example.com"
 languageCode = "en-gb"
 title = "Sam Robbins"
-# theme = "hugo-developer-portfolio"
 googleAnalytics = ""
 
 # Remove this when using normally
-# themesDir = "../../" 
-# `
-[module]
-  [[module.imports]]
-    path = "github.com/samrobbins85/hugo-developer-portfolio"
+themesDir = "../" 
+theme = "."
+# 
+#[module]
+#  [[module.imports]]
+#    path = "github.com/samrobbins85/hugo-developer-portfolio"
 
 # Plugins
 [params.plugins]
