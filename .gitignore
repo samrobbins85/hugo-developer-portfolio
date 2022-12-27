@@ -1,3 +1,5 @@
 exampleSite/public 
 
 .vercel
+
+node_modules
