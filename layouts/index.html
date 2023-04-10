@@ -414,6 +414,53 @@
 
 
 
+{{ if .Site.Data.homepage.publication.enable }}
+<!-- publication -->
+<section class="uk-margin-xlarge-bottom">
+    <div class="uk-container">
+
+        <h1 class="uk-heading-line uk-heading-medium  uk-margin-large-bottom"><span>Publication</span></h1>
+
+
+            {{ range .Site.Data.homepage.publication.item }}
+            <div class="uk-margin-large-bottom">
+              <div class="uk-container">
+                <div class="uk-flex-center" uk-grid uk-height-match=".publication">
+                  <div class="uk-width-1-2 uk-width-1-3@s publication">
+                      <img src="{{.image}}" alt="Research Image">
+                  </div>
+                  <div class="uk-width-expand@m publication">
+                      <h3 class="uk-card-title">{{.title}}</h3>
+                      {{ if .academy }}
+                      <h4>{{.academy}}</h4>
+                      {{ end }}
+                      <p>
+                      {{.description}}
+                      </p>
+                      <p>
+                        {{ if .pdf_link }}
+                          <a class="uk-button uk-button-primary" href="{{.pdf_link}}">PDF</a>
+                        {{ end }}
+                        {{ if .code_link }}
+                          <a class="uk-button uk-button-primary" href="{{.code_link}}">Code</a>
+                        {{ end }}
+                      </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr />
+            {{ end }}
+
+
+
+
+
+
+
+
+</section>
+{{ end }}
 
 
 
