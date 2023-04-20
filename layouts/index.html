@@ -16,7 +16,16 @@
 
  -->
 <section>
-    <div class="uk-container uk-margin-xlarge-top uk-margin-xlarge-bottom">
+    {{ if .Site.Data.homepage.banner.image }}
+    <div class="uk-container">
+        <div class="uk-flex-center" uk-grid>
+            <div class="uk-width-1-2 uk-width-1-3@s">
+                <img src="{{ .Site.Data.homepage.banner.image }}" alt="author">
+            </div>
+        </div>
+    </div>
+    {{ end }}
+    <div class="uk-container uk-margin-large-top uk-margin-xlarge-bottom">
 
         <h1 class="uk-heading-large">{{ .Site.Data.homepage.banner.title | safeHTML }}</h1>
     </div>
