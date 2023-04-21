@@ -286,6 +286,21 @@ education:
       image: https://res.cloudinary.com/samrobbins/image/upload/f_auto,q_auto/v1591793268/logos/logos_Durham_fc2sae.svg
 ```
 
+#### publications
+
+This section allows you to showcase your publications history, the fields are self explanatory.
+
+```yml
+publications:
+  enable: true
+  item:
+    - image: /path/to/img
+      title: Title of the publication
+      description: details about the publication
+      code_link: link/to/the/repository
+      pdf_link: link/to/the/pdf
+```
+
 ### `about.yml`
 
 This file configures the about page, and follows the format below:
