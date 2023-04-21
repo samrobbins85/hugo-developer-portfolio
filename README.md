@@ -154,6 +154,10 @@ social:
   hotmail: ""
   telegram: ""
   whatsapp: ""
+  custom:
+    - url: link/to/the/social/media
+      icon: link/to/the/icon/of/the/social/media
+      name: name of the social media
 ```
 
 #### about

@@ -83,6 +83,10 @@
         <li><a href="https://wa.me/{{ .Site.Data.homepage.social.whatsapp}}"> <img
                     class="contain" src="https://cdn.svgporn.com/logos/whatsapp.svg" alt="Whatsapp" loading="lazy"></a></li>
         {{ end }}
+        {{ range .Site.Data.homepage.social.custom }}
+        <li><a href="{{ .url }}" target="_blank" rel="noopener noreferrer"> <img
+                    class="contain" src="{{ .icon }}" alt="{{ .name }}" loading="lazy"></a></li>
+        {{ end }}
     </ul>
 
 
