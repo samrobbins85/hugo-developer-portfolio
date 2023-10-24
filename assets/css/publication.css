@@ -1,0 +1,28 @@
+p em:not(:first-child){
+  border-left: 1px solid #666;
+}
+
+p{
+  padding: 5px 0;
+  margin: 0;
+}
+
+em{
+  padding: 0 7px;
+}
+
+figcaption {
+	font-size: 1rem;
+	font-weight: 300;
+	margin: 1rem;
+	text-align: center;
+	line-height: 1.5rem;
+	color: #666;
+	display: block;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+	font-size: 1.2rem;
+	font-weight: 650;
+	text-rendering: optimizeLegibility;
+}
