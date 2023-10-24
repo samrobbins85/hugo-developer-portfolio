@@ -15,7 +15,7 @@
               <div class="uk-width-1-2 uk-width-1-4@s publication">
                 <figure>
                   {{ if .image }}
-                    <img class="contain publications" src="{{.image}}" alt="Graphical abstract">
+                    <img class="contain publications medium-zoom-image" src="{{.image}}" id="zoom-margin" alt="Graphical abstract">
                   {{ end }}
                   {{ if .date }}
                     <figcaption>{{ .date }}</figcaption>
@@ -110,7 +110,7 @@
               <div class="uk-width-1-2 uk-width-1-4@s publication">
                 <figure>
                   {{ if .image }}
-                    <img class="contain publications" src="{{.image}}" alt="Photo">
+                    <img class="contain publications medium-zoom-image" src="{{.image}}" id="zoom-margin" alt="Photo">
                   {{ end }}
                   {{ if .date }}
                     <figcaption>{{ .date }}</figcaption>
@@ -193,7 +193,7 @@
               <div class="uk-width-1-2 uk-width-1-4@s publication">
                 <figure>
                   {{ if .image }}
-                    <img class="contain publications" src="{{.image}}" alt="Cover">
+                    <img class="contain publications medium-zoom-image" src="{{.image}}" id="zoom-margin" alt="Cover">
                   {{ end }}
                   {{ if .date }}
                     <figcaption>{{ .date }}</figcaption>
@@ -272,6 +272,10 @@
       {{ end }}
     </div>
   {{ end }}
+  <hr />
 </section>
+{{ $zoom := resources.Get "js/medium-zoom-1.0.8.min.js" | minify }}
+<script src="{{ $zoom.Permalink | relURL}}"></script>
 {{ end }}
+
 

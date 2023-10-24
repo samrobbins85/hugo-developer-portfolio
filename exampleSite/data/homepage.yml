@@ -61,6 +61,7 @@ portfolio:
       value: web-dev
 publications:
   enable: true
+  enlarge_abstract: true
   item:
     - image: /path/to/img
       title: Title of the publication

@@ -436,7 +436,11 @@
               <div class="uk-container">
                 <div class="uk-flex-center" uk-grid uk-height-match=".publication">
                   <div class="uk-width-1-2 uk-width-1-4@s publication">
-                      <img class="contain publications" src="{{.image}}" alt="Research Image">
+                    {{ if $.Site.Data.homepage.publications.enlarge_abstract }}
+                      <img class="contain publications medium-zoom-image" src="{{.image}}" id="zoom-margin" alt="Graphical abstract">
+                    {{ else }}
+                      <img class="contain publications" src="{{.image}}" alt="Graphical abstract">
+                    {{ end }}
                   </div>
                   <div class="uk-width-expand@m publication">
                       <h3 class="uk-card-title">{{.title}}</h3>
@@ -474,5 +478,12 @@
             {{ end }}
 </section>
 {{ end }}
+
 {{ end }}
+
+{{ if $.Site.Data.publication.papers.enabled }}
+{{ $zoom := resources.Get "js/medium-zoom-1.0.8.min.js" | minify }}
+<script src="{{ $zoom.Permalink | relURL}}"></script>
+{{ end }}
+
 {{ end }}
