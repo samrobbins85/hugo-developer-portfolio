@@ -221,19 +221,19 @@
                   {{ end }}
                 </p>
                 {{ if .chapter }}
-                  <p class="uk-text-bolder">{{.title}}</p>
+                  <p class="uk-text-bolder">
+                    {{ if .pages }}
+                      In: {{.title}}, <span class="uk-text-italic">Pages {{.volume}}</span>
+                    {{ else }}
+                      In: {{.title}}.
+                    {{ end }}
+                  </p>
                 {{ end }}
                 
                 {{ if .location }}
                 <p class="uk-text-bolder">{{.location}}</p>
                 {{ end }}
-                {{ if .conference }}
-                  <p class="uk-text">In: <span class="uk-text-italic">{{.conference}}.</span>
-                    {{ if .pages }}
-                      <span class="uk-text-italic">Pages {{.volume}}</span>
-                    {{ end }}
-                  </p>
-                {{ end }}
+                
                 <p>
                 {{.description}}
                 </p>
@@ -272,7 +272,6 @@
       {{ end }}
     </div>
   {{ end }}
-  <hr />
 </section>
 {{ $zoom := resources.Get "js/medium-zoom-1.0.8.min.js" | minify }}
 <script src="{{ $zoom.Permalink | relURL}}"></script>

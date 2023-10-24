@@ -12,17 +12,17 @@ em{
 }
 
 figcaption {
-	font-size: 1rem;
-	font-weight: 300;
-	margin: 1rem;
-	text-align: center;
-	line-height: 1.5rem;
-	color: #666;
-	display: block;
-	padding: 0;
-	border: 0;
-	box-sizing: border-box;
-	font-size: 1.2rem;
-	font-weight: 650;
-	text-rendering: optimizeLegibility;
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 1rem;
+  text-align: center;
+  line-height: 1.5rem;
+  color: #666;
+  display: block;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-size: 1.2rem;
+  font-weight: 650;
+  text-rendering: optimizeLegibility;
 }
