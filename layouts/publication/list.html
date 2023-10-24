@@ -229,10 +229,16 @@
                     {{ end }}
                   </p>
                 {{ end }}
-                
-                {{ if .location }}
-                <p class="uk-text-bolder">{{.location}}</p>
-                {{ end }}
+
+                <p class="uk-text-normal">
+                  {{ if .publisher }}
+                    <span> Publisher: {{ .publisher }}
+                    {{ if .location }}
+                      , {{ .location }}
+                    {{ end }}
+                    .</span>
+                  {{ end }}
+                </p>
                 
                 <p>
                 {{.description}}
