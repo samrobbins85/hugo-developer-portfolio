@@ -419,16 +419,16 @@
             {{ end }}
         </div>
     </div>
-
+</section>
 
 
 
 {{ if .Site.Data.homepage.publications.enable }}
-<!-- publication -->
+<!-- selected publication -->
 <section class="uk-margin-xlarge-bottom">
     <div class="uk-container">
 
-        <h1 class="uk-heading-line uk-heading-medium  uk-margin-large-bottom"><span>Publications</span></h1>
+        <h1 class="uk-heading-line uk-heading-medium  uk-margin-large-bottom"><span>Selected Publications</span></h1>
 
 
             {{ range .Site.Data.homepage.publications.item }}
@@ -447,8 +447,20 @@
                       {{.description}}
                       </p>
                       <p>
+                        {{ if .doi }}
+                          <a class="uk-button uk-button-primary" href="https://doi.org/{{.doi}}">DOI</a>
+                        {{ end }}
+                        {{ if .arxiv_id }}
+                          <a class="uk-button uk-button-primary" href="https://arxiv.org/abs/{{.arxiv_id}}">arXiv</a>
+                        {{ end }}
                         {{ if .pdf_link }}
                           <a class="uk-button uk-button-primary" href="{{.pdf_link}}">PDF</a>
+                        {{ end }}
+                        {{ if .pubmed_id }}
+                          <a class="uk-button uk-button-primary" href="https://pubmed.ncbi.nlm.nih.gov/{{.pubmed_id}}/">PubMed</a>
+                        {{ end }}
+                        {{ if .pmc_id }}
+                          <a class="uk-button uk-button-primary" href="https://www.ncbi.nlm.nih.gov/pmc/articles/{{.pmc_id}}/">PMC free article</a>
                         {{ end }}
                         {{ if .code_link }}
                           <a class="uk-button uk-button-primary" href="{{.code_link}}">Code</a>
@@ -462,6 +474,5 @@
             {{ end }}
 </section>
 {{ end }}
-</section>
 {{ end }}
 {{ end }}
