@@ -70,12 +70,18 @@
         {{ end }} {{ if .Site.Data.homepage.social.instagram }}
         <li><a href="https://instagram.com/{{ .Site.Data.homepage.social.instagram }}"> <img
                     class="contain" src="https://cdn.svgporn.com/logos/instagram-icon.svg" alt="Instagram" loading="lazy"></a></li>
+        {{ end }} {{ if .Site.Data.homepage.social.researchgate }}
+        <li><a href="https://www.researchgate.net/profile/{{ .Site.Data.homepage.social.researchgate }}"> <img
+                    class="contain" src="https://upload.wikimedia.org/wikipedia/commons/5/5e/ResearchGate_icon_SVG.svg" alt="ResearchGate" loading="lazy"></a></li>
         {{ end }}{{ if .Site.Data.homepage.social.gmail }}
         <li><a href="mailto:{{ .Site.Data.homepage.social.gmail }}@gmail.com" > <img
                     class="contain" src="https://cdn.svgporn.com/logos/google-gmail.svg" alt="Gmail" loading="lazy"></a></li>
         {{ end }}{{ if .Site.Data.homepage.social.hotmail }}
         <li><a href="mailto:{{ .Site.Data.homepage.social.hotmail }}@hotmail.com" > <img
                     class="contain" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/microsoftoutlook.svg" alt="Hotmail" loading="lazy"></a></li>
+        {{ end }}{{ if .Site.Data.homepage.social.email }}
+        <li><a href="mailto:{{ .Site.Data.homepage.social.email }}" > <img
+                    class="contain" src="https://upload.wikimedia.org/wikipedia/commons/archive/6/6e/20230404155420%21Mail_fluent_Icon.svg" alt="Email" loading="lazy"></a></li>
         {{ end }} {{ if .Site.Data.homepage.social.telegram }}
         <li><a href="https://t.me/{{ .Site.Data.homepage.social.telegram }}"> <img
                     class="contain" src="https://cdn.svgporn.com/logos/telegram.svg" alt="Telegram" loading="lazy"></a></li>
