@@ -70,12 +70,18 @@
         {{ end }} {{ if .Site.Data.homepage.social.instagram }}
         <li><a href="https://instagram.com/{{ .Site.Data.homepage.social.instagram }}"> <img
                     class="contain" src="https://cdn.svgporn.com/logos/instagram-icon.svg" alt="Instagram" loading="lazy"></a></li>
+        {{ end }} {{ if .Site.Data.homepage.social.researchgate }}
+        <li><a href="https://www.researchgate.net/profile/{{ .Site.Data.homepage.social.researchgate }}"> <img
+                    class="contain" src="https://upload.wikimedia.org/wikipedia/commons/5/5e/ResearchGate_icon_SVG.svg" alt="ResearchGate" loading="lazy"></a></li>
         {{ end }}{{ if .Site.Data.homepage.social.gmail }}
         <li><a href="mailto:{{ .Site.Data.homepage.social.gmail }}@gmail.com" > <img
                     class="contain" src="https://cdn.svgporn.com/logos/google-gmail.svg" alt="Gmail" loading="lazy"></a></li>
         {{ end }}{{ if .Site.Data.homepage.social.hotmail }}
         <li><a href="mailto:{{ .Site.Data.homepage.social.hotmail }}@hotmail.com" > <img
                     class="contain" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/microsoftoutlook.svg" alt="Hotmail" loading="lazy"></a></li>
+        {{ end }}{{ if .Site.Data.homepage.social.email }}
+        <li><a href="mailto:{{ .Site.Data.homepage.social.email }}" > <img
+                    class="contain" src="https://upload.wikimedia.org/wikipedia/commons/archive/6/6e/20230404155420%21Mail_fluent_Icon.svg" alt="Email" loading="lazy"></a></li>
         {{ end }} {{ if .Site.Data.homepage.social.telegram }}
         <li><a href="https://t.me/{{ .Site.Data.homepage.social.telegram }}"> <img
                     class="contain" src="https://cdn.svgporn.com/logos/telegram.svg" alt="Telegram" loading="lazy"></a></li>
@@ -419,16 +425,16 @@
             {{ end }}
         </div>
     </div>
-
+</section>
 
 
 
 {{ if .Site.Data.homepage.publications.enable }}
-<!-- publication -->
+<!-- selected publication -->
 <section class="uk-margin-xlarge-bottom">
     <div class="uk-container">
 
-        <h1 class="uk-heading-line uk-heading-medium  uk-margin-large-bottom"><span>Publications</span></h1>
+        <h1 class="uk-heading-line uk-heading-medium  uk-margin-large-bottom"><span>Selected Publications</span></h1>
 
 
             {{ range .Site.Data.homepage.publications.item }}
@@ -436,7 +442,11 @@
               <div class="uk-container">
                 <div class="uk-flex-center" uk-grid uk-height-match=".publication">
                   <div class="uk-width-1-2 uk-width-1-4@s publication">
-                      <img class="contain publications" src="{{.image}}" alt="Research Image">
+                    {{ if $.Site.Data.homepage.publications.enlarge_abstract }}
+                      <img class="contain publications medium-zoom-image" src="{{.image}}" id="zoom-margin" alt="Graphical abstract">
+                    {{ else }}
+                      <img class="contain publications" src="{{.image}}" alt="Graphical abstract">
+                    {{ end }}
                   </div>
                   <div class="uk-width-expand@m publication">
                       <h3 class="uk-card-title">{{.title}}</h3>
@@ -447,8 +457,20 @@
                       {{.description}}
                       </p>
                       <p>
+                        {{ if .doi }}
+                          <a class="uk-button uk-button-primary" href="https://doi.org/{{.doi}}">DOI</a>
+                        {{ end }}
+                        {{ if .arxiv_id }}
+                          <a class="uk-button uk-button-primary" href="https://arxiv.org/abs/{{.arxiv_id}}">arXiv</a>
+                        {{ end }}
                         {{ if .pdf_link }}
                           <a class="uk-button uk-button-primary" href="{{.pdf_link}}">PDF</a>
+                        {{ end }}
+                        {{ if .pubmed_id }}
+                          <a class="uk-button uk-button-primary" href="https://pubmed.ncbi.nlm.nih.gov/{{.pubmed_id}}/">PubMed</a>
+                        {{ end }}
+                        {{ if .pmc_id }}
+                          <a class="uk-button uk-button-primary" href="https://www.ncbi.nlm.nih.gov/pmc/articles/{{.pmc_id}}/">PMC free article</a>
                         {{ end }}
                         {{ if .code_link }}
                           <a class="uk-button uk-button-primary" href="{{.code_link}}">Code</a>
@@ -462,6 +484,12 @@
             {{ end }}
 </section>
 {{ end }}
-</section>
+
 {{ end }}
+
+{{ if $.Site.Data.publication.papers.enabled }}
+{{ $zoom := resources.Get "js/medium-zoom-1.0.8.min.js" | minify }}
+<script src="{{ $zoom.Permalink | relURL}}"></script>
+{{ end }}
+
 {{ end }}

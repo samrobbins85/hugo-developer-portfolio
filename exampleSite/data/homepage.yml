@@ -6,9 +6,11 @@ social:
   linkedin: sam-robbins-gb
   github: samrobbins85
   gitlab: ""
+  researchgate: ""
   facebook: ""
   instagram: ""
   gmail: samrobbinsgb
+  email: admin@example.com
 about:
   enable: true
   content: 2nd Year Durham Computer Science Student
@@ -59,3 +61,18 @@ portfolio:
   filter:
     - label: Web Dev
       value: web-dev
+publications:
+  enable: true
+  enlarge_abstract: true
+  item:
+    - image: /path/to/img
+      title: Title of the publication
+      description: details about the publication
+      code_link: link/to/the/repository
+      pdf_link: link/to/the/pdf
+    - title: test
+      description: test test
+      doi: 10.1234/5678
+      pubmed_id: 12345
+      pmc_id: PMC123
+      data_link: link/to/the/data

@@ -1,0 +1,56 @@
+papers:
+  enabled: true
+  item:
+    - title: Title of the publication
+      authors: 
+      - author: a
+      - author: me
+      image: ""
+      journal: Journal A
+      volume: 22
+      issue: 3
+      date: May 2020
+      description: details about the publication
+      doi: 10.1000
+      code_link: link/to/the/repository
+      pdf_link: link/to/the/pdf
+    - discipline: b
+      authors: 
+      - author: me
+      - author: someone
+      image: ""
+      title: Title of the publications
+      code_link: https://github.com
+      contributions: |-
+        I contributed a name.
+        No other contributions declared.
+    - title: C
+      date: 2022
+      doi: 202
+books:
+  enabled: true
+  item:
+    - title: first book
+      authors: 
+      - author: me
+      publisher: Publisher 1
+    - title: Second book
+      publisher: Publisher 2
+      authors: 
+      - author: me
+      city: Malaysia
+      chapter: Chapter name
+      date: Feb 30, 201
+      isbn: 23232-2323-23
+conferences:
+  enabled: true
+  item:
+    - title: first conference
+      conference: conf1
+    - title: second conference
+      conference: conf2
+      authors: 
+      - author: me
+      location: Malaysia
+      date: Feb 30, 2021
+    
