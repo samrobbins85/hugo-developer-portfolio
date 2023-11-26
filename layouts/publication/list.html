@@ -57,25 +57,25 @@
                 </p>
                 <p>
                   {{ if .doi }}
-                    <a class="uk-button uk-button-primary" href="https://doi.org/{{.doi}}">DOI</a>
+                    <a class="uk-button uk-button-primary" href="https://doi.org/{{.doi}}" target="_blank">DOI</a>
                   {{ end }}
                   {{ if .arxiv_id }}
-                    <a class="uk-button uk-button-primary" href="https://arxiv.org/abs/{{.arxiv_id}}">arXiv</a>
+                    <a class="uk-button uk-button-primary" href="https://arxiv.org/abs/{{.arxiv_id}}" target="_blank">arXiv</a>
                   {{ end }}
                   {{ if .pdf_link }}
-                    <a class="uk-button uk-button-primary" href="{{.pdf_link}}">PDF</a>
+                    <a class="uk-button uk-button-primary" href="{{.pdf_link}}" target="_blank">PDF</a>
                   {{ end }}
                   {{ if .pubmed_id }}
-                    <a class="uk-button uk-button-primary" href="https://pubmed.ncbi.nlm.nih.gov/{{.pubmed_id}}/">PubMed</a>
+                    <a class="uk-button uk-button-primary" href="https://pubmed.ncbi.nlm.nih.gov/{{.pubmed_id}}/" target="_blank">PubMed</a>
                   {{ end }}
                   {{ if .pmc_id }}
-                    <a class="uk-button uk-button-primary" href="https://www.ncbi.nlm.nih.gov/pmc/articles/{{.pmc_id}}/">PMC free article</a>
+                    <a class="uk-button uk-button-primary" href="https://www.ncbi.nlm.nih.gov/pmc/articles/{{.pmc_id}}/" target="_blank">PMC free article</a>
                   {{ end }}
                   {{ if .code_link }}
-                    <a class="uk-button uk-button-primary" href="{{.code_link}}">Code</a>
+                    <a class="uk-button uk-button-primary" href="{{.code_link}}" target="_blank">Code</a>
                   {{ end }}
                   {{ if .data_link }}
-                    <a class="uk-button uk-button-primary" href="{{.data_link}}">Data</a>
+                    <a class="uk-button uk-button-primary" href="{{.data_link}}" target="_blank">Data</a>
                   {{ end }}
                   {{ if .contributions }}
                   <a class="uk-button uk-button-primary" uk-toggle="target: #modal_paper_{{ replaceRE "\\W" "_" .title }}">Contributions</a>
