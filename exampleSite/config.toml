@@ -45,9 +45,14 @@ theme = "."
   weight=3
 
   [[menu.main]]
+  name = "Publications"
+  URL = "publication"
+  weight=4
+
+  [[menu.main]]
   name = "Contact"
   URL = "contact"
-  weight=4
+  weight=5
 
 
 [params]

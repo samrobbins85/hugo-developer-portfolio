@@ -148,10 +148,12 @@ social:
   bitbucket: ""
   github: samrobbins85
   gitlab: ""
+  researchgate: ""
   facebook: ""
   instagram: ""
   gmail: samrobbinsgb
   hotmail: ""
+  email: admin@example.com
   telegram: ""
   whatsapp: ""
 ```
@@ -286,13 +288,14 @@ education:
       image: https://res.cloudinary.com/samrobbins/image/upload/f_auto,q_auto/v1591793268/logos/logos_Durham_fc2sae.svg
 ```
 
-#### publications
+#### selected publications
 
-This section allows you to showcase your publications history, the fields are self explanatory.
+This section allows you to showcase your highlight publications, the fields are self explanatory.
 
 ```yml
 publications:
   enable: true
+  enlarge_abstract: true
   item:
     - image: /path/to/img
       title: Title of the publication
@@ -323,6 +326,58 @@ This file configures the portfolio page, allowing you to specify the filters you
 filter:
   - label: Web Dev
     value: web-dev
+```
+
+### `publication.yml`
+
+This file configures the publication page, and follows the format below:
+
+```yml
+papers:
+  enabled: true
+  item:
+    - title: Title of the publication
+      date: May 5, 2024
+      authors: 
+      - author: Someone
+      - author: me
+      image: path/to/show/graphical/abstract
+      journal: Journal A
+      volume: 22
+      issue: 3
+      description: details about the publication
+      doi: 10.1000
+      pubmed_id: 1234567
+      pmc_id: PMC2345
+      code_link: link/to/the/repository
+      data_link: link/to/the/data
+      pdf_link: link/to/the/pdf
+      contributions: None declared
+    - title: The second paper
+      authors: 
+      - author: me
+      status: under review
+      arxiv_id: 1234
+books:
+  enabled: true
+  item:
+    - title: My first book
+      publisher: Publisher 2
+      authors: 
+      - author: me
+      city: Malaysia
+      chapter: My first chapter
+      date: Feb 30, 201
+      isbn: 23232-2323-23
+conferences:
+  enabled: true
+  item:
+    - title: second conference
+      conference: conf2
+      authors: 
+    - author: me
+      location: Malaysia
+      date: Feb 30, 2021
 ```
 
 ### Blogs
